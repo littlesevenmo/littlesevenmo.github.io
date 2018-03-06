@@ -10,6 +10,7 @@ install:
   - npm install   #安装hexo及插件
 before_script:
   - npm install -g mocha
+  - npm install hexo-abbrlink
   - git clone --branch master https://github.com/littlesevenmo/littlesevenmo.github.io.git public
 script:
   - hexo cl   #清除
