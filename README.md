@@ -1,0 +1,2 @@
+# littlesevenmo.github.io
+blog
