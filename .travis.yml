@@ -6,12 +6,13 @@ cache:
 before_install:
   - npm install -g hexo
   - npm install -g hexo-cli
-    - git config user.name "littlesevenmo"   #修改成自己的github用户名
-  - git config user.email "littlesevenmo@gmail.com"   #修改成自己的GitHub邮箱
+  #- git config user.name "littlesevenmo"   #修改成自己的github用户名
+  #- git config user.email "littlesevenmo@gmail.com"   #修改成自己的GitHub邮箱
 install:
   - npm install   #安装hexo及插件
 before_script:
-  - npm install hexo-abbrlink --save
+  - npm install hexo-abbrlink
+  #- npm install hexo-abbrlink --save
 #  - npm install -g mocha
   - git clone --branch master https://github.com/littlesevenmo/littlesevenmo.github.io.git public
 script:
@@ -20,6 +21,8 @@ script:
 after_script:
   - cd ./public
   - git init
+  - git config user.name "littlesevenmo"   #修改成自己的github用户名
+  - git config user.email "littlesevenmo@gmail.com"   #修改成自己的GitHub邮箱 
   - git add .
   - git commit -m "update by Travis-CI"
   - git push --force --quiet "https://51b30d3dca784c699f3af931897039956848d3f5@github.com/littlesevenmo/littlesevenmo.github.io.git" master:master #GH_token就是在travis中设置的token
