@@ -1,0 +1,31 @@
+language: node_js   #设置语言
+node_js: stable     #设置相应的版本
+cache:
+    directories:
+        - node_modules    #据说可以减少travis构建时间
+before_install:
+  - npm install -g hexo
+  - npm install -g hexo-cli
+install:
+  - npm install   #安装hexo及插件
+before_script:
+  - npm install hexo-abbrlink --save
+#  - npm install -g mocha
+  - git clone --branch master https://github.com/littlesevenmo/littlesevenmo.github.io.git public
+script:
+  - hexo clean   #清除
+  - hexo g   #生成
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "littlesevenmo"   #修改成自己的github用户名
+  - git config user.email "littlesevenmo@gmail.com"   #修改成自己的GitHub邮箱
+  - git add .
+  - git commit -m "update by Travis-CI"
+  - git push --force --quiet "https://51b30d3dca784c699f3af931897039956848d3f5@github.com/littlesevenmo/littlesevenmo.github.io.git" master:master #GH_token就是在travis中设置的token
+branches:
+  only:
+  - blog  #只监测这个分支，一有动静就开始构建
+env:
+    global:
+        - GH_REF: github.com/littlesevenmo/littlesevenmo.github.io.git
