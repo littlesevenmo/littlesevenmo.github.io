@@ -25,7 +25,7 @@ after_script:
   - git config user.email "littlesevenmo@gmail.com"   #修改成自己的GitHub邮箱 
   - git add .
   - git commit -m "update by Travis-CI"
-  - git push --force --quiet "https://51b30d3dca784c699f3af931897039956848d3f5@github.com/littlesevenmo/littlesevenmo.github.io.git" master:master #GH_token就是在travis中设置的token
+  - git push --force --quiet "https://51b30d3dca784c699f3af931897039956848d3f5@github.com/littlesevenmo/littlesevenmo.github.io.git" master #GH_token就是在travis中设置的token
 branches:
   only:
   - blog  #只监测这个分支，一有动静就开始构建
