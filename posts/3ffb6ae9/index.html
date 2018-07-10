@@ -142,10 +142,18 @@
 <meta property="og:site_name" content="且听风吟">
 <meta property="og:description" content="题目学校最近举行一场运动会，共有17名身高不同的学生参加。裁判准备了如下颜色的帽子：3顶红色，4顶黄色，5顶蓝色，7顶绿色。规则如下：让17个人按顺序站成一列，给他们每个人都戴一顶帽子，每个人看不见自己帽子的颜色，却能看到站在前面的那些人的帽子颜色。即， 从队头到队尾，分别标记为1,2,4,5….17。1号啥都看不到，17号能看到1~16号帽子的颜色。这17名学生知道帽子都有什么颜色以及有多少顶。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-13T03:18:26.316Z">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/1.png">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/2.png">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/3.png">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/4.png">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/5.png">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/6.png">
+<meta property="og:image" content="https://www.windsings.com/posts/3ffb6ae9/7.png">
+<meta property="og:updated_time" content="2018-07-09T09:50:13.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="帽子颜色问题">
 <meta name="twitter:description" content="题目学校最近举行一场运动会，共有17名身高不同的学生参加。裁判准备了如下颜色的帽子：3顶红色，4顶黄色，5顶蓝色，7顶绿色。规则如下：让17个人按顺序站成一列，给他们每个人都戴一顶帽子，每个人看不见自己帽子的颜色，却能看到站在前面的那些人的帽子颜色。即， 从队头到队尾，分别标记为1,2,4,5….17。1号啥都看不到，17号能看到1~16号帽子的颜色。这17名学生知道帽子都有什么颜色以及有多少顶。">
+<meta name="twitter:image" content="https://www.windsings.com/posts/3ffb6ae9/1.png">
 
 
 
@@ -471,16 +479,59 @@
 
       
         <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>学校最近举行一场运动会，共有17名身高不同的学生参加。裁判准备了如下颜色的帽子：3顶红色，4顶黄色，5顶蓝色，7顶绿色。规则如下：让17个人按顺序站成一列，给他们每个人都戴一顶帽子，每个人看不见自己帽子的颜色，却能看到站在前面的那些人的帽子颜色。即， 从队头到队尾，分别标记为1,2,4,5….17。1号啥都看不到，17号能看到1~16号帽子的颜色。这17名学生知道帽子都有什么颜色以及有多少顶。</p>
-<p>现在从队尾开始，即17号，开始依次问，你是否知道自己戴的帽子的颜色，如果他回答不知道，就继续问他前面的人，即16,15,14…依次往前问。问最多问到几号，他就一定能知道自己戴的是什么颜色的帽子。<br><a id="more"></a><br>答案最多是问到4号。</p>
+<p>现在从队尾开始，即17号，开始依次问，你是否知道自己戴的帽子的颜色，如果他回答不知道，就继续问他前面的人，即16,15,14…依次往前问。问最多问到几号，他就一定能知道自己戴的是什么颜色的帽子。<br><a id="more"></a><br>答案最多是问到11号。</p>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>先看一个这个问题的简化版：</p>
-<p>有3顶黑帽子，2顶白帽子。让三个人从前到后站成一排。从前到后分别标记为1号，2,号，3号。给他们每个人头上戴一顶帽子。每个人都看不见自己戴的帽子的颜色，却只能看见站在前面那些人的帽子颜色。（所以3号可以看见前面两个人头上帽子的颜色，2号看得见1号的帽子颜色但看不见在他后面那个人的帽子颜色，而1号谁的帽子都看不见。现在从3号开始，问他是不是知道自己戴的帽子颜色，如果他回答说不知道，就继续问他前面那个人。现假设这三个人全都戴着黑帽子，那么1号一定知道自己戴的是黑帽子，问为什么？</p>
-<p>答案是，1号听见了2,3号都说了不知道。对于3号，如果他看见了两顶白帽子，那么他就知道自己戴的是黑帽子。但是3号不知道，所以3号看见了至少一顶黑色。那么对于2号，如果2号看见了一顶白色，听见了3号不知道，那么2号就知道自己戴的是黑色的。如果2号也不知道，说明2号也看到了黑色，也即1号戴的是黑色的。</p>
+<p>有3顶黑帽子，2顶白帽子。让三个人从前到后站成一排。从前到后分别标记为1号，2,号，3号。给他们每个人头上戴一顶帽子。每个人都看不见自己戴的帽子的颜色，却只能看见站在前面那些人的帽子颜色。（所以3号可以看见前面两个人头上帽子的颜色，2号看得见1号的帽子颜色但看不见在他后面那个人的帽子颜色，而1号谁的帽子都看不见。现在从3号开始，问他是不是知道自己戴的帽子颜色，如果他回答说不知道，就继续问他前面那个人。问最多问到几号，他就一定知道自己戴的是什么帽子。</p>
+<p>答案是，1号。分析如下：</p>
+<ol>
+<li>3号说不知道，那么3号看到的情况有：1黑1白，2黑。</li>
+<li>在问2号的时候，如果2号看到的是白色，那么这就只能是1黑1白的情况，因此2号就知道自己戴的是黑色的。</li>
+<li>如果2号看到的是黑色的，那么2号就不知道自己戴的是白还是黑色，只好说不知道。因此在1号听见了2,3都说不知道之后，他就知道了自己戴的是黑色的帽子。</li>
+</ol>
 <p>换个复杂点的：</p>
-<p>3顶红帽子，4顶黑帽子，5顶白帽子，10个人。</p>
-<p>由数量可知，每种颜色的帽子至少出现一次。如果10号看到了4黑5白，那么10号就知道自己是红帽子。如果10号不知道，9号看到了4黑4白，10号不知道，说明算上自己，至少有一个红，因此9号就知道自己是红。</p>
-<p><strong>因此，对于这种类型的题，每种颜色至少出现一次的，从后往前数，第一个看不见全部颜色的，那么他就知道自己戴的是什么颜色的帽子，具体的颜色就是全部颜色-自己看到的颜色。</strong></p>
-<p>于是，引言中说的那个题，最多问到4号。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>这个题是一个同学问我的题，好像是阿里的网上笔试题中的一道，简单修改了下。</p>
+<p>3顶红帽子，4顶黑帽子，5顶白帽子，10个人。详细列举如下：</p>
+<ol>
+<li>从最后面的10号开始分析，3顶红帽子，4顶黑帽子，5顶白帽子，他要想推理出自己帽子的颜色，那么他看到的帽子的颜色情形一定是这样的：某两种颜色帽子全部出现。</li>
+<li>10号不知道自己帽子的颜色，由此可以得出，他看到的帽子颜色不可能出现：3红4黑、3红5白、4黑5白的情况，那么他看到的帽子颜色只可能有下表7种情况：</li>
+</ol>
+<p><img src="/posts/3ffb6ae9/1.png" alt="帽子颜色问题"></p>
+<ol>
+<li>分析9号的情况，9号听到10说不知道，那么他就可能通过上面的分析，知道10号看到的帽子情况是上面7种情况。针对上面的每一种情况，自己帽子颜色有红、黑、白3种可能，那么总共就有7 × 3 = 21 种可能。如下表：</li>
+</ol>
+<p><img src="/posts/3ffb6ae9/2.png" alt="帽子颜色问题"></p>
+<ol>
+<li>上表列出了9号能够看到所有可能情况，第一列表示9号是红色帽子的情况下，可能出现的颜色组合，第二列表示他是黑色帽子时可能出现的组合，第三列就是他是白色帽子时的组合。</li>
+</ol>
+<p>上图红色标记的，表示在21种情况中，没有重复出现的颜色组合，而黄色标记的则是有重复出现的颜色组合。</p>
+<p>如组合（1）：红0黑4白4，如果9号看到这种颜色组合，那么他就能判断出自己带的是红帽子，因为，所有21种组合中，这个组合是唯一的。</p>
+<p>而对于组合（3）：红1黑4白3，在21种组合中有重复，和组合（15）重复，9号戴红色帽子或者戴白色帽子都是这种情况，9号无法判断自己的帽子的颜色是红色还是白色。<br>9号无法判断自己帽子的颜色，只可能是重复出现的标记为黄色的组合，一共有6种情况，如下表：</p>
+<p><img src="/posts/3ffb6ae9/3.png" alt="帽子颜色问题"></p>
+<ol>
+<li>分析8号的情况，8号听到9号说不知道，那么他就可能通过上面的分析，知道9号看到的帽子情况是上面6种情况。针对上面的每一种情况，自己帽子颜色有红、黑、白3种可能，那么总共就有6 × 3 = 18 种可能。如下表：</li>
+</ol>
+<p><img src="/posts/3ffb6ae9/4.png" alt="帽子颜色问题"></p>
+<ol>
+<li>类似前面的分析，上面标记为红色的颜色组合，是在18种组合中唯一的组合，就是8号可以推断出自己帽子颜色的组合，黄色的组合则是他无法判断自己帽子颜色的组合，这种组合一共有3种，如下表：</li>
+</ol>
+<p><img src="/posts/3ffb6ae9/5.png" alt="帽子颜色问题"></p>
+<ol>
+<li>分析7号的情况，7号听到8号说不知道，那么他就可能通过上面的分析，知道8号看到的帽子情况是上面3种情况。针对上面的每一种情况，自己帽子颜色有红、黑、白3种可能，那么总共就有3 × 3 = 9 种可能。如下表：</li>
+</ol>
+<p><img src="/posts/3ffb6ae9/6.png" alt="帽子颜色问题"></p>
+<ol>
+<li>类似前面的分析，上面标记为红色的颜色组合，是在9种组合中唯一的组合，就是7号可以推断出自己帽子颜色的组合，黄色的组合则是他无法判断自己帽子颜色的组合，这种组合只有一种，那就是：红1黑2白3。</li>
+<li>现在分析6号的情况，6号听到7号说不知道，那么他就可能通过上面的分析，知道7号看到的帽子情况只有一种：红1黑2白3。针对这种情况，自己帽子颜色有红、黑、白3种可能，那么总共就有1 × 3 = 3 种可能。如下表：</li>
+</ol>
+<p><img src="/posts/3ffb6ae9/7.png" alt="帽子颜色问题"></p>
+<p>上面三种情况都是唯一的，6号看到其它人的帽子颜色组合就可以判断出自己帽子的颜色，如果看到2顶黑帽3顶白帽，那6号就可以判断出自己的帽子是红色。</p>
+<h2 id="换个思路理解"><a href="#换个思路理解" class="headerlink" title="换个思路理解"></a>换个思路理解</h2><p>帽子比人数多2，因此每种颜色的帽子分别至少出现1,2,3,5次。</p>
+<p>对于这个题，如果想让一个人不知道，那么他面前必定有四种颜色，且最少为1,2,3,5。</p>
+<p>因此对于11号，他只能看到10个，且知道了12~17全都说不知道，所以包括他在内，满足4种颜色，分别有1,2,3,5顶。</p>
+<p><strong>因此，对于这种类型的题，把所有颜色的帽子的最小出现次数相加，其和即为最多问到几号。具体颜色=各颜色最少个数-他所看到的</strong></p>
+<p>于是，引言中说的那个题，最多问到11号。</p>
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p>来源2018阿里网上笔试题。</p>
+<h1 id="致谢-amp-引用"><a href="#致谢-amp-引用" class="headerlink" title="致谢&amp;引用"></a>致谢&amp;引用</h1><p>引用：<a href="http://blog.sina.com.cn/s/blog_17f3b16300102xe3h.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_17f3b16300102xe3h.html</a></p>
+<p>特别感谢：yz1509</p>
 
       
     </div>
@@ -607,7 +658,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">54</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -763,7 +814,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">60</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -815,7 +870,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#换个思路理解"><span class="nav-number">2.1.</span> <span class="nav-text">换个思路理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目来源"><span class="nav-number">2.2.</span> <span class="nav-text">题目来源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#致谢-amp-引用"><span class="nav-number">3.</span> <span class="nav-text">致谢&amp;引用</span></a></li></ol></div>
             
 
           </div>
