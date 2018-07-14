@@ -134,14 +134,18 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="题目题目链接快速排序">
+<meta name="keywords" content="PAT,算法,快速排序">
+<meta property="og:type" content="article">
 <meta property="og:title" content="PAT-A-1101 Quick Sort (25)">
 <meta property="og:url" content="https://www.windsings.com/posts/4a5f9413/index.html">
 <meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="题目题目链接快速排序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T14:14:54.611Z">
+<meta property="og:updated_time" content="2018-07-14T02:51:49.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT-A-1101 Quick Sort (25)">
+<meta name="twitter:description" content="题目题目链接快速排序">
 
 
 
@@ -411,6 +415,24 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-A/" itemprop="url" rel="index"><span itemprop="name">PAT-A</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -448,7 +470,22 @@
       
 
       
-        
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems" target="_blank" rel="noopener">题目链接</a><br>快速排序<br><a id="more"></a><br>著名的快速排序算法中有一个名为partition的经典过程。在此过程中，通常选择一个元素作为枢轴。然后，小于枢轴的元素向左移动，而大于枢轴的元素向右移动。在算法运行后，给定N个<strong>不同</strong>的正整数，求这N个数中有多少个可以选定作为枢轴？<br>例如，给定N = 5和数字1,3,2,4和5.我们有：</p>
+<ol>
+<li>1可以是枢轴，因为它的左边没有元素，右边的所有元素都比它大;</li>
+<li>3不能是枢轴，因为虽然它左边的所有元素都较小，但它右边的数字2小于它;</li>
+<li>2不能是枢轴，因为虽然它右边的所有元素都较大，但它左边的数字3大于它;</li>
+</ol>
+<p>并且由于类似的原因，4和5也可能成为枢轴。</p>
+<p>因此总共有3个可以选作枢轴的点。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>每个输入包括一个测试样例。第一行给出正整数N（&lt;=10<sup>5</sup>）。然后下一行是N个不大于10<sup>9</sup>的正整数。数字之间由空格隔开。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>在第一行输出可以作为枢轴的元素的数量。然后在下一行中按顺序输出这些元素，数字之间由空格隔开，每行末尾不得有多余的空格。</p>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>快速排序有个重要的性质，每个枢轴元素在这次排序之后，都会为它确定一个位置，这个位置就是排序全部结束之后，它所在的位置。即每趟快速排序，至少确定一个元素的位置。</p>
+<p>利用这个思路，我们用另外一个数组存储将这些数字排序之后的序列，看排序前的位置是否等于排序后的位置。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>为了避免例如 1 4 3 2 5 中，对 3 的误判，需要再添加一个判断条件，判断 3 是不是从最开始到现在最大的数。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp1, num, res;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solution</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N; num.resize(N);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num[i]);</span><br><span class="line">    temp1 = num;</span><br><span class="line">    sort(temp1.begin(), temp1.end());</span><br><span class="line">    <span class="keyword">int</span> maxn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (num[i] == temp1[i] &amp;&amp; num[i] &gt; maxn)</span><br><span class="line">            res.push_back(num[i]);</span><br><span class="line">        maxn = max(maxn, num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; res.size(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; res[i];</span><br><span class="line">        <span class="keyword">if</span> (i != res.size() - <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"2.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    solution();</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Sample Input:</span><br><span class="line"></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">Sample Output:</span><br><span class="line"></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -465,6 +502,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/快速排序/" rel="tag"><i class="fa fa-tag"></i> 快速排序</a>
+          
+        </div>
       
 
       
@@ -535,8 +582,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -773,6 +829,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">2.2.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试数据"><span class="nav-number">2.4.</span> <span class="nav-text">测试数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
