@@ -134,14 +134,18 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="PAT-A-1090">
+  <meta name="description" content="题目题目链接供应链中的最高价格">
+<meta name="keywords" content="PAT,算法,层次遍历,树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT-A-1090 Highest Price in Supply Chain (25)">
 <meta property="og:url" content="https://www.windsings.com/posts/5585a924/index.html">
 <meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="题目题目链接供应链中的最高价格">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-09T09:16:04.607Z">
+<meta property="og:updated_time" content="2018-07-13T08:24:28.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PAT-A-1090">
+<meta name="twitter:title" content="PAT-A-1090 Highest Price in Supply Chain (25)">
+<meta name="twitter:description" content="题目题目链接供应链中的最高价格">
 
 
 
@@ -160,7 +164,7 @@
   };
 </script>
 
-  <title>PAT-A-1090 | 且听风吟</title>
+  <title>PAT-A-1090 Highest Price in Supply Chain (25) | 且听风吟</title>
   
 
 
@@ -389,7 +393,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT-A-1090</h1>
+          <h1 class="post-title" itemprop="name headline">PAT-A-1090 Highest Price in Supply Chain (25)</h1>
         
 
         <div class="post-meta">
@@ -410,6 +414,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-A/" itemprop="url" rel="index"><span itemprop="name">PAT-A</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -448,7 +470,17 @@
       
 
       
-        
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems" target="_blank" rel="noopener">题目链接</a><br>供应链中的最高价格<br><a id="more"></a><br>供应链是由零售商，分销商和供应商组成的网络，每个人都参与其中，并且将产品从供应商转移到客户。</p>
+<p>从一个根供应商开始，链上每个人以价格P从一个供应商处购买产品，并以高于P的r%的价格出售或者分发给他们。假设供应链中的每个成员有且仅有一个供应商。</p>
+<p>现给定一个供应链，求一些零售商可以期待的最高的价格。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>每个输入文件包括一个测试用例，对于每种情况，第一行包括三个正整数：N（&lt;=10<sup>5</sup>）表示供应链中的成员数（编号从0~N-1），P：根供应商给出的价格，r：每个分销商或零售商加价的百分比。</p>
+<p>然后下一行包括N个数字，每个数字S<sub>i</sub>是第i个成员的供应商的索引。根供应商的S<sub>root</sub>定义为-1。一行中所有的数字都由空格分隔开。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每个测试用例，在第一行中输出一些零售商进货的最高价格，精确到小数点后2位，以及这些零售商的个数。<strong>注意！，是零售商的进货价！</strong> 数字之间由空格隔开，保证价格不会超过10<sup>10<sup>。</sup></sup></p>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>层次遍历</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>类似题目：PAT-A-1079。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="comment">//#pragma warning(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="keyword">double</span> P, r;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;M;			<span class="comment">//存储整个销售网络</span></span><br><span class="line"><span class="keyword">int</span> level[<span class="number">100011</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solution</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N &gt;&gt; P &gt;&gt; r;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    M.resize(N + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">        M[temp + <span class="number">1</span>].push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; que;	que.push(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!que.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        temp = que.front(); que.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M[temp].size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            que.push(M[temp][i]);</span><br><span class="line">            level[M[temp][i]] = level[temp] + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(level, level + N + <span class="number">1</span>, cmp);</span><br><span class="line">    temp = level[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f "</span>, P*<span class="built_in">pow</span>(<span class="number">1</span> + r / <span class="number">100</span>, temp - <span class="number">1</span>));</span><br><span class="line">    <span class="comment">//cout &lt;&lt; P*pow(1 + r / 100, temp-1) &lt;&lt; ' ';</span></span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (level[cnt]==temp)</span><br><span class="line">    &#123;</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//	freopen("1.txt", "r", stdin);</span></span><br><span class="line">    solution();</span><br><span class="line">    <span class="comment">//system("pause");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Sample Input:</span><br><span class="line"></span><br><span class="line"><span class="number">9</span> <span class="number">1.80</span> <span class="number">1.00</span></span><br><span class="line"><span class="number">1</span> <span class="number">5</span> <span class="number">4</span> <span class="number">4</span> <span class="number">-1</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span> <span class="number">6</span></span><br><span class="line">Sample Output:</span><br><span class="line"></span><br><span class="line"><span class="number">1.85</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -466,6 +498,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PAT/" rel="tag"><i class="fa fa-tag"></i> PAT</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/层次遍历/" rel="tag"><i class="fa fa-tag"></i> 层次遍历</a>
+          
+            <a href="/tags/树/" rel="tag"><i class="fa fa-tag"></i> 树</a>
+          
+        </div>
+      
 
       
       
@@ -475,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/354220c1/" rel="next" title="PAT-A-1089">
-                <i class="fa fa-chevron-left"></i> PAT-A-1089
+              <a href="/posts/354220c1/" rel="next" title="PAT-A-1089 Insert or Merge (25)">
+                <i class="fa fa-chevron-left"></i> PAT-A-1089 Insert or Merge (25)
               </a>
             
           </div>
@@ -484,6 +528,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/fea59011/" rel="prev" title="PAT-A-1088 Rational Arithmetic (20)">
+                PAT-A-1088 Rational Arithmetic (20) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -535,8 +583,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -555,7 +612,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -715,7 +772,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">70</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -757,6 +830,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">2.2.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试数据"><span class="nav-number">2.4.</span> <span class="nav-text">测试数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
