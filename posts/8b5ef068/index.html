@@ -111,14 +111,14 @@
   <meta name="description" content="题目题目链接找到平均数">
 <meta name="keywords" content="PAT,算法,字符串处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT-A-1108">
+<meta property="og:title" content="PAT-A-1108 Finding Average（20）">
 <meta property="og:url" content="https://www.windsings.com/posts/8b5ef068/index.html">
 <meta property="og:site_name" content="且听风吟">
 <meta property="og:description" content="题目题目链接找到平均数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T11:34:01.282Z">
+<meta property="og:updated_time" content="2018-08-05T11:46:13.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PAT-A-1108">
+<meta name="twitter:title" content="PAT-A-1108 Finding Average（20）">
 <meta name="twitter:description" content="题目题目链接找到平均数">
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>PAT-A-1108 | 且听风吟</title>
+  <title>PAT-A-1108 Finding Average（20） | 且听风吟</title>
   
 
 
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT-A-1108
+          <h1 class="post-title" itemprop="name headline">PAT-A-1108 Finding Average（20）
               
             
           </h1>
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2018-08-05 18:56:05 / 修改时间：19:34:01" itemprop="dateCreated datePublished" datetime="2018-08-05T18:56:05+08:00">2018-08-05</time>
+              <time title="创建时间：2018-08-05 18:56:05 / 修改时间：19:46:13" itemprop="dateCreated datePublished" datetime="2018-08-05T18:56:05+08:00">2018-08-05</time>
             
 
             
@@ -450,7 +450,16 @@
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>The basic task is simple: given N real numbers, you are supposed to calculate their average. But what makes it complicated is that some of the input numbers might not be legal. A legal input is a real number in [−1000,1000] and is accurate up to no more than 2 decimal places. When you calculate the average, those illegal numbers must not be counted in.</p>
 <h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification"></a>Input Specification</h2><p>Each input file contains one test case. For each case, the first line gives a positive integer N (≤100). Then N numbers are given in the next line, separated by one space.</p>
 <h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification"></a>Output Specification</h2><p>For each illegal input number, print in a line ERROR: X is not a legal number where X is the input. Then finally print in a line the result: The average of K numbers is Y where K is the number of legal inputs and Y is their average, accurate to 2 decimal places. In case the average cannot be calculated, output Undefined instead of Y. In case K is only 1, output The average of 1 number is Y instead.</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">## 测试数据</span><br><span class="line">``` cpp</span><br><span class="line">Sample Input <span class="number">1</span>:</span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">5</span> <span class="number">-3.2</span> aaa <span class="number">9999</span> <span class="number">2.3</span><span class="number">.4</span> <span class="number">7.123</span> <span class="number">2.35</span></span><br><span class="line">Sample Output <span class="number">1</span>:</span><br><span class="line">ERROR: aaa is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">9999</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">2.3</span><span class="number">.4</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">7.123</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">The average of <span class="number">3</span> numbers is <span class="number">1.38</span></span><br><span class="line">Sample Input <span class="number">2</span>:</span><br><span class="line"><span class="number">2</span></span><br><span class="line">aaa <span class="number">-9999</span></span><br><span class="line">Sample Output <span class="number">2</span>:</span><br><span class="line">ERROR: aaa is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">-9999</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">The average of <span class="number">0</span> numbers is Undefined</span><br></pre></td></tr></table></figure>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定N个数，要求计算他们的平均值。但是，某些输入的数字可能不合法。一个合法的输入是在 [−1000,1000] 间的实数，最多精确到小数点后2位。计算平均值时，不得计入这些非法的数字。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>每个输入文件包括一个测试用例。对于每种情况，第一行给出一个正整数N(≤100)。然后在下一行给出N个数，由空格隔开。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每个非法的输入，输出ERROR: X is not a legal number，其中X是那个非法的输入。然后在最后一行中打印结果：The average of K numbers is Y 。K是合法输入的数量，Y使他们的平均值，精确到2位小数。如果无法计算平均值，则输出Undefined。如果K只有1，则输出The average of 1 number is Y。</p>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>字符串处理。使用sscanf()和sprintf()。具体细节见代码注释</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
+<li>sscanf() – 从一个字符串中读进与指定格式相符的数据</li>
+<li>sprintf() – 字符串格式化命令，主要功能是把格式化的数据写入某个字符串中。</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> num[<span class="number">50</span>],s[<span class="number">50</span>];</span><br><span class="line"><span class="keyword">int</span> N, cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">double</span> numSum = <span class="number">0.0</span>, temp;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solution</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>, num);</span><br><span class="line">        <span class="built_in">sscanf</span>(num, <span class="string">"%lf"</span>, &amp;temp);			<span class="comment">//temp用于计算求和</span></span><br><span class="line">        <span class="built_in">sprintf</span>(s, <span class="string">"%.2lf"</span>, temp);			<span class="comment">//s字符串用于比较，这样比较起来比较方便</span></span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="built_in">strlen</span>(num); j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (num[j] != s[j])</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag || temp &lt; <span class="number">-1000</span> || temp&gt;<span class="number">1000</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"ERROR: %s is not a legal number\n"</span>, num);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            numSum += temp;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"The average of 1 number is %.2lf"</span>, numSum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (cnt &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"The average of %d numbers is %.2lf"</span>, cnt, numSum / cnt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"The average of 0 numbers is Undefined"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"1.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    solution();</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Sample Input <span class="number">1</span>:</span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">5</span> <span class="number">-3.2</span> aaa <span class="number">9999</span> <span class="number">2.3</span><span class="number">.4</span> <span class="number">7.123</span> <span class="number">2.35</span></span><br><span class="line">Sample Output <span class="number">1</span>:</span><br><span class="line">ERROR: aaa is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">9999</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">2.3</span><span class="number">.4</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">7.123</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">The average of <span class="number">3</span> numbers is <span class="number">1.38</span></span><br><span class="line">Sample Input <span class="number">2</span>:</span><br><span class="line"><span class="number">2</span></span><br><span class="line">aaa <span class="number">-9999</span></span><br><span class="line">Sample Output <span class="number">2</span>:</span><br><span class="line">ERROR: aaa is <span class="keyword">not</span> a legal number</span><br><span class="line">ERROR: <span class="number">-9999</span> is <span class="keyword">not</span> a legal number</span><br><span class="line">The average of <span class="number">0</span> numbers is Undefined</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -497,6 +506,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/fde4c840/" rel="prev" title="PAT-A-1109 Group Photo（25）">
+                PAT-A-1109 Group Photo（25） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -577,7 +590,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">90</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -763,7 +776,25 @@
                     
                       
                     
-                    <span class="site-state-item-count">75</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">84</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -815,7 +846,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Input Specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.3.</span> <span class="nav-text">Output Specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.4.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.5.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.6.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">2.2.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Input Specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.3.</span> <span class="nav-text">Output Specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.4.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.5.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.6.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">2.2.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试数据"><span class="nav-number">2.4.</span> <span class="nav-text">测试数据</span></a></li></ol></li></ol></div>
             
 
           </div>
