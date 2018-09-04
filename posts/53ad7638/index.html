@@ -108,14 +108,20 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="POJ-2632">
+  <meta name="description" content="题目题目链接崩溃的机器人">
+<meta name="keywords" content="算法,模拟,POJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ-2632 Crashing Robots">
 <meta property="og:url" content="https://www.windsings.com/posts/53ad7638/index.html">
 <meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="题目题目链接崩溃的机器人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-22T05:37:50.918Z">
+<meta property="og:image" content="https://www.windsings.com/posts/53ad7638/2632_1.jpg">
+<meta property="og:updated_time" content="2018-09-04T07:22:15.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ-2632">
+<meta name="twitter:title" content="POJ-2632 Crashing Robots">
+<meta name="twitter:description" content="题目题目链接崩溃的机器人">
+<meta name="twitter:image" content="https://www.windsings.com/posts/53ad7638/2632_1.jpg">
 
 
 
@@ -134,7 +140,7 @@
   };
 </script>
 
-  <title>POJ-2632 | 且听风吟</title>
+  <title>POJ-2632 Crashing Robots | 且听风吟</title>
   
 
 
@@ -351,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">POJ-2632
+          <h1 class="post-title" itemprop="name headline">POJ-2632 Crashing Robots
               
             
           </h1>
@@ -380,8 +386,42 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-04 15:22:15" itemprop="dateModified" datetime="2018-09-04T15:22:15+08:00">2018-09-04</time>
+              
+            
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/" itemprop="url" rel="index"><span itemprop="name">POJ</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -420,7 +460,38 @@
       
 
       
-        
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><a href="http://poj.org/problem?id=2632" target="_blank" rel="noopener">题目链接</a><br>崩溃的机器人<br><a id="more"></a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In a modernized warehouse, robots are used to fetch the goods. Careful planning is needed to ensure that the robots reach their destinations without crashing into each other. Of course, all warehouses are rectangular, and all robots occupy a circular floor space with a diameter of 1 meter. Assume there are N robots, numbered from 1 through N. You will get to know the position and orientation of each robot, and all the instructions, which are carefully (and mindlessly) followed by the robots. Instructions are processed in the order they come. No two robots move simultaneously; a robot always completes its move before the next one starts moving.<br>A robot crashes with a wall if it attempts to move outside the area of the warehouse, and two robots crash with each other if they ever try to occupy the same spot.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification"></a>Input Specification</h2><p>The first line of input is K, the number of test cases. Each test case starts with one line consisting of two integers, 1 &lt;= A, B &lt;= 100, giving the size of the warehouse in meters. A is the length in the EW-direction, and B in the NS-direction.<br>The second line contains two integers, 1 &lt;= N, M &lt;= 100, denoting the numbers of robots and instructions respectively.<br>Then follow N lines with two integers, 1 &lt;= Xi &lt;= A, 1 &lt;= Yi &lt;= B and one letter (N, S, E or W), giving the starting position and direction of each robot, in order from 1 through N. No two robots start at the same position.<br><img src="/posts/53ad7638/2632_1.jpg" alt="2632"><br>Finally there are M lines, giving the instructions in sequential order.<br>An instruction has the following format:<br>&lt; robot #&gt; &lt; action&gt; &lt; repeat&gt;<br>Where is one of<br>L: turn left 90 degrees,<br>R: turn right 90 degrees, or<br>F: move forward one meter,</p>
+<p>and 1 &lt;= &lt; repeat&gt; &lt;= 100 is the number of times the robot should perform this single move.</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification"></a>Output Specification</h2><p>Output one line for each test case:<br>Robot i crashes into the wall, if robot i crashes into a wall. (A robot crashes into a wall if Xi = 0, Xi = A + 1, Yi = 0 or Yi = B + 1.)<br>Robot i crashes into robot j, if robots i and j crash, and i is the moving robot.<br>OK, if no crashing occurs.</p>
+<p>Only the first crash is to be reported.</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>机器人在仓库中取货，仓库是矩形的，所有的机器人都占直径1M的圆形地板空间，假设有N个机器人，从1~N编号。现在知道每个机器人的位置和方向。机器人会无意识的遵从所有的指令，按照顺序进行。保证没有两个机器人同时移动，机器人总是在下一个指令之前处理当前之灵。</p>
+<p>如果机器人试图移动到仓库区域之外，机器人会撞墙。如果机器人试图占据一个已经有机器人的点，则这两个机器人会互相撞击。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行输入K，表示测试用例的数量。</p>
+<p>每个测试用例以包含两个整数的行开始，1 &lt;= A，B &lt;= 100，以米为单位给出仓库的大小。A是EW方向的长度，B是NS方向的长度。<br>第二行包含两个整数，1 &lt;= N，M &lt;= 100，分别表示机器人和指令的数量。<br>然后跟随N行，用两个整数，1 &lt;= Xi &lt;= A，1 &lt;= Yi &lt;= B和一个字母（N，S，E或W），给出每个机器人的起始位置和方向，保证没有两个机器人从同一个位置开始。</p>
+<p>最后有M行，按顺序给出说明。<br>指令具有以下格式：</p>
+<ul>
+<li>&lt;robot＃&gt; <action> <repeat></repeat></action></li>
+</ul>
+<p>其中，<action> 是以下的其中之一</action></p>
+<ul>
+<li>L：向左转90度。</li>
+<li>R：向右转90度</li>
+<li>F：前进一米。</li>
+</ul>
+<p>1 &lt;= <repeat> &lt;= 100是机器人执行此单次操作的次数。</repeat></p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>每个测试用例有一行输出：</p>
+<ul>
+<li>Robot i crashes into the wall     如果机器人撞墙了</li>
+<li>Robot i crashes into robot j    如果i是正在移动的机器人，撞到了j。</li>
+<li>OK, if no crashing occurs.</li>
+</ul>
+<h1 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h1><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>模拟</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> Directions[<span class="number">4</span>] = &#123; <span class="string">'N'</span>,<span class="string">'E'</span>,<span class="string">'S'</span>,<span class="string">'W'</span> &#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> Direction;		<span class="comment">//方向</span></span><br><span class="line">    <span class="keyword">int</span> x;				<span class="comment">//坐标</span></span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;robot;</span><br><span class="line"><span class="built_in">vector</span>&lt;robot&gt;R;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> times;</span><br><span class="line">&#125;command;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;G;</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="keyword">int</span> K, A, B, N, M;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(command comm,<span class="keyword">int</span> cnt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!flag)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (comm.c == <span class="string">'L'</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comm.times; i++)</span><br><span class="line">            R[comm.num].Direction = (R[comm.num].Direction + <span class="number">3</span>) % <span class="number">4</span>;		<span class="comment">//向左</span></span><br><span class="line">    <span class="keyword">if</span> (comm.c == <span class="string">'R'</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comm.times; i++)</span><br><span class="line">            R[comm.num].Direction = (R[comm.num].Direction + <span class="number">1</span>) % <span class="number">4</span>;		<span class="comment">//向右</span></span><br><span class="line">    <span class="keyword">if</span> (comm.c == <span class="string">'F'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">switch</span> (R[comm.num].Direction)</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:									<span class="comment">//向北走</span></span><br><span class="line">            G[R[comm.num].y][R[comm.num].x] = <span class="number">0</span>;				<span class="comment">//起步</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comm.times; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                R[comm.num].y += <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (R[comm.num].y &gt; B)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into the wall\n"</span>, comm.num);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (G[R[comm.num].y][R[comm.num].x] != <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into robot %d\n"</span>, comm.num, G[R[comm.num].y][R[comm.num].x]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag)</span><br><span class="line">                G[R[comm.num].y][R[comm.num].x] = comm.num;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:									<span class="comment">//向东走</span></span><br><span class="line">            G[R[comm.num].y][R[comm.num].x] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comm.times; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                R[comm.num].x += <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (R[comm.num].x &gt; A)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into the wall\n"</span>, comm.num);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (G[R[comm.num].y][R[comm.num].x] != <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into robot %d\n"</span>, comm.num, G[R[comm.num].y][R[comm.num].x]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag)</span><br><span class="line">                G[R[comm.num].y][R[comm.num].x] = comm.num;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:									<span class="comment">//向南走</span></span><br><span class="line">            G[R[comm.num].y][R[comm.num].x] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comm.times; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                R[comm.num].y -= <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (R[comm.num].y == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into the wall\n"</span>, comm.num);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (G[R[comm.num].y][R[comm.num].x] != <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into robot %d\n"</span>, comm.num, G[R[comm.num].y][R[comm.num].x]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag)</span><br><span class="line">                G[R[comm.num].y][R[comm.num].x] = comm.num;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:									<span class="comment">//向西走</span></span><br><span class="line">            G[R[comm.num].y][R[comm.num].x] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comm.times; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                R[comm.num].x -= <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (R[comm.num].x == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into the wall\n"</span>, comm.num);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (G[R[comm.num].y][R[comm.num].x] != <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"Robot %d crashes into robot %d\n"</span>, comm.num, G[R[comm.num].y][R[comm.num].x]);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag)</span><br><span class="line">                G[R[comm.num].y][R[comm.num].x] = comm.num;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt == M&amp;&amp;flag)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"OK"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solution</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> Dir;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">    <span class="keyword">while</span> (K--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; A &gt;&gt; B;</span><br><span class="line">        G.clear();</span><br><span class="line">        G.resize(B+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= B; i++)</span><br><span class="line">            G[i].resize(A+<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; N &gt;&gt; M;</span><br><span class="line">        R.resize(N + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; R[i].x &gt;&gt; R[i].y &gt;&gt; Dir;</span><br><span class="line">            G[R[i].y][R[i].x] = i;</span><br><span class="line">            <span class="keyword">switch</span> (Dir)</span><br><span class="line">            &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'N'</span>: R[i].Direction = <span class="number">0</span>; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'E'</span>: R[i].Direction = <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'S'</span>: R[i].Direction = <span class="number">2</span>; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'W'</span>: R[i].Direction = <span class="number">3</span>; <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        command comm;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">        flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; comm.num &gt;&gt; comm.c &gt;&gt; comm.times;</span><br><span class="line">            move(comm, cnt);</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"1.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"2.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    solution();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><pre><code class="cpp">
+</code></pre>
+
       
     </div>
 
@@ -437,6 +508,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/模拟/" rel="tag"><i class="fa fa-tag"></i> 模拟</a>
+          
+            <a href="/tags/POJ/" rel="tag"><i class="fa fa-tag"></i> POJ</a>
+          
+        </div>
       
 
       
@@ -457,8 +538,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/d8ff61b5/" rel="prev" title="POJ-1860">
-                POJ-1860 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/d8ff61b5/" rel="prev" title="POJ-1860 Currency Exchange">
+                POJ-1860 Currency Exchange <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,8 +592,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -531,7 +621,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">90</span>
+                    <span class="site-state-item-count">92</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -777,6 +867,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Input Specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.3.</span> <span class="nav-text">Output Specification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.4.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.5.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.6.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题"><span class="nav-number">2.</span> <span class="nav-text">解题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试数据"><span class="nav-number">2.3.</span> <span class="nav-text">测试数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
