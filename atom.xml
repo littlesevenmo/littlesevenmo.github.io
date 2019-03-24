@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.windsings.com/"/>
-  <updated>2019-03-24T18:28:26.736Z</updated>
+  <updated>2019-03-24T18:32:47.317Z</updated>
   <id>https://www.windsings.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>高级图像处理-Lab5</title>
+    <title>高级图像处理-Lab5频域滤波</title>
     <link href="https://www.windsings.com//posts/6e84f7a7/"/>
     <id>https://www.windsings.com//posts/6e84f7a7/</id>
     <published>2019-03-24T18:23:26.000Z</published>
-    <updated>2019-03-24T18:28:26.736Z</updated>
+    <updated>2019-03-24T18:32:47.317Z</updated>
     
     <content type="html"><![CDATA[<p>&#x6211;&#x7684;OpenCV&#x7248;&#x672C;&#x662F;4.0.1&#x3002;IDE&#x662F;VS2017&#x3002;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F;Win10&#x3002;</p><p><a href="https://dev.tencent.com/s/5167be5b-f5ed-4e9c-a25d-21a0676eb26d" target="_blank" rel="noopener">&#x5B9E;&#x9A8C;&#x8981;&#x6C42;</a> <a href="https://dev.tencent.com/s/08f3d6e9-4e8a-4034-ab84-eeeac896585f" target="_blank" rel="noopener">&#x6211;&#x7684;&#x4EE3;&#x7801;</a> <a id="more"></a></p><h1 id="&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684;-dft-&#x548C;-idft">&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684; DFT &#x548C; IDFT</h1>]]></content>
     
