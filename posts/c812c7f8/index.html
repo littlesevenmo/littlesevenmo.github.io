@@ -117,7 +117,7 @@
 <meta property="og:description" content="&amp;#x9898;&amp;#x76EE;&amp;#x94FE;&amp;#x63A5; &amp;#x8D85;&amp;#x8D8A;&amp;#x4FDD;&amp;#x4F51;&amp;#xFF0C;offer++">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.windsings.com/posts/c812c7f8/1557257019018.png">
-<meta property="og:updated_time" content="2019-05-07T19:37:26.395Z">
+<meta property="og:updated_time" content="2019-06-04T20:43:36.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer题解">
 <meta name="twitter:description" content="&amp;#x9898;&amp;#x76EE;&amp;#x94FE;&amp;#x63A5; &amp;#x8D85;&amp;#x8D8A;&amp;#x4FDD;&amp;#x4F51;&amp;#xFF0C;offer++">
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 03:37:26" itemprop="dateModified" datetime="2019-05-08T03:37:26+08:00">2019-05-08</time>
+                <time title="修改时间：2019-06-05 04:43:36" itemprop="dateModified" datetime="2019-06-05T04:43:36+08:00">2019-06-05</time>
               
             
           </span>
@@ -859,7 +859,6 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">        <span class="keyword">while</span> (num2 != <span class="number">0</span>) </span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> sum = num1 ^ num2;</span><br><span class="line">            <span class="keyword">int</span> carray = (num1 &amp; num2) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            num1 = sum;</span><br><span class="line">            num2 = carray;</span><br><span class="line">        }</span><br><span class="line">    <span class="keyword">return</span> num1;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 <p>&#x5F69;&#x86CB;</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">        _asm</span><br><span class="line">        {</span><br><span class="line">            MOV EAX, a</span><br><span class="line">            MOV ECX, b</span><br><span class="line">            ADD EAX, ECX</span><br><span class="line">            MOV a, EAX</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
-![&#x8BA1;&#x7B97;&#x673A;&#x751F;&#x6210;&#x4E86;&#x53EF;&#x9009;&#x6587;&#x5B57;: &#x4E0D;&#x52A0;&#x51CF;&#x4E56;&#x9664;&#x505A;&#x529B;Lli&#x53BB; MOVECX&#xFF0C; ADDEAX (&#x5251;&#x6307;offer&#x9898;&#x89E3;/clip_image001.png) 21 24 30 36 37 39 40 41 46 EclassSolution public: intadd(inta, asm MOV EAX intb) b ECX D:
 
       
     </div>
