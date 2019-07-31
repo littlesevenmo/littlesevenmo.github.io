@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="&amp;#x6211;&amp;#x7684;OpenCV&amp;#x7248;&amp;#x672C;&amp;#x662F;4.0.1&amp;#x3002;IDE&amp;#x662F;VS2017&amp;#x3002;&amp;#x64CD;&amp;#x4F5C;&amp;#x7CFB;&amp;#x7EDF;&amp;#x662F;Win10&amp;#x3002; &amp;#x5B9E;&amp;#x9A8C;&amp;#x8981;&amp;#x6C42; &amp;#x6211;&amp;#x7684;&amp;#x4EE3;&amp;#x7">
+  <meta name="description" content="&amp;#x6211;&amp;#x7684;OpenCV&amp;#x7248;&amp;#x672C;&amp;#x662F;4.0.1&amp;#x3002;IDE&amp;#x662F;VS2017&amp;#x3002;&amp;#x64CD;&amp;#x4F5C;&amp;#x7CFB;&amp;#x7EDF;&amp;#x662F;Win10&amp;#x3002; &amp;#x5B9E;&amp;#x9A8C;&amp;#x8981;&amp;#x6C42;    &amp;#x6211;&amp;#x7684;&amp;#x4EE3;&amp;#">
 <meta name="keywords" content="C++,OpenCV,计算机视觉,高级图像处理,中科大,实验笔记,赵振刚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高级图像处理-Lab5频域滤波">
 <meta property="og:url" content="https://www.windsings.com/posts/6e84f7a7/index.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="&amp;#x6211;&amp;#x7684;OpenCV&amp;#x7248;&amp;#x672C;&amp;#x662F;4.0.1&amp;#x3002;IDE&amp;#x662F;VS2017&amp;#x3002;&amp;#x64CD;&amp;#x4F5C;&amp;#x7CFB;&amp;#x7EDF;&amp;#x662F;Win10&amp;#x3002; &amp;#x5B9E;&amp;#x9A8C;&amp;#x8981;&amp;#x6C42; &amp;#x6211;&amp;#x7684;&amp;#x4EE3;&amp;#x7">
+<meta property="og:description" content="&amp;#x6211;&amp;#x7684;OpenCV&amp;#x7248;&amp;#x672C;&amp;#x662F;4.0.1&amp;#x3002;IDE&amp;#x662F;VS2017&amp;#x3002;&amp;#x64CD;&amp;#x4F5C;&amp;#x7CFB;&amp;#x7EDF;&amp;#x662F;Win10&amp;#x3002; &amp;#x5B9E;&amp;#x9A8C;&amp;#x8981;&amp;#x6C42;    &amp;#x6211;&amp;#x7684;&amp;#x4EE3;&amp;#">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-24T19:04:46.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高级图像处理-Lab5频域滤波">
-<meta name="twitter:description" content="&amp;#x6211;&amp;#x7684;OpenCV&amp;#x7248;&amp;#x672C;&amp;#x662F;4.0.1&amp;#x3002;IDE&amp;#x662F;VS2017&amp;#x3002;&amp;#x64CD;&amp;#x4F5C;&amp;#x7CFB;&amp;#x7EDF;&amp;#x662F;Win10&amp;#x3002; &amp;#x5B9E;&amp;#x9A8C;&amp;#x8981;&amp;#x6C42; &amp;#x6211;&amp;#x7684;&amp;#x4EE3;&amp;#x7">
+<meta name="twitter:description" content="&amp;#x6211;&amp;#x7684;OpenCV&amp;#x7248;&amp;#x672C;&amp;#x662F;4.0.1&amp;#x3002;IDE&amp;#x662F;VS2017&amp;#x3002;&amp;#x64CD;&amp;#x4F5C;&amp;#x7CFB;&amp;#x7EDF;&amp;#x662F;Win10&amp;#x3002; &amp;#x5B9E;&amp;#x9A8C;&amp;#x8981;&amp;#x6C42;    &amp;#x6211;&amp;#x7684;&amp;#x4EE3;&amp;#">
 
 
 
@@ -453,9 +453,8 @@
 
       
         <p>&#x6211;&#x7684;OpenCV&#x7248;&#x672C;&#x662F;4.0.1&#x3002;IDE&#x662F;VS2017&#x3002;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F;Win10&#x3002;</p>
-<p><a href="https://dev.tencent.com/s/5167be5b-f5ed-4e9c-a25d-21a0676eb26d" target="_blank" rel="noopener">&#x5B9E;&#x9A8C;&#x8981;&#x6C42;</a> <a href="https://dev.tencent.com/s/08f3d6e9-4e8a-4034-ab84-eeeac896585f" target="_blank" rel="noopener">&#x6211;&#x7684;&#x4EE3;&#x7801;</a> <a id="more"></a></p>
-<h1 id="&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684;-dft-&#x548C;-idft">&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684; DFT &#x548C; IDFT</h1>
-
+<p><a href="https://dev.tencent.com/s/5167be5b-f5ed-4e9c-a25d-21a0676eb26d" target="_blank" rel="noopener">&#x5B9E;&#x9A8C;&#x8981;&#x6C42;</a>    <a href="https://dev.tencent.com/s/08f3d6e9-4e8a-4034-ab84-eeeac896585f" target="_blank" rel="noopener">&#x6211;&#x7684;&#x4EE3;&#x7801;</a><br><a id="more"></a></p>
+<h1 id="&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684;-DFT-&#x548C;-IDFT"><a href="#&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684;-DFT-&#x548C;-IDFT" class="headerlink" title="&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684; DFT &#x548C; IDFT"></a>&#x7070;&#x5EA6;&#x56FE;&#x50CF;&#x7684; DFT &#x548C; IDFT</h1>
       
     </div>
 
@@ -1035,7 +1034,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#灰度图像的-dft-和-idft"><span class="nav-number">1.</span> <span class="nav-text">灰度图像的 DFT 和 IDFT</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#灰度图像的-DFT-和-IDFT"><span class="nav-number">1.</span> <span class="nav-text">灰度图像的 DFT 和 IDFT</span></a></li></ol></div>
             
 
           </div>
