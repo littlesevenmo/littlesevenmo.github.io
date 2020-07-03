@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP:KERSSL} !on
+RewriteRule .* https://www.windsings.com/$1 [R=301,L]
