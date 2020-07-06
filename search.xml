@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[字节跳动2018校招算法方向（第一批）]]></title>
+    <url>%2F%2Fposts%2F1c810b8c%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>字节跳动笔试题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>字节跳动</tag>
+        <tag>笔试题</tag>
+        <tag>牛客网</tag>
+        <tag>秋招</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SUMO笔记]]></title>
     <url>%2F%2Fposts%2F59170f05%2F</url>
     <content type="text"><![CDATA[SUMO &#x7684;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x3002;]]></content>
@@ -1518,8 +1533,8 @@
       <tags>
         <tag>算法</tag>
         <tag>PAT</tag>
-        <tag>模拟</tag>
         <tag>AVL Tree</tag>
+        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>

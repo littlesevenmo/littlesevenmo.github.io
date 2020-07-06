@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.jpg?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.jpg?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.jpg?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="&amp;#x7F16;&amp;#x7A0B;&amp;#x9898;&amp;#x4E00; P&amp;#x4E3A;&amp;#x7ED9;&amp;#x5B9A;&amp;#x7684;&amp;#x4E8C;&amp;#x7EF4;&amp;#x5E73;&amp;#x9762;&amp;#x6574;&amp;#x6570;&amp;#x70B9;&amp;#x96C6;&amp;#x3002;&amp;#x5B9A;&amp;#x4E49; P &amp;#x4E2D;&amp;#x67D0;&amp;#x70B9;x&amp;#xFF0C;&amp;#x5982">
+<meta name="keywords" content="算法,字节跳动,笔试题,牛客网,秋招">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字节跳动2018校招算法方向（第一批）">
+<meta property="og:url" content="https://www.windsings.com/posts/1c810b8c/index.html">
+<meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="&amp;#x7F16;&amp;#x7A0B;&amp;#x9898;&amp;#x4E00; P&amp;#x4E3A;&amp;#x7ED9;&amp;#x5B9A;&amp;#x7684;&amp;#x4E8C;&amp;#x7EF4;&amp;#x5E73;&amp;#x9762;&amp;#x6574;&amp;#x6570;&amp;#x70B9;&amp;#x96C6;&amp;#x3002;&amp;#x5B9A;&amp;#x4E49; P &amp;#x4E2D;&amp;#x67D0;&amp;#x70B9;x&amp;#xFF0C;&amp;#x5982">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.windsings.com/posts/1c810b8c/1.jpg">
+<meta property="og:updated_time" content="2020-07-06T15:43:42.631Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字节跳动2018校招算法方向（第一批）">
+<meta name="twitter:description" content="&amp;#x7F16;&amp;#x7A0B;&amp;#x9898;&amp;#x4E00; P&amp;#x4E3A;&amp;#x7ED9;&amp;#x5B9A;&amp;#x7684;&amp;#x4E8C;&amp;#x7EF4;&amp;#x5E73;&amp;#x9762;&amp;#x6574;&amp;#x6570;&amp;#x70B9;&amp;#x96C6;&amp;#x3002;&amp;#x5B9A;&amp;#x4E49; P &amp;#x4E2D;&amp;#x67D0;&amp;#x70B9;x&amp;#xFF0C;&amp;#x5982">
+<meta name="twitter:image" content="https://www.windsings.com/posts/1c810b8c/1.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="且听风吟" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://www.windsings.com/posts/1c810b8c/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>字节跳动2018校招算法方向（第一批） | 且听风吟</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">且听风吟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-friendlinks">
+    <a href="/FriendLinks/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.windsings.com/posts/1c810b8c/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wind">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="且听风吟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">字节跳动2018校招算法方向（第一批）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-06 23:33:23 / 修改时间：23:43:42" itemprop="dateCreated datePublished" datetime="2020-07-06T23:33:23+08:00">2020-07-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/字节跳动笔试题/" itemprop="url" rel="index"><span itemprop="name">字节跳动笔试题</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/1c810b8c/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/1c810b8c/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="&#x7F16;&#x7A0B;&#x9898;&#x4E00;">&#x7F16;&#x7A0B;&#x9898;&#x4E00;</h1>
+<p>P&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x4E8C;&#x7EF4;&#x5E73;&#x9762;&#x6574;&#x6570;&#x70B9;&#x96C6;&#x3002;&#x5B9A;&#x4E49; P &#x4E2D;&#x67D0;&#x70B9;x&#xFF0C;&#x5982;&#x679C;x&#x6EE1;&#x8DB3; P &#x4E2D;&#x4EFB;&#x610F;&#x70B9;&#x90FD;&#x4E0D;&#x5728; x &#x7684;&#x53F3;&#x4E0A;&#x65B9;&#x533A;&#x57DF;&#x5185;&#xFF08;&#x6A2A;&#x7EB5;&#x5750;&#x6807;&#x90FD;&#x5927;&#x4E8E;x&#xFF09;&#xFF0C;&#x5219;&#x79F0;&#x5176;&#x4E3A;&#x201C;&#x6700;&#x5927;&#x7684;&#x201D;&#x3002;&#x6C42;&#x51FA;&#x6240;&#x6709;&#x201C;&#x6700;&#x5927;&#x7684;&#x201D;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x3002;&#xFF08;&#x6240;&#x6709;&#x70B9;&#x7684;&#x6A2A;&#x5750;&#x6807;&#x548C;&#x7EB5;&#x5750;&#x6807;&#x90FD;&#x4E0D;&#x91CD;&#x590D;, &#x5750;&#x6807;&#x8F74;&#x8303;&#x56F4;&#x5728;[0, 1e9) &#x5185;&#xFF09;</p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#xFF1A;&#x5B9E;&#x5FC3;&#x70B9;&#x4E3A;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x70B9;&#x7684;&#x96C6;&#x5408;&#x3002;&#x8BF7;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x627E;&#x5230;&#x96C6;&#x5408; P &#x4E2D;&#x7684;&#x6240;&#x6709; &#x201D;&#x6700;&#x5927;&#x201C; &#x70B9;&#x7684;&#x96C6;&#x5408;&#x5E76;&#x8F93;&#x51FA;&#x3002;</p>
+<p><img src="/posts/1c810b8c/1.jpg"></p>
+<p>&#x601D;&#x8DEF;&#x5206;&#x6790;&#xFF1A;</p>
+<p>&#x5148;&#x6309;&#x7167;&#x7EB5;&#x5750;&#x6807;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x7531;&#x5927;&#x5230;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6392;&#x5E8F;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x7684;&#x6A2A;&#x5750;&#x6807;&#xFF0C;&#x904D;&#x5386;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x70B9;&#x7684;&#x6A2A;&#x5750;&#x6807;&#x5927;&#x4E8E;&#x6700;&#x5927;&#x6A2A;&#x5750;&#x6807;&#xFF0C;&#x5219;&#x662F;&#x6700;&#x5916;&#x56F4;&#x7684;&#xFF0C;&#x53CD;&#x4E4B;&#xFF0C;&#x5219;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x70B9;&#x7684;&#x53F3;&#xFF08;x&#x4E0D;&#x662F;&#x5F53;&#x524D;&#x6700;&#x5927;&#xFF09;&#x4E0A;&#xFF08;&#x6309;&#x7167;y&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF09;&#x65B9;&#x6709;&#x70B9;&#xFF0C;&#x4E0D;&#x662F;&#x6700;&#x5916;&#x5C42;&#x7684;&#x3002;</p>
+<p>&#x4EE3;&#x7801;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Wind</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">}node;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node p, node q)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> p.b &gt; q.b;			<span class="comment">//&#x6309;&#x7167;y&#x7684;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> Wind</span></span><br><span class="line">    freopen(<span class="string">&quot;Text.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="built_in">vector</span>&lt;node&gt; v;</span><br><span class="line">    v.resize(N);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;v[i].a, &amp;v[i].b);</span><br><span class="line">    }</span><br><span class="line">    sort(v.begin(), v.end(), cmp);</span><br><span class="line">    <span class="keyword">int</span> maxx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (v[i].a &gt; maxx)</span><br><span class="line">        {</span><br><span class="line">            maxx = v[i].a;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, v[i].a, v[i].b);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="&#x7F16;&#x7A0B;&#x9898;&#x4E8C;">&#x7F16;&#x7A0B;&#x9898;&#x4E8C;</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5E8F;&#x5217;, &#x9700;&#x8981;&#x6C42;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x533A;&#x95F4;, &#x4F7F;&#x5F97;&#x8BE5;&#x533A;&#x95F4;&#x662F;&#x6240;&#x6709;&#x533A;&#x95F4;&#x4E2D;&#x7ECF;&#x8FC7;&#x5982;&#x4E0B;&#x8BA1;&#x7B97;&#x7684;&#x503C;&#x6700;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#xFF1A;</p>
+<p>&#x533A;&#x95F4;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x6570; * &#x533A;&#x95F4;&#x6240;&#x6709;&#x6570;&#x7684;&#x548C;&#x6700;&#x540E;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x7ECF;&#x8FC7;&#x8BA1;&#x7B97;&#x540E;&#x7684;&#x6700;&#x5927;&#x503C;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8F93;&#x51FA;&#x5177;&#x4F53;&#x7684;&#x533A;&#x95F4;&#x3002;&#x5982;&#x7ED9;&#x5B9A;&#x5E8F;&#x5217; [6 2 1]&#x5219;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x516C;&#x5F0F;, &#x53EF;&#x5F97;&#x5230;&#x6240;&#x6709;&#x53EF;&#x4EE5;&#x9009;&#x5B9A;&#x5404;&#x4E2A;&#x533A;&#x95F4;&#x7684;&#x8BA1;&#x7B97;&#x503C;:</p>
+<p>[6] = 6 * 6 = 36;</p>
+<p>[2] = 2 * 2 = 4;</p>
+<p>[1] = 1 * 1 = 1;</p>
+<p>[6,2] = 2 * 8 = 16;</p>
+<p>[2,1] = 1 * 3 = 3;</p>
+<p>[6, 2, 1] = 1 * 9 = 9;</p>
+<p>&#x4ECE;&#x4E0A;&#x8FF0;&#x8BA1;&#x7B97;&#x53EF;&#x89C1;&#x9009;&#x5B9A;&#x533A;&#x95F4; [6] &#xFF0C;&#x8BA1;&#x7B97;&#x503C;&#x4E3A; 36&#xFF0C; &#x5219;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x4E3A; 36&#x3002;</p>
+<p>&#x533A;&#x95F4;&#x5185;&#x7684;&#x6240;&#x6709;&#x6570;&#x5B57;&#x90FD;&#x5728;[0, 100]&#x7684;&#x8303;&#x56F4;&#x5185;;</p>
+<p>&#x601D;&#x8DEF;&#x5206;&#x6790;&#xFF1A;C++&#x66B4;&#x529B;&#x53EF;&#x4EE5;&#x505A;&#x51FA;&#x6765;</p>
+<p>&#x4EE3;&#x7801;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Wind</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> Wind</span></span><br><span class="line">    freopen(<span class="string">&quot;Text.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;v[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> maxn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>, minn = <span class="number">101</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (v[i] == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        sum = v[i];</span><br><span class="line">        minn = v[i];</span><br><span class="line">        maxn = max(sum*minn, maxn);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n&amp;&amp;v[j] != <span class="number">0</span>; j++)</span><br><span class="line">        {</span><br><span class="line">            sum += v[j];</span><br><span class="line">            minn = min(minn, v[j]);</span><br><span class="line">            maxn = max(sum*minn,maxn);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; maxn;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="&#x7F16;&#x7A0B;&#x9898;&#x4E09;">&#x7F16;&#x7A0B;&#x9898;&#x4E09;</h1>
+<p>&#x4EA7;&#x54C1;&#x7ECF;&#x7406;(PM)&#x6709;&#x5F88;&#x591A;&#x597D;&#x7684;idea&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;idea&#x9700;&#x8981;&#x7A0B;&#x5E8F;&#x5458;&#x5B9E;&#x73B0;&#x3002;&#x73B0;&#x5728;&#x6709;N&#x4E2A;PM&#xFF0C;&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x4F1A;&#x60F3;&#x51FA;&#x4E00;&#x4E2A; idea&#xFF0C;&#x6BCF;&#x4E2A; idea &#x6709;&#x63D0;&#x51FA;&#x65F6;&#x95F4;&#x3001;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x548C;&#x4F18;&#x5148;&#x7B49;&#x7EA7;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;PM&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x60F3;&#x5B9E;&#x73B0;&#x7684;idea&#x9996;&#x5148;&#x8003;&#x8651;&#x4F18;&#x5148;&#x7B49;&#x7EA7;&#x9AD8;&#x7684;&#xFF0C;&#x76F8;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F18;&#x5148;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x6700;&#x5C0F;&#x7684;&#xFF0C;&#x8FD8;&#x76F8;&#x540C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x9009;&#x62E9;&#x6700;&#x65E9;&#x60F3;&#x51FA;&#x7684;&#xFF0C;&#x6CA1;&#x6709; PM &#x4F1A;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x63D0;&#x51FA;&#x4E24;&#x4E2A; idea&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x6709;M&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x6BCF;&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x67E5;&#x770B;&#x6BCF;&#x4E2A;PM&#x5C1A;&#x672A;&#x6267;&#x884C;&#x5E76;&#x4E14;&#x6700;&#x60F3;&#x5B8C;&#x6210;&#x7684;&#x4E00;&#x4E2A;idea,&#x7136;&#x540E;&#x4ECE;&#x4E2D;&#x6311;&#x9009;&#x51FA;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x6700;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;idea&#x72EC;&#x7ACB;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x76F8;&#x540C;&#x5219;&#x9009;&#x62E9;PM&#x5E8F;&#x53F7;&#x6700;&#x5C0F;&#x7684;&#x3002;&#x76F4;&#x5230;&#x5B8C;&#x6210;&#x4E86;idea&#x624D;&#x4F1A;&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x540C;&#x65F6;&#x5904;&#x4E8E;&#x7A7A;&#x95F2;&#x72B6;&#x6001;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x4F1A;&#x4F9D;&#x6B21;&#x8FDB;&#x884C;&#x67E5;&#x770B;idea&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x6C42;&#x6BCF;&#x4E2A;idea&#x5B9E;&#x73B0;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x8F93;&#x5165;&#x7B2C;&#x4E00;&#x884C;&#x4E09;&#x4E2A;&#x6570;N&#x3001;M&#x3001;P&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x6709;N&#x4E2A;PM&#xFF0C;M&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;P&#x4E2A;idea&#x3002;&#x968F;&#x540E;&#x6709;P&#x884C;&#xFF0C;&#x6BCF;&#x884C;&#x6709;4&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x5206;&#x522B;&#x662F;PM&#x5E8F;&#x53F7;&#x3001;&#x63D0;&#x51FA;&#x65F6;&#x95F4;&#x3001;&#x4F18;&#x5148;&#x7B49;&#x7EA7;&#x548C;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x3002;&#x8F93;&#x51FA;P&#x884C;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x6BCF;&#x4E2A;idea&#x5B9E;&#x73B0;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x3002;</p>
+<p>&#x601D;&#x8DEF;&#x5206;&#x6790;&#xFF1A;&#x6A21;&#x62DF;&#x53BB;&#x505A;&#x3002;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x4F18;&#x5148;&#x961F;&#x5217;&#x3002;</p>
+<p>&#x4EE3;&#x7801;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Wind</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> time;</span><br><span class="line">    <span class="keyword">int</span> rank;</span><br><span class="line">    <span class="keyword">int</span> cost;</span><br><span class="line">    <span class="keyword">int</span> global_id;</span><br><span class="line">    <span class="keyword">int</span> finish_time = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> struct node&amp;b)<span class="keyword">const</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (rank != b.rank)</span><br><span class="line">            <span class="keyword">return</span> rank &lt; b.rank;</span><br><span class="line">        <span class="keyword">if</span> (cost != b.cost)</span><br><span class="line">            <span class="keyword">return</span> cost &gt; b.cost;</span><br><span class="line">        <span class="keyword">if</span> (time != b.time)</span><br><span class="line">            <span class="keyword">return</span> time &gt; b.time;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">} idea;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(idea a, idea b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> a.global_id &lt; b.global_id;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp3</span><span class="params">(idea a, idea b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(a.time!=b.time)</span><br><span class="line">        <span class="keyword">return</span> a.time &lt; b.time;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> Wind</span></span><br><span class="line">    freopen(<span class="string">&quot;Text.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n, m, p;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; p;</span><br><span class="line">    <span class="built_in">vector</span>&lt;idea&gt; v;</span><br><span class="line">    idea in;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; in.id&gt;&gt;in.time&gt;&gt;in.rank&gt;&gt;in.cost;</span><br><span class="line">        in.global_id = i;</span><br><span class="line">        v.push_back(in);</span><br><span class="line">    }</span><br><span class="line">    sort(v.begin(), v.end(), cmp3);</span><br><span class="line">    <span class="built_in">vector</span>&lt;priority_queue&lt;idea&gt;&gt; PM(n);</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; pq;</span><br><span class="line">    <span class="built_in">vector</span>&lt;idea&gt; finished_idea;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        pq.push(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> time = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (finished_idea.size()!=p)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (; i &lt; v.size()&amp;&amp;v[i].time&lt;=time; i++)</span><br><span class="line">        {</span><br><span class="line">            PM[v[i].id - <span class="number">1</span>].push(v[i]);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">while</span> (pq.top()&lt;=time)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> first = <span class="number">0</span>, minn = <span class="number">9999</span>;</span><br><span class="line">            <span class="keyword">bool</span> haveidea = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span> (PM[j].empty())</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (minn &gt; PM[j].top().cost)</span><br><span class="line">                {</span><br><span class="line">                    minn = PM[j].top().cost;</span><br><span class="line">                    first = j;</span><br><span class="line">                    haveidea = <span class="literal">true</span>;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> (haveidea)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">int</span> chengxuyuan = pq.top(); pq.pop();</span><br><span class="line">                idea wancheng = PM[first].top(); PM[first].pop();</span><br><span class="line">                wancheng.finish_time = time + wancheng.cost;</span><br><span class="line">                chengxuyuan = wancheng.finish_time;</span><br><span class="line">                pq.push(chengxuyuan);</span><br><span class="line">                finished_idea.push_back(wancheng);</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (time &gt;= pq.top())</span><br><span class="line">            time++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            time = pq.top();</span><br><span class="line">    }</span><br><span class="line">    sort(finished_idea.begin(), finished_idea.end(), cmp2);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; p; j++)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; finished_idea[j].finish_time &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="&#x95EE;&#x7B54;&#x9898;&#x4E00;">&#x95EE;&#x7B54;&#x9898;&#x4E00;</h1>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x68F5;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;, &#x5728;&#x5DF2;&#x77E5;&#x8BE5;&#x6811;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;, &#x6C42;&#x8282;&#x70B9;&#x6570;&#x6700;&#x591A;&#x7684;&#x90A3;&#x4E00;&#x5C42;&#x5E76;&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;&#x5C42;&#x6570;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6700;&#x540E;&#x7B54;&#x6848;&#x6709;&#x591A;&#x5C42;, &#x8F93;&#x51FA;&#x6700;&#x6D45;&#x7684;&#x90A3;&#x4E00;&#x5C42;&#xFF0C;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;100000&#x3002;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8BF7;&#x6307;&#x51FA;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x591A;&#x5904;&#x9519;&#x8BEF;&#xFF1A;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> {</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;Node*&gt; sons;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfsFind</span><span class="params">(Node *node, <span class="keyword">int</span> dep, <span class="keyword">int</span> counter[])</span> </span>{</span><br><span class="line">    counter[dep]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node.sons.size(); i++) {</span><br><span class="line">        dfsFind(node.sons[i], dep, counter);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(Node *root, <span class="keyword">int</span> maxDep)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> depCounter[<span class="number">100000</span>];</span><br><span class="line">    dfsFind(root, <span class="number">0</span>, depCounter);</span><br><span class="line">    <span class="keyword">int</span> max, maxDep;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxDep; i++) {</span><br><span class="line">        <span class="keyword">if</span> (depCounter[i] &gt; max) {</span><br><span class="line">            max = depCounter[i];</span><br><span class="line">            maxDep = i;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxDep;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p><code>dfsFind</code>&#x51FD;&#x6570;</p>
+<ol type="1">
+<li>node<code>&#x662F;&#x6307;&#x9488;&#xFF0C;&#x6240;&#x4EE5;&#x5F97;&#x662F;</code>node-&gt;sons[i]`</li>
+<li>&#x4F20;&#x9012;&#x5230;&#x65F6;&#x5019;&#xFF0C;&#x8981;dep+1&#x3002;</li>
+<li>&#x5982;&#x679C;&#x662F;<code>node</code>&#x4E3A;&#x7A7A;&#xFF0C;&#x8981;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x3002;</li>
+</ol>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfsFind</span><span class="params">(Node *node, <span class="keyword">int</span> dep, <span class="keyword">int</span> counter[])</span> </span>{</span><br><span class="line">    <span class="keyword">if</span>(node==<span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    counter[dep]++;</span><br><span class="line">    &#xA0;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node.sons-&gt;size(); i++) {</span><br><span class="line">    &#xA0; &#xA0; dfsFind(node-&gt;sons[i], dep+<span class="number">1</span>, counter);&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0; <span class="comment">//&#x6539;&#x4E3A;dep+1&#xFF0C;node-&gt;sons[i]</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p></li>
+<li><p><code>find</code>&#x51FD;&#x6570;&#xFF1A;</p>
+<ol type="1">
+<li>&#x9898;&#x76EE;&#x4E2D;&#x8BF4;&#xFF0C;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;100000&#xFF0C;&#x5982;&#x679C;<code>i</code>&#x7684;&#x8D77;&#x59CB;&#x662F;1&#xFF0C;&#x90A3;&#x4E48;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x5E94;&#x8BE5;&#x8981;&#x6539;&#x6210;100001&#x3002;</li>
+<li>&#x8003;&#x8651;<code>root</code>&#x4E3A;&#x7A7A;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+<li><code>max</code>&#x540D;&#x5B57;&#x53EF;&#x80FD;&#x4F1A;&#x4E0E;<code>max()</code>&#x51FD;&#x6570;&#x8D77;&#x51B2;&#x7A81;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x6211;&#xFF0C;&#x6211;&#x4F1A;&#x6539;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x6539;&#x6210;<code>maxn</code></li>
+<li><code>maxDep</code>&#x662F;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x5B9A;&#x4E49;&#xFF0C;&#x6539;&#x4E2A;&#x540D;&#x5B57;&#x3002;</li>
+</ol>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(Node *root, <span class="keyword">int</span> maxDep)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> depCounter[<span class="number">100001</span>];</span><br><span class="line">    dfsFind(root, <span class="number">1</span>, depCounter);           <span class="comment">//&#x6539;&#x4E3A;root, 1, depCounter</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> maxn=<span class="number">0</span>, maxDep_2=<span class="number">0</span>;                    <span class="comment">//maxn=0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= maxDep; i++) {</span><br><span class="line">        <span class="keyword">if</span> (depCounter[i] &gt; maxn) {</span><br><span class="line">            maxn = depCounter[i];</span><br><span class="line">            maxDep_2 = i;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxDep_2;</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h1 id="&#x95EE;&#x7B54;&#x9898;&#x4E8C;">&#x95EE;&#x7B54;&#x9898;&#x4E8C;</h1>
+<p>&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#xFF0C;&#x4E0D;&#x592A;&#x4F1A;&#x505A;&#x3002;</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/字节跳动/" rel="tag"><i class="fa fa-tag"></i> 字节跳动</a>
+          
+            <a href="/tags/笔试题/" rel="tag"><i class="fa fa-tag"></i> 笔试题</a>
+          
+            <a href="/tags/牛客网/" rel="tag"><i class="fa fa-tag"></i> 牛客网</a>
+          
+            <a href="/tags/秋招/" rel="tag"><i class="fa fa-tag"></i> 秋招</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/59170f05/" rel="next" title="SUMO笔记">
+                <i class="fa fa-chevron-left"></i> SUMO笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/logo.jpg" alt="Wind">
+            
+              <p class="site-author-name" itemprop="name">Wind</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">128</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">169</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/littlesevenmo" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编程题一"><span class="nav-number">1.</span> <span class="nav-text">编程题一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程题二"><span class="nav-number">2.</span> <span class="nav-text">编程题二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程题三"><span class="nav-number">3.</span> <span class="nav-text">编程题三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问答题一"><span class="nav-number">4.</span> <span class="nav-text">问答题一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问答题二"><span class="nav-number">5.</span> <span class="nav-text">问答题二</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wind</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//c.lcfile.com/static/js/3.0.4/av-min.js"></script>
+  
+  
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '98m9sdCe4IbmMSxBRVqhjIMs-gzGzoHsz',
+        appKey: 'nlMG4TSqFG4jVtoGeY4v3VYj',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                //var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).substring(1);//截取第一位/斜杠
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
