@@ -1400,8 +1400,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>动态规划</tag>
+        <tag>算法</tag>
         <tag>最长上升子序列</tag>
         <tag>DP</tag>
         <tag>LIS</tag>
@@ -1415,8 +1415,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>动态规划</tag>
+        <tag>算法</tag>
         <tag>PAT</tag>
         <tag>最长上升子序列</tag>
       </tags>
@@ -1429,8 +1429,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>01背包</tag>
+        <tag>算法</tag>
         <tag>PAT</tag>
         <tag>背包问题</tag>
       </tags>
@@ -1578,8 +1578,8 @@
       <tags>
         <tag>算法</tag>
         <tag>PAT</tag>
-        <tag>AVL Tree</tag>
         <tag>模拟</tag>
+        <tag>AVL Tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1695,8 +1695,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>动态规划</tag>
+        <tag>算法</tag>
         <tag>PAT</tag>
       </tags>
   </entry>
