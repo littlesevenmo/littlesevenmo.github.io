@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.jpg?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.jpg?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.jpg?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Ray version&amp;#xFF1A;0.7.4&amp;#x3002;Ray.init()&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6790;&amp;#x3002;">
+<meta name="keywords" content="Ray,分布式系统,源码分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ray源码分析-init">
+<meta property="og:url" content="https://www.windsings.com/posts/ad6b7978/index.html">
+<meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="Ray version&amp;#xFF1A;0.7.4&amp;#x3002;Ray.init()&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6790;&amp;#x3002;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-07-20T23:17:38.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ray源码分析-init">
+<meta name="twitter:description" content="Ray version&amp;#xFF1A;0.7.4&amp;#x3002;Ray.init()&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6790;&amp;#x3002;">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="且听风吟" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://www.windsings.com/posts/ad6b7978/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ray源码分析-init | 且听风吟</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">且听风吟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-friendlinks">
+    <a href="/FriendLinks/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.windsings.com/posts/ad6b7978/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wind">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="且听风吟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ray源码分析-init
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-21 06:59:30 / 修改时间：07:17:38" itemprop="dateCreated datePublished" datetime="2020-07-21T06:59:30+08:00">2020-07-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Ray源码分析/" itemprop="url" rel="index"><span itemprop="name">Ray源码分析</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/ad6b7978/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/ad6b7978/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Ray version&#xFF1A;0.7.4&#x3002;<code>Ray.init()</code>&#x6E90;&#x7801;&#x5206;&#x6790;&#x3002;</p>
+<a id="more"></a>
+<h1 id="&#x4F8B;&#x7A0B;"><a href="#&#x4F8B;&#x7A0B;" class="headerlink" title="&#x4F8B;&#x7A0B;"></a>&#x4F8B;&#x7A0B;</h1><p>&#x4EE5;&#x6700;&#x7B80;&#x5355;&#x7684;&#x201C;Hello World&#x201D;&#x7A0B;&#x5E8F;&#x4E3A;&#x4F8B;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ray</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">ray.init()</span><br><span class="line"><span class="meta">@ray.remote</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello World&quot;</span></span><br><span class="line"></span><br><span class="line">results = ray.get(f.remote())</span><br><span class="line">print(results)</span><br></pre></td></tr></table></figure>
+<p>&#x6267;&#x884C;&#x540E;&#xFF0C;&#x8F93;&#x51FA;&#xFF1A;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2020-07-21 07:06:50,948 INFO node.py:498 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2020-07-21_07-06-50_947678_1170/logs.</span><br><span class="line">2020-07-21 07:06:51,054 INFO services.py:409 -- Waiting for redis server at 127.0.0.1:24634 to respond...</span><br><span class="line">2020-07-21 07:06:51,170 INFO services.py:409 -- Waiting for redis server at 127.0.0.1:35429 to respond...</span><br><span class="line">2020-07-21 07:06:51,174 INFO services.py:809 -- Starting Redis shard with 10.0 GB max memory.</span><br><span class="line">2020-07-21 07:06:51,195 INFO node.py:512 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2020-07-21_07-06-50_947678_1170/logs.</span><br><span class="line">2020-07-21 07:06:51,197 WARNING services.py:1301 -- Warning: Capping object memory store to 20.0GB. To increase this further, specify `object_store_memory` when calling ray.init() or ray start.</span><br><span class="line">2020-07-21 07:06:51,197 INFO services.py:1475 -- Starting the Plasma object store with 20.0 GB memory using /dev/shm.</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+<h1 id="&#x903B;&#x8F91;&#x5206;&#x6790;"><a href="#&#x903B;&#x8F91;&#x5206;&#x6790;" class="headerlink" title="&#x903B;&#x8F91;&#x5206;&#x6790;"></a>&#x903B;&#x8F91;&#x5206;&#x6790;</h1><p>&#x8FD9;&#x91CC;&#x5206;&#x6790;<code>ray.init()</code></p>
+<p>&#x5728;ray/python/ray/worker.py&#x4E2D;</p>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6709;&#x4E24;&#x79CD;&#x7528;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;Ray&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;<code>ray.init(redis_address=&quot;123.45.67.89:123&quot;)</code></p>
+<p>&#x4E00;&#x4E2A;&#x662F;&#x542F;&#x52A8;&#x4E00;&#x4E2A;Ray&#x96C6;&#x7FA4;&#xFF0C;&#x7136;&#x540E;&#x8FDE;&#x63A5;&#x5B83;&#x3002;&#x7528;&#x6CD5;&#x662F;ray.init()&#xFF0C;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x53C2;&#x6570;&#x7565;&#xFF0C;&#x6E90;&#x7801;&#x548C;&#x6587;&#x6863;&#x4E2D;&#x90FD;&#x6709;&#x5F88;&#x6E05;&#x6670;&#x7684;&#x63CF;&#x8FF0;&#x3002;&#x8FD9;&#x91CC;&#x8BB0;&#x51E0;&#x4E2A;&#x91CD;&#x70B9;&#xFF1A;</p>
+<p>Ray&#x4E2D;&#x6709;&#x4E09;&#x79CD;&#x6A21;&#x5F0F;&#xFF1A;SCRIPT_MODE&#xFF0C;WORKER_MODE&#xFF0C;LOCAL_MODE</p>
+<p>&#x5728;ray/python/ray/worker.py&#x2013;set_mode&#x4E2D;</p>
+<ul>
+<li>SCRIPT_MODE&#xFF1A;&#x5F53;&#x8FD9;&#x4E2A;Worker&#x662F;&#x4E00;&#x4E2A;Driver&#x65F6;&#xFF0C;&#x4E14;&#x8FD9;&#x4E2A;Driver&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;python&#x811A;&#x672C;&#x6216;&#x8005;&#x6B63;&#x5728;shell&#x4E2D;&#x4EA4;&#x4E92;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;SCRIPT_MODE&#xFF0C;&#x4F1A;&#x6253;&#x5370;&#x4FE1;&#x606F;&#xFF0C;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</li>
+<li>WORKER_MODE&#xFF1A;&#x8FD9;&#x4E2A;Worker&#x4E0D;&#x662F;Driver&#x65F6;&#x4F7F;&#x7528;WORKER_MODE&#xFF0C;&#x4E0D;&#x4F1A;&#x6253;&#x5370;&#x5173;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+<li>LOCAL_MODE&#xFF1A;&#x5982;&#x679C;&#x8981;&#x987A;&#x5E8F;&#x8FD0;&#x884C;&#x6216;&#x662F;&#x8C03;&#x8BD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;LOCAL_MODE&#xFF0C;&#x6B64;&#x65F6;&#x7684;Worker&#x5373;&#x662F;driver&#x3002;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x9001;remote&#x51FD;&#x6570;&#x5230;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x800C;&#x662F;&#x76F4;&#x63A5;&#x4EE5;&#x963B;&#x585E;&#x7684;&#x5F62;&#x5F0F;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<p><code>init</code>&#x7684;&#x8FD0;&#x884C;&#x903B;&#x8F91;&#xFF0C;&#x6211;&#x628A;&#x5173;&#x952E;&#x51FD;&#x6570;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF0C;&#x91CD;&#x65B0;&#x5199;&#x4E86;&#x4E00;&#x904D;&#x903B;&#x8F91;&#xFF0C;&#x6211;&#x611F;&#x89C9;&#x8FD9;&#x6837;&#x770B;&#x7684;&#x6E05;&#x9664;&#x4E00;&#x4E9B;&#xFF1A;</p>
+<h2 id="&#x4ECE;&#x96F6;&#x542F;&#x52A8;Ray&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;"><a href="#&#x4ECE;&#x96F6;&#x542F;&#x52A8;Ray&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;" class="headerlink" title="&#x4ECE;&#x96F6;&#x542F;&#x52A8;Ray&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;"></a>&#x4ECE;&#x96F6;&#x542F;&#x52A8;Ray&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ray/python/ray/worker.py</span></span><br><span class="line"><span class="comment"># &#x5148;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span></span><br><span class="line"><span class="keyword">if</span> have_config:</span><br><span class="line">    setup_logger()</span><br><span class="line"></span><br><span class="line"><span class="comment"># set MODE</span></span><br><span class="line">driver_mode=XXX_MODE</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x68C0;&#x67E5;&#x6709;&#x6CA1;&#x6709;&#x7F3A;&#x5C11;&#x5305;&#xFF0C;&#x5982;&#x679C;&#x7F3A;&#x5C11;&#xFF0C;&#x62A5;&#x9519;&#xFF0C;&#x63D0;&#x793A;&#x5B89;&#x88C5;</span></span><br><span class="line"><span class="keyword">if</span> XXX <span class="keyword">is</span> Node:</span><br><span class="line">    logger.warning(<span class="string">&quot;pip install XXX&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F;&#x66FE;&#x7ECF;&#x521D;&#x59CB;&#x5316;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x62A5;&#x9519;</span></span><br><span class="line"><span class="keyword">if</span> global_worker.connected:</span><br><span class="line">    logger.error(<span class="string">&quot;calling ray.init() again after it has already been called.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x628A;&#x53C2;&#x6570;&#x4E2D;&#x7684;hostname&#x8F6C;&#x4E3A;&#x6570;&#x5B57;&#x5316;&#x7684;IP address</span></span><br><span class="line"><span class="keyword">if</span> node_ip_address <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">    node_ip_address = services.address_to_ip(node_ip_address)</span><br><span class="line"><span class="keyword">if</span> redis_address <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">    redis_address = services.address_to_ip(redis_address)</span><br><span class="line"></span><br><span class="line"><span class="comment"># LOCAL_MODE&#x7684;&#x90E8;&#x5206;&#x7565;&#x8FC7;&#xFF0C;&#x4E0D;&#x8868;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x5982;&#x679C;&#x662F;&#x65B0;&#x5F00;&#x7684;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#xFF0C;redis_address&#x81EA;&#x7136;&#x662F;&#x7A7A;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#xFF1A;</span></span><br><span class="line"><span class="comment"># &#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5747;&#x524D;&#x63D0;&#x662F;redis_address = None</span></span><br><span class="line">load ray_params</span><br><span class="line"><span class="comment"># head=true&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x8981;&#x505A;Master</span></span><br><span class="line">_global_node = ray.node.Node(head=<span class="keyword">True</span>, shutdown_at_exit=<span class="keyword">False</span>, ray_params=ray_params)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ray/python/ray/node.py  class Node</span></span><br><span class="line">redis_client = <span class="keyword">None</span></span><br><span class="line">date_str = XXX <span class="comment"># &#x6309;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x751F;&#x6210;date_str</span></span><br><span class="line">session_name = XXX <span class="comment"># &#x6309;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x751F;&#x6210;session_name</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x8BBE;&#x7F6E;plasma_store_socket_name&#x548C;_raylet_socket_name</span></span><br><span class="line">_plasma_store_socket_name = XXX</span><br><span class="line">_raylet_socket_name = XXX</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x66F4;&#x65B0;redis_shared&#x7684;&#x6570;&#x91CF;&#xFF0C;</span></span><br><span class="line">ray_params.update_if_absent(num_redis_shards=<span class="number">1</span>, include_webui=<span class="keyword">True</span>)</span><br><span class="line">self._webui_url = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x521D;&#x59CB;&#x5316;&#x6574;&#x4E2A;Ray&#x96C6;&#x7FA4;</span></span><br><span class="line">self.start_head_processes()    <span class="comment">#&#x542F;&#x52A8;Master&#x8282;&#x70B9;</span></span><br><span class="line">redis_client = self.create_redis_client()</span><br><span class="line">redis_client.set(<span class="string">&quot;session_name&quot;</span>, self.session_name)</span><br><span class="line">redis_client.set(<span class="string">&quot;session_dir&quot;</span>, self._session_dir)</span><br><span class="line">redis_client.set(<span class="string">&quot;temp_dir&quot;</span>, self._temp_dir)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x542F;&#x52A8;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x8FDB;&#x7A0B;</span></span><br><span class="line">self.start_ray_processes()</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x81F3;&#x6B64;&#xFF0C;&#x6574;&#x4E2A;Ray&#x96C6;&#x7FA4;&#x542F;&#x52A8;&#x5B8C;&#x6BD5;</span></span><br></pre></td></tr></table></figure>
+<p>&#x518D;&#x628A;start_head_processes()&#x548C;start_ray_processes()&#x62FF;&#x51FA;&#x6765;&#x7EC6;&#x770B;&#xFF1A;</p>
+<p><code>start_head_processes()</code>&#x90E8;&#x5206;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># start_head_processes()   &#x521D;&#x59CB;&#x5316;Master&#x7684;&#x6D41;&#x7A0B;</span></span><br><span class="line">start_redis()</span><br><span class="line">start_monitor()</span><br><span class="line">start_raylet_monitor()</span><br><span class="line">start_dashboard()</span><br></pre></td></tr></table></figure>
+<p><code>start_ray_processes()</code>&#x90E8;&#x5206;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># start_ray_processes() &#x542F;&#x52A8;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x8FDB;&#x7A0B;</span></span><br><span class="line">start_plasma_store()</span><br><span class="line">start_raylet()</span><br><span class="line">start_reporter()</span><br><span class="line">start_log_monitor()</span><br></pre></td></tr></table></figure>
+<p>&#x5176;&#x4E2D;<code>start_raylet()</code>&#x662F;&#x542F;&#x52A8;ray&#x8282;&#x70B9;&#x7684;&#x5173;&#x952E;&#x51FD;&#x6570;&#xFF0C;node.py<code>&#x4E2D;&#x7684;</code>start_raylet()<code>&#x51FD;&#x6570;&#x8C03;&#x7528;</code>services.py&#x4E2D;&#x7684;<code>start_raylet()</code>&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8;&#x4E00;&#x4E2A;raylet&#xFF0C;&#x4E00;&#x4E2A;raylet&#x5C31;&#x662F;&#x4E00;&#x4E2A;local scheduler&#x548C;object manager&#x7684;&#x7ED3;&#x5408;&#x4F53;&#x3002;&#x4E00;&#x4E2A;raylet&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x5806;worker&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x662F;CPU&#x7684;&#x6838;&#x5FC3;&#x6570;&#x3002;local_scheduler&#x5C31;&#x662F;&#x8BBA;&#x6587;&#x4E2D;&#x7684;&#x672C;&#x5730;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#xFF0C;object<br>manager&#x5BF9;&#x5E94;&#x8BBA;&#x6587;&#x67B6;&#x6784;&#x56FE;&#x4E2D;&#x7684;object store&#x3002;</p>
+<h2 id="&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;"><a href="#&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;" class="headerlink" title="&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;"></a>&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x903B;&#x8F91;</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ray/python/ray/worker.py</span></span><br><span class="line"><span class="comment"># &#x5148;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span></span><br><span class="line"><span class="keyword">if</span> have_config:</span><br><span class="line">    setup_logger()</span><br><span class="line"></span><br><span class="line"><span class="comment"># set MODE</span></span><br><span class="line">driver_mode=XXX_MODE</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x68C0;&#x67E5;&#x6709;&#x6CA1;&#x6709;&#x7F3A;&#x5C11;&#x5305;&#xFF0C;&#x5982;&#x679C;&#x7F3A;&#x5C11;&#xFF0C;&#x62A5;&#x9519;&#xFF0C;&#x63D0;&#x793A;&#x5B89;&#x88C5;</span></span><br><span class="line"><span class="keyword">if</span> XXX <span class="keyword">is</span> Node:</span><br><span class="line">    logger.warning(<span class="string">&quot;pip install XXX&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F;&#x66FE;&#x7ECF;&#x521D;&#x59CB;&#x5316;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x62A5;&#x9519;</span></span><br><span class="line"><span class="keyword">if</span> global_worker.connected:</span><br><span class="line">    logger.error(<span class="string">&quot;calling ray.init() again after it has already been called.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x628A;&#x53C2;&#x6570;&#x4E2D;&#x7684;hostname&#x8F6C;&#x4E3A;&#x6570;&#x5B57;&#x5316;&#x7684;IP address</span></span><br><span class="line"><span class="keyword">if</span> node_ip_address <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">    node_ip_address = services.address_to_ip(node_ip_address)</span><br><span class="line"><span class="keyword">if</span> redis_address <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">    redis_address = services.address_to_ip(redis_address)</span><br><span class="line"></span><br><span class="line"><span class="comment"># LOCAL_MODE&#x7684;&#x90E8;&#x5206;&#x7565;&#x8FC7;&#xFF0C;&#x4E0D;&#x8868;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x96C6;&#x7FA4;&#xFF0C;redis_address&#x975E;&#x7A7A;&#xFF0C;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#xFF1A;</span></span><br><span class="line"><span class="comment"># &#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5747;&#x524D;&#x63D0;&#x662F;redis_address = XXX.XXX.XXX.<span class="doctag">XXX:</span>XXX&#x7684;&#x60C5;&#x51B5;&#x4E0B;</span></span><br><span class="line">load ray_params</span><br><span class="line"></span><br><span class="line"><span class="comment"># head=false&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x8981;&#x505A;Slave</span></span><br><span class="line">_global_node = ray.node.Node(head=<span class="keyword">False</span>, shutdown_at_exit=<span class="keyword">False</span>, ray_params=ray_params)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ray/python/ray/node.py  class Node</span></span><br><span class="line">redis_client = create_redis_client()</span><br><span class="line">date_str = XXX <span class="comment"># &#x6309;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x751F;&#x6210;date_str</span></span><br><span class="line">session_name = XXX <span class="comment"># &#x6309;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x751F;&#x6210;session_name</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x521D;&#x59CB;&#x5316;redis_client</span></span><br><span class="line">_init_temp(redis_client)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x8BBE;&#x7F6E;plasma_store_socket_name&#x548C;_raylet_socket_name</span></span><br><span class="line">_plasma_store_socket_name = XXX</span><br><span class="line">_raylet_socket_name = XXX</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x66F4;&#x65B0;include_java&#x7684;&#x5730;&#x5740;&#x548C;webui&#x7684;&#x5730;&#x5740;&#xFF0C;</span></span><br><span class="line">ray_params.include_java = (ray.services.include_java_from_redis(redis_client))</span><br><span class="line">self._webui_url = ray.services.get_webui_url_from_redis(redis_client)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x542F;&#x52A8;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6240;&#x6709;ray&#x7A0B;&#x5E8F;</span></span><br><span class="line">start_ray_processes()</span><br></pre></td></tr></table></figure>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x6211;&#x770B;&#x7684;Ray&#x7684;&#x6E90;&#x7801;&#x7684;&#x7248;&#x672C;&#x53F7;&#x662F;0.7.3&#x3002;<strong>Ray&#x81EA;&#x4ECE;0.5.0&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x6CA1;&#x6709;Global Scheduler&#x4E86;&#x3002;</strong></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ray/" rel="tag"><i class="fa fa-tag"></i> Ray</a>
+          
+            <a href="/tags/分布式系统/" rel="tag"><i class="fa fa-tag"></i> 分布式系统</a>
+          
+            <a href="/tags/源码分析/" rel="tag"><i class="fa fa-tag"></i> 源码分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/1823f825/" rel="next" title="浅谈C++11 CAS">
+                <i class="fa fa-chevron-left"></i> 浅谈C++11 CAS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/e72d2e7a/" rel="prev" title="Ray源码分析-remote修饰器">
+                Ray源码分析-remote修饰器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/logo.jpg" alt="Wind">
+            
+              <p class="site-author-name" itemprop="name">Wind</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">136</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/littlesevenmo" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#例程"><span class="nav-number">1.</span> <span class="nav-text">例程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑分析"><span class="nav-number">2.</span> <span class="nav-text">逻辑分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从零启动Ray集群的逻辑"><span class="nav-number">2.1.</span> <span class="nav-text">从零启动Ray集群的逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加入一个集群的逻辑"><span class="nav-number">2.2.</span> <span class="nav-text">加入一个集群的逻辑</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wind</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//c.lcfile.com/static/js/3.0.4/av-min.js"></script>
+  
+  
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '98m9sdCe4IbmMSxBRVqhjIMs-gzGzoHsz',
+        appKey: 'nlMG4TSqFG4jVtoGeY4v3VYj',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                //var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).substring(1);//截取第一位/斜杠
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

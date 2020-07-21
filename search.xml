@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ray源码分析-进程调度]]></title>
+    <url>%2F%2Fposts%2F33c2ca1a%2F</url>
+    <content type="text"><![CDATA[Ray version&#xFF1A;0.7.4&#x3002;&#x8FDB;&#x7A0B;&#x8C03;&#x5EA6;&#x90E8;&#x5206;&#x6E90;&#x7801;&#x5206;&#x6790;]]></content>
+      <categories>
+        <category>Ray源码分析</category>
+      </categories>
+      <tags>
+        <tag>Ray</tag>
+        <tag>分布式系统</tag>
+        <tag>源码分析</tag>
+        <tag>python</tag>
+        <tag>进程调度</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ray源码分析-执行remote函数]]></title>
+    <url>%2F%2Fposts%2F6c39f779%2F</url>
+    <content type="text"><![CDATA[Ray version:0.7.4 &#x5F53;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;remote function&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;remote_func.remote()&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;]]></content>
+      <categories>
+        <category>Ray源码分析</category>
+      </categories>
+      <tags>
+        <tag>Ray</tag>
+        <tag>分布式系统</tag>
+        <tag>源码分析</tag>
+        <tag>python</tag>
+        <tag>remote function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ray源码分析-remote修饰器]]></title>
+    <url>%2F%2Fposts%2Fe72d2e7a%2F</url>
+    <content type="text"><![CDATA[Ray version: 0.7.3 `@ray.remote`&#x4FEE;&#x9970;&#x5668;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;]]></content>
+      <categories>
+        <category>Ray源码分析</category>
+      </categories>
+      <tags>
+        <tag>Ray</tag>
+        <tag>分布式系统</tag>
+        <tag>源码分析</tag>
+        <tag>python</tag>
+        <tag>修饰器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ray源码分析-init]]></title>
+    <url>%2F%2Fposts%2Fad6b7978%2F</url>
+    <content type="text"><![CDATA[Ray version&#xFF1A;0.7.4&#x3002;Ray.init()&#x6E90;&#x7801;&#x5206;&#x6790;&#x3002;]]></content>
+      <categories>
+        <category>Ray源码分析</category>
+      </categories>
+      <tags>
+        <tag>Ray</tag>
+        <tag>分布式系统</tag>
+        <tag>源码分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[浅谈C++11 CAS]]></title>
+    <url>%2F%2Fposts%2F1823f825%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Ray论文解读]]></title>
     <url>%2F%2Fposts%2Ff158070c%2F</url>
     <content type="text"><![CDATA[Ray&#x662F;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x548C;&#x6267;&#x884C;&#x5206;&#x5E03;&#x5F0F;&#x7A0B;&#x5E8F;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x662F;&#x5BF9;Ray&#x8BBA;&#x6587;&#x7684;&#x7B14;&#x8BB0;&#x3002; Ray: A Distributed Framework for Emerging AI Applications]]></content>
@@ -9,10 +72,10 @@
       </categories>
       <tags>
         <tag>Ray</tag>
+        <tag>python</tag>
         <tag>分布式</tag>
         <tag>并行计算</tag>
         <tag>多进程</tag>
-        <tag>python</tag>
         <tag>论文笔记</tag>
       </tags>
   </entry>
@@ -49,19 +112,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[秋招信息汇总]]></title>
-    <url>%2F%2Fposts%2F9ded2558%2F</url>
-    <content type="text"><![CDATA[&#x76F8;&#x4FE1;&#x81EA;&#x5DF1;&#x80FD;&#x4E0A;&#x5CB8;&#x3002;]]></content>
-      <categories>
-        <category>秋招信息</category>
-      </categories>
-      <tags>
-        <tag>2021届秋招</tag>
-        <tag>校园招聘</tag>
-        <tag>信息汇总</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[字节跳动2018校招算法方向第一批-题解与思路分析]]></title>
     <url>%2F%2Fposts%2F1c810b8c%2F</url>
     <content type="text"><![CDATA[&#x9898;&#x76EE;&#x8FDE;&#x63A5;]]></content>
@@ -94,7 +144,7 @@
   <entry>
     <title><![CDATA[循环小数的循环体]]></title>
     <url>%2F%2Fposts%2Fa12ff16d%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x6982;&#x8FF0; LeetCode 166&#x9898;&#xFF0C;&#x9762;&#x8BD5;&#x9047;&#x5230;&#x4E86;&#x3002; &#x7ED9;&#x5B9A;&#x4E24;&#x4E2A;&#x6570;p&#x548C;q&#xFF0C;&#x5982;&#x679C;p/q&#x662F;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x5C0F;&#x6570;&#xFF0C;&#x5219;&#x6C42;&#x8FD9;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x5C0F;&#x6570;&#x7684;&#x5FAA;&#x73AF;&#x4F53;&#x3002;&#x4E0D;&#x9650;&#x5B9A;p&#x548C;q&#x7684;&#x5927;&#x5C0F;&#x3002; &#x65B0;&#x74F6;&#x88C5;&#x65E7;&#x9152;&#xFF0C;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x601D;&#x8DEF;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x6982;&#x8FF0;LeetCode 166&#x9898;&#xFF0C;&#x9762;&#x8BD5;&#x9047;&#x5230;&#x4E86;&#x3002; &#x7ED9;&#x5B9A;&#x4E24;&#x4E2A;&#x6570;p&#x548C;q&#xFF0C;&#x5982;&#x679C;p/q&#x662F;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x5C0F;&#x6570;&#xFF0C;&#x5219;&#x6C42;&#x8FD9;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x5C0F;&#x6570;&#x7684;&#x5FAA;&#x73AF;&#x4F53;&#x3002;&#x4E0D;&#x9650;&#x5B9A;p&#x548C;q&#x7684;&#x5927;&#x5C0F;&#x3002; &#x65B0;&#x74F6;&#x88C5;&#x65E7;&#x9152;&#xFF0C;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x601D;&#x8DEF;&#x3002;]]></content>
       <categories>
         <category>算法题</category>
       </categories>
@@ -176,7 +226,7 @@
   <entry>
     <title><![CDATA[分布式与云计算复习笔记]]></title>
     <url>%2F%2Fposts%2F64e8389b%2F</url>
-    <content type="text"><![CDATA[&#x8FD9;&#x4E2A;&#x592A;&#x96BE;&#x4E86;&#x6211;&#x4EEC;&#x4E0D;&#x8BB2;&#xFF1B;&#x8FD9;&#x4E2A;&#x592A;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x4E0D;&#x8BB2;&#xFF1B;&#x8FD9;&#x4E2A;.....&#xFF08;&#x559D;&#x53E3;&#x6C34;&#xFF0C;&#x70B9;&#x51FB;&#x9875;PPT&#xFF09;&#x4E5F;&#x4E0D;&#x8BB2;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x8FD9;&#x4E2A;&#x592A;&#x96BE;&#x4E86;&#x6211;&#x4EEC;&#x4E0D;&#x8BB2;&#xFF1B;&#x8FD9;&#x4E2A;&#x592A;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x4E0D;&#x8BB2;&#xFF1B;&#x8FD9;&#x4E2A;&#x2026;..&#xFF08;&#x559D;&#x53E3;&#x6C34;&#xFF0C;&#x70B9;&#x51FB;&#x9875;PPT&#xFF09;&#x4E5F;&#x4E0D;&#x8BB2;&#x3002;]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -354,7 +404,7 @@
   <entry>
     <title><![CDATA[寒假算法基础集训营1题解]]></title>
     <url>%2F%2Fposts%2F4714a7e1%2F</url>
-    <content type="text"><![CDATA[&#x5BD2;&#x5047;&#x91CC;&#x505A;&#x7684;&#x6BD4;&#x8D5B;&#xFF0C;&#x88AB;&#x5927;&#x4F6C;&#x6309;&#x5728;&#x5730;&#x4E0A;&#x6469;&#x64E6;&#xFF0C;&#x5B66;&#x5230;&#x4E86;&#x4E0D;&#x5C11;&#x4E1C;&#x897F;&#x3002;&#x6545;&#x8BB0;&#x5F55;&#x4E4B;&#x3002; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5B98;&#x65B9;&#x9898;&#x89E3;]]></content>
+    <content type="text"><![CDATA[&#x5BD2;&#x5047;&#x91CC;&#x505A;&#x7684;&#x6BD4;&#x8D5B;&#xFF0C;&#x88AB;&#x5927;&#x4F6C;&#x6309;&#x5728;&#x5730;&#x4E0A;&#x6469;&#x64E6;&#xFF0C;&#x5B66;&#x5230;&#x4E86;&#x4E0D;&#x5C11;&#x4E1C;&#x897F;&#x3002;&#x6545;&#x8BB0;&#x5F55;&#x4E4B;&#x3002; &#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5B98;&#x65B9;&#x9898;&#x89E3;]]></content>
       <categories>
         <category>ACM</category>
       </categories>
@@ -586,7 +636,7 @@
   <entry>
     <title><![CDATA[01背包笔记]]></title>
     <url>%2F%2Fposts%2F829adb17%2F</url>
-    <content type="text"><![CDATA[01&#x80CC;&#x5305;&#x95EE;&#x9898;&#x63CF;&#x8FF0; &#x5DF2;&#x77E5;:&#x6709;&#x4E00;&#x4E2A;&#x5BB9;&#x91CF;&#x4E3A;V&#x7684;&#x80CC;&#x5305;&#x548C;N&#x4EF6;&#x7269;&#x54C1;&#xFF0C;&#x7B2C;i&#x4EF6;&#x7269;&#x54C1;&#x7684;&#x91CD;&#x91CF;&#x662F;weight[i]&#xFF0C;&#x6536;&#x76CA;&#x662F;cost[i]&#x3002; &#x9650;&#x5236;:&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x53EA;&#x6709;&#x4E00;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x653E;&#x6216;&#x8005;&#x4E0D;&#x653E; &#x95EE;&#x9898;:&#x5728;&#x4E0D;&#x8D85;&#x8FC7;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x83B7;&#x5F97;&#x591A;&#x5C11;&#x4EF7;&#x503C;&#x6216;&#x6536;&#x76CA; &#x76F8;&#x4F3C;&#x95EE;&#x9898;:&#x5728;&#x6070;&#x597D;&#x88C5;&#x6EE1;&#x80CC;&#x5305;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x83B7;&#x5F97;&#x591A;&#x5C11;&#x4EF7;&#x503C;&#x6216;&#x6536;&#x76CA; &#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8BA8;&#x8BBA;&#x5728;&#x4E0D;&#x8D85;&#x8FC7;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x83B7;&#x5F97;&#x591A;&#x5C11;&#x4EF7;&#x503C;&#x6216;&#x6536;&#x76CA;&#x3002;]]></content>
+    <content type="text"><![CDATA[01&#x80CC;&#x5305;&#x95EE;&#x9898;&#x63CF;&#x8FF0;&#x5DF2;&#x77E5;:&#x6709;&#x4E00;&#x4E2A;&#x5BB9;&#x91CF;&#x4E3A;V&#x7684;&#x80CC;&#x5305;&#x548C;N&#x4EF6;&#x7269;&#x54C1;&#xFF0C;&#x7B2C;i&#x4EF6;&#x7269;&#x54C1;&#x7684;&#x91CD;&#x91CF;&#x662F;weight[i]&#xFF0C;&#x6536;&#x76CA;&#x662F;cost[i]&#x3002; &#x9650;&#x5236;:&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x53EA;&#x6709;&#x4E00;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x653E;&#x6216;&#x8005;&#x4E0D;&#x653E; &#x95EE;&#x9898;:&#x5728;&#x4E0D;&#x8D85;&#x8FC7;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x83B7;&#x5F97;&#x591A;&#x5C11;&#x4EF7;&#x503C;&#x6216;&#x6536;&#x76CA; &#x76F8;&#x4F3C;&#x95EE;&#x9898;:&#x5728;&#x6070;&#x597D;&#x88C5;&#x6EE1;&#x80CC;&#x5305;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x83B7;&#x5F97;&#x591A;&#x5C11;&#x4EF7;&#x503C;&#x6216;&#x6536;&#x76CA; &#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8BA8;&#x8BBA;&#x5728;&#x4E0D;&#x8D85;&#x8FC7;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x83B7;&#x5F97;&#x591A;&#x5C11;&#x4EF7;&#x503C;&#x6216;&#x6536;&#x76CA;&#x3002;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -599,7 +649,7 @@
   <entry>
     <title><![CDATA[读研日记]]></title>
     <url>%2F%2Fposts%2F52379290%2F</url>
-    <content type="text"><![CDATA[&#x6211;&#x7684;&#x8BFB;&#x7814;&#x65E5;&#x8BB0;&#x3002;&#x8C28;&#x4EE5;&#x6B64;&#x6587;&#x8BB0;&#x5F55;&#x6211;&#x7684;&#x7814;&#x7A76;&#x751F;&#x751F;&#x6DAF;&#x3002;]]></content>
+    <content type="text"><![CDATA[我的读研日记。谨以此文记录我的研究生生涯。]]></content>
       <categories>
         <category>日记</category>
       </categories>
@@ -611,7 +661,7 @@
   <entry>
     <title><![CDATA[POJ-2996 Help Me with the Game]]></title>
     <url>%2F%2Fposts%2Fa5731d96%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5E2E;&#x6211;&#x5B8C;&#x6210;&#x6E38;&#x620F;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5E2E;&#x6211;&#x5B8C;&#x6210;&#x6E38;&#x620F;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -624,7 +674,7 @@
   <entry>
     <title><![CDATA[POJ-1573 Robot Motion]]></title>
     <url>%2F%2Fposts%2F5035921d%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x673A;&#x5668;&#x4EBA;&#x79FB;&#x52A8;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x673A;&#x5668;&#x4EBA;&#x79FB;&#x52A8;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -637,7 +687,7 @@
   <entry>
     <title><![CDATA[POJ-1860 Currency Exchange]]></title>
     <url>%2F%2Fposts%2Fd8ff61b5%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4EA4;&#x6362;&#x8D27;&#x5E01;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4EA4;&#x6362;&#x8D27;&#x5E01;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -652,7 +702,7 @@
   <entry>
     <title><![CDATA[POJ-2632 Crashing Robots]]></title>
     <url>%2F%2Fposts%2F53ad7638%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5D29;&#x6E83;&#x7684;&#x673A;&#x5668;&#x4EBA;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5D29;&#x6E83;&#x7684;&#x673A;&#x5668;&#x4EBA;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -665,7 +715,7 @@
   <entry>
     <title><![CDATA[POJ-1068 Parencodings]]></title>
     <url>%2F%2Fposts%2Fd837b83f%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; Parencodings]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;Parencodings]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -678,7 +728,7 @@
   <entry>
     <title><![CDATA[POJ-3295 Tautology]]></title>
     <url>%2F%2Fposts%2F8893c4a8%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C38;&#x771F;&#x5F0F;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6C38;&#x771F;&#x5F0F;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -692,7 +742,7 @@
   <entry>
     <title><![CDATA[POJ-2586 Y2K Accounting Bug]]></title>
     <url>%2F%2Fposts%2Fb572d5b3%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5343;&#x5E74;&#x866B;&#x9519;&#x8BEF;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5343;&#x5E74;&#x866B;&#x9519;&#x8BEF;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -706,7 +756,7 @@
   <entry>
     <title><![CDATA[POJ-2109 Power of Cryptography]]></title>
     <url>%2F%2Fposts%2Fea1deaf6%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5BC6;&#x7801;&#x5B66;&#x7684;&#x529B;&#x91CF;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5BC6;&#x7801;&#x5B66;&#x7684;&#x529B;&#x91CF;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -720,7 +770,7 @@
   <entry>
     <title><![CDATA[POJ-1328 Radar Installation]]></title>
     <url>%2F%2Fposts%2Fbe1dc362%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5B89;&#x88C5;&#x96F7;&#x8FBE;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5B89;&#x88C5;&#x96F7;&#x8FBE;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -738,7 +788,7 @@
   <entry>
     <title><![CDATA[POJ-2965 The Pilots Brothers' refrigerator]]></title>
     <url>%2F%2Fposts%2F9424e4c0%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x98DE;&#x884C;&#x5458;&#x5144;&#x5F1F;&#x7684;&#x51B0;&#x7BB1;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x98DE;&#x884C;&#x5458;&#x5144;&#x5F1F;&#x7684;&#x51B0;&#x7BB1;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -752,7 +802,7 @@
   <entry>
     <title><![CDATA[POJ-1753 Flip Game]]></title>
     <url>%2F%2Fposts%2Fa4273118%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x53CD;&#x8F6C;&#x6E38;&#x620F;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x53CD;&#x8F6C;&#x6E38;&#x620F;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -766,7 +816,7 @@
   <entry>
     <title><![CDATA[PAT-A-1114 Family Property（25）]]></title>
     <url>%2F%2Fposts%2F9bf38d02%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5BB6;&#x5EAD;&#x8D22;&#x4EA7;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5BB6;&#x5EAD;&#x8D22;&#x4EA7;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -779,7 +829,7 @@
   <entry>
     <title><![CDATA[PAT-A-1113 Integer Set Partition（25）]]></title>
     <url>%2F%2Fposts%2F59718a1%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5212;&#x5206;&#x6574;&#x6570;&#x96C6;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5212;&#x5206;&#x6574;&#x6570;&#x96C6;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -792,7 +842,7 @@
   <entry>
     <title><![CDATA[PAT-A-1112]]></title>
     <url>%2F%2Fposts%2F72902837%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7834;&#x635F;&#x7684;&#x952E;&#x76D8;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7834;&#x635F;&#x7684;&#x952E;&#x76D8;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -805,7 +855,7 @@
   <entry>
     <title><![CDATA[PAT-A-1099 Build A Binary Search Tree (30)]]></title>
     <url>%2F%2Fposts%2F23974e8%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6784;&#x5EFA;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6784;&#x5EFA;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -819,7 +869,7 @@
   <entry>
     <title><![CDATA[PAT-A-1111]]></title>
     <url>%2F%2Fposts%2Feb99798d%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5728;&#x7EBF;&#x5730;&#x56FE;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5728;&#x7EBF;&#x5730;&#x56FE;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -834,7 +884,7 @@
   <entry>
     <title><![CDATA[PAT-A-1110 Complete Binary Tree（25）]]></title>
     <url>%2F%2Fposts%2F1a7984cb%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -848,7 +898,7 @@
   <entry>
     <title><![CDATA[PAT-A-1109 Group Photo（25）]]></title>
     <url>%2F%2Fposts%2Ffde4c840%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5408;&#x5F71;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5408;&#x5F71;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -861,7 +911,7 @@
   <entry>
     <title><![CDATA[PAT-A-1108 Finding Average（20）]]></title>
     <url>%2F%2Fposts%2F8b5ef068%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x627E;&#x5230;&#x5E73;&#x5747;&#x6570;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x627E;&#x5230;&#x5E73;&#x5747;&#x6570;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -874,7 +924,7 @@
   <entry>
     <title><![CDATA[PAT-A-1107 Social Clusters（30）]]></title>
     <url>%2F%2Fposts%2F45a41abd%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x793E;&#x4EA4;&#x96C6;&#x7FA4;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x793E;&#x4EA4;&#x96C6;&#x7FA4;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -887,7 +937,7 @@
   <entry>
     <title><![CDATA[PAT-A-1106 Lowest Price in Supply Chain（25）]]></title>
     <url>%2F%2Fposts%2Fd7add263%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4F9B;&#x5E94;&#x94FE;&#x4E2D;&#x7684;&#x6700;&#x4F4E;&#x4EF7;&#x683C;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4F9B;&#x5E94;&#x94FE;&#x4E2D;&#x7684;&#x6700;&#x4F4E;&#x4EF7;&#x683C;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -901,7 +951,7 @@
   <entry>
     <title><![CDATA[PAT-A-1105 Spiral Matrix (25)]]></title>
     <url>%2F%2Fposts%2F7507f506%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x87BA;&#x65CB;&#x77E9;&#x9635;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x87BA;&#x65CB;&#x77E9;&#x9635;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -914,7 +964,7 @@
   <entry>
     <title><![CDATA[PAT-A-1104 Sum of Number Segments (20)]]></title>
     <url>%2F%2Fposts%2Fbd559055%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6570;&#x5B57;&#x6BB5;&#x7684;&#x603B;&#x548C;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6570;&#x5B57;&#x6BB5;&#x7684;&#x603B;&#x548C;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -927,7 +977,7 @@
   <entry>
     <title><![CDATA[PAT-A-1103 Integer Factorization (30)]]></title>
     <url>%2F%2Fposts%2F5efed0ac%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6574;&#x6570;&#x7684;&#x56E0;&#x5F0F;&#x5206;&#x89E3;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6574;&#x6570;&#x7684;&#x56E0;&#x5F0F;&#x5206;&#x89E3;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -941,7 +991,7 @@
   <entry>
     <title><![CDATA[PAT-A-1102 Invert a Binary Tree (25)]]></title>
     <url>%2F%2Fposts%2F9691409a%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -954,7 +1004,7 @@
   <entry>
     <title><![CDATA[PAT-A-1095 Cars on Campus (30)]]></title>
     <url>%2F%2Fposts%2F18272c90%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6821;&#x56ED;&#x91CC;&#x7684;&#x6C7D;&#x8F66;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6821;&#x56ED;&#x91CC;&#x7684;&#x6C7D;&#x8F66;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -968,7 +1018,7 @@
   <entry>
     <title><![CDATA[PAT-A-1098 Insertion or Heap Sort (25)]]></title>
     <url>%2F%2Fposts%2F45a528a9%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x63D2;&#x5165;&#x6392;&#x5E8F;&#x8FD8;&#x662F;&#x5806;&#x6392;&#x5E8F;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x8FD8;&#x662F;&#x5806;&#x6392;&#x5E8F;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -984,7 +1034,7 @@
   <entry>
     <title><![CDATA[PAT-A-1091 Acute Stroke (30)]]></title>
     <url>%2F%2Fposts%2F228299b2%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6025;&#x6027;&#x8111;&#x731D;&#x6B7B;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6025;&#x6027;&#x8111;&#x731D;&#x6B7B;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -999,7 +1049,7 @@
   <entry>
     <title><![CDATA[PAT-A-1087 All Roads Lead to Rome (30)]]></title>
     <url>%2F%2Fposts%2F5777fec1%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6761;&#x6761;&#x5927;&#x8DEF;&#x901A;&#x7F57;&#x9A6C;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6761;&#x6761;&#x5927;&#x8DEF;&#x901A;&#x7F57;&#x9A6C;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1014,7 +1064,7 @@
   <entry>
     <title><![CDATA[PAT-A-1101 Quick Sort (25)]]></title>
     <url>%2F%2Fposts%2F4a5f9413%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5FEB;&#x901F;&#x6392;&#x5E8F;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5FEB;&#x901F;&#x6392;&#x5E8F;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1027,7 +1077,7 @@
   <entry>
     <title><![CDATA[PAT-A-1100 Mars Numbers (20)]]></title>
     <url>%2F%2Fposts%2F463096a8%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x706B;&#x661F;&#x4E0A;&#x7684;&#x6570;&#x5B57;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x706B;&#x661F;&#x4E0A;&#x7684;&#x6570;&#x5B57;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1042,7 +1092,7 @@
   <entry>
     <title><![CDATA[PAT-A-1097 Deduplication on a Linked List (25)]]></title>
     <url>%2F%2Fposts%2Fb2a66fb6%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5220;&#x9664;&#x94FE;&#x8868;&#x4E0A;&#x7684;&#x91CD;&#x590D;&#x6570;&#x636E;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E0A;&#x7684;&#x91CD;&#x590D;&#x6570;&#x636E;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1055,7 +1105,7 @@
   <entry>
     <title><![CDATA[PAT-A-1096 Consecutive Factors (20)]]></title>
     <url>%2F%2Fposts%2F1596ce8c%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8FDE;&#x7EED;&#x7684;&#x56E0;&#x6570;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x8FDE;&#x7EED;&#x7684;&#x56E0;&#x6570;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1068,7 +1118,7 @@
   <entry>
     <title><![CDATA[PAT-A-1094 The Largest Generation (25)]]></title>
     <url>%2F%2Fposts%2Fba347fc6%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4EBA;&#x53E3;&#x6700;&#x591A;&#x7684;&#x4E00;&#x4EE3;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4EBA;&#x53E3;&#x6700;&#x591A;&#x7684;&#x4E00;&#x4EE3;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1082,7 +1132,7 @@
   <entry>
     <title><![CDATA[PAT-A-1093 Count PAT’s (25)]]></title>
     <url>%2F%2Fposts%2Fcc8cf89e%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8BA1;&#x7B97;&#x6709;&#x591A;&#x5C11;&#x4E2A;PAT]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x8BA1;&#x7B97;&#x6709;&#x591A;&#x5C11;&#x4E2A;PAT]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1096,7 +1146,7 @@
   <entry>
     <title><![CDATA[PAT-A-1092 To Buy or Not to Buy (20)]]></title>
     <url>%2F%2Fposts%2Fbb8bc808%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4E70;&#x8FD8;&#x662F;&#x4E0D;&#x4E70;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4E70;&#x8FD8;&#x662F;&#x4E0D;&#x4E70;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1110,7 +1160,7 @@
   <entry>
     <title><![CDATA[PAT-A-1088 Rational Arithmetic (20)]]></title>
     <url>%2F%2Fposts%2Ffea59011%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6709;&#x7406;&#x6570;&#x7684;&#x8FD0;&#x7B97;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6709;&#x7406;&#x6570;&#x7684;&#x8FD0;&#x7B97;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1124,7 +1174,7 @@
   <entry>
     <title><![CDATA[PAT-A-1090 Highest Price in Supply Chain (25)]]></title>
     <url>%2F%2Fposts%2F5585a924%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4F9B;&#x5E94;&#x94FE;&#x4E2D;&#x7684;&#x6700;&#x9AD8;&#x4EF7;&#x683C;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4F9B;&#x5E94;&#x94FE;&#x4E2D;&#x7684;&#x6700;&#x9AD8;&#x4EF7;&#x683C;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1138,7 +1188,7 @@
   <entry>
     <title><![CDATA[PAT-A-1089 Insert or Merge (25)]]></title>
     <url>%2F%2Fposts%2F354220c1%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x63D2;&#x5165;&#x6392;&#x5E8F;&#x8FD8;&#x662F;&#x5F52;&#x5E76;&#x6392;&#x5E8F;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x8FD8;&#x662F;&#x5F52;&#x5E76;&#x6392;&#x5E8F;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1153,7 +1203,7 @@
   <entry>
     <title><![CDATA[PAT-A-1086 Tree Traversals Again (25)]]></title>
     <url>%2F%2Fposts%2Fc2c1493b%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x91CD;&#x65B0;&#x904D;&#x5386;&#x4E8C;&#x53C9;&#x6811;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x91CD;&#x65B0;&#x904D;&#x5386;&#x4E8C;&#x53C9;&#x6811;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1168,7 +1218,7 @@
   <entry>
     <title><![CDATA[PAT-A-1085 Perfect Sequence (25)]]></title>
     <url>%2F%2Fposts%2F6fa331c%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5B8C;&#x7F8E;&#x7684;&#x5E8F;&#x5217;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5B8C;&#x7F8E;&#x7684;&#x5E8F;&#x5217;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1182,7 +1232,7 @@
   <entry>
     <title><![CDATA[PAT-A-1084 Broken Keyboard (20)]]></title>
     <url>%2F%2Fposts%2F1feaae6d%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x574F;&#x6389;&#x7684;&#x952E;&#x76D8;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x574F;&#x6389;&#x7684;&#x952E;&#x76D8;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1196,7 +1246,7 @@
   <entry>
     <title><![CDATA[PAT-A-1083 List Grades (25)]]></title>
     <url>%2F%2Fposts%2Fd597c9df%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8F93;&#x51FA;&#x6210;&#x7EE9;&#x5728;&#x7ED9;&#x5B9A;&#x533A;&#x95F4;&#x7684;&#x540C;&#x5B66;&#x4FE1;&#x606F;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x8F93;&#x51FA;&#x6210;&#x7EE9;&#x5728;&#x7ED9;&#x5B9A;&#x533A;&#x95F4;&#x7684;&#x540C;&#x5B66;&#x4FE1;&#x606F;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1209,7 +1259,7 @@
   <entry>
     <title><![CDATA[PAT-A-1081 Rational Sum (20)]]></title>
     <url>%2F%2Fposts%2F3b99a8f3%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6709;&#x7406;&#x6570;&#x7684;&#x548C;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6709;&#x7406;&#x6570;&#x7684;&#x548C;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1224,7 +1274,7 @@
   <entry>
     <title><![CDATA[PAT-A-1082 Read Number in Chinese (25)]]></title>
     <url>%2F%2Fposts%2Fa290f949%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6570;&#x5B57;&#x7684;&#x4E2D;&#x6587;&#x8BFB;&#x6CD5;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6570;&#x5B57;&#x7684;&#x4E2D;&#x6587;&#x8BFB;&#x6CD5;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1237,7 +1287,7 @@
   <entry>
     <title><![CDATA[PAT-A-1079 Total Sales of Supply Chain (25)]]></title>
     <url>%2F%2Fposts%2Fb2da3c0e%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4F9B;&#x5E94;&#x94FE;&#x7684;&#x9500;&#x552E;&#x603B;&#x989D;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6C42;&#x4F9B;&#x5E94;&#x94FE;&#x7684;&#x9500;&#x552E;&#x603B;&#x989D;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1250,7 +1300,7 @@
   <entry>
     <title><![CDATA[PAT-A-1080 Graduate Admission (30)]]></title>
     <url>%2F%2Fposts%2Ff4728b59%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7814;&#x7A76;&#x751F;&#x62DB;&#x751F;&#x5F55;&#x53D6;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7814;&#x7A76;&#x751F;&#x62DB;&#x751F;&#x5F55;&#x53D6;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1263,7 +1313,7 @@
   <entry>
     <title><![CDATA[PAT-A-1078 Hashing (25)]]></title>
     <url>%2F%2Fposts%2F923495e5%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x54C8;&#x5E0C;&#x8868;&#x7684;&#x5E73;&#x65B9;&#x63A2;&#x67E5;&#x6CD5;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x54C8;&#x5E0C;&#x8868;&#x7684;&#x5E73;&#x65B9;&#x63A2;&#x67E5;&#x6CD5;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1277,7 +1327,7 @@
   <entry>
     <title><![CDATA[PAT-A-1077 Kuchiguse (20)]]></title>
     <url>%2F%2Fposts%2F6e8a40c3%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x65E5;&#x8BED;&#x7684;&#x5C3E;&#x97F3;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x65E5;&#x8BED;&#x7684;&#x5C3E;&#x97F3;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1290,7 +1340,7 @@
   <entry>
     <title><![CDATA[已知二叉树的中序和前序序列(或后序)求解树]]></title>
     <url>%2F%2Fposts%2Fb3684980%2F</url>
-    <content type="text"><![CDATA[&#x5E8F;&#x8A00; &#x8FD9;&#x79CD;&#x9898;&#x4E00;&#x822C;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x5171;&#x540C;&#x70B9;&#x662F;&#x90FD;&#x5DF2;&#x77E5;&#x4E2D;&#x5E8F;&#x5E8F;&#x5217;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4E2D;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x662F;&#x65E0;&#x6CD5;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x4E00;&#x68F5;&#x6811;&#x7684;&#xFF0C;&#x8BC1;&#x660E;&#x7565;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x5E8F;&#x8A00;&#x8FD9;&#x79CD;&#x9898;&#x4E00;&#x822C;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x5171;&#x540C;&#x70B9;&#x662F;&#x90FD;&#x5DF2;&#x77E5;&#x4E2D;&#x5E8F;&#x5E8F;&#x5217;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4E2D;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x662F;&#x65E0;&#x6CD5;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x4E00;&#x68F5;&#x6811;&#x7684;&#xFF0C;&#x8BC1;&#x660E;&#x7565;&#x3002;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -1315,7 +1365,7 @@
   <entry>
     <title><![CDATA[帽子颜色问题]]></title>
     <url>%2F%2Fposts%2F3ffb6ae9%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x5B66;&#x6821;&#x6700;&#x8FD1;&#x4E3E;&#x884C;&#x4E00;&#x573A;&#x8FD0;&#x52A8;&#x4F1A;&#xFF0C;&#x5171;&#x6709;17&#x540D;&#x8EAB;&#x9AD8;&#x4E0D;&#x540C;&#x7684;&#x5B66;&#x751F;&#x53C2;&#x52A0;&#x3002;&#x88C1;&#x5224;&#x51C6;&#x5907;&#x4E86;&#x5982;&#x4E0B;&#x989C;&#x8272;&#x7684;&#x5E3D;&#x5B50;&#xFF1A;3&#x9876;&#x7EA2;&#x8272;&#xFF0C;4&#x9876;&#x9EC4;&#x8272;&#xFF0C;5&#x9876;&#x84DD;&#x8272;&#xFF0C;7&#x9876;&#x7EFF;&#x8272;&#x3002;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;&#x8BA9;17&#x4E2A;&#x4EBA;&#x6309;&#x987A;&#x5E8F;&#x7AD9;&#x6210;&#x4E00;&#x5217;&#xFF0C;&#x7ED9;&#x4ED6;&#x4EEC;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x6234;&#x4E00;&#x9876;&#x5E3D;&#x5B50;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EBA;&#x770B;&#x4E0D;&#x89C1;&#x81EA;&#x5DF1;&#x5E3D;&#x5B50;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x5374;&#x80FD;&#x770B;&#x5230;&#x7AD9;&#x5728;&#x524D;&#x9762;&#x7684;&#x90A3;&#x4E9B;&#x4EBA;&#x7684;&#x5E3D;&#x5B50;&#x989C;&#x8272;&#x3002;&#x5373;&#xFF0C; &#x4ECE;&#x961F;&#x5934;&#x5230;&#x961F;&#x5C3E;&#xFF0C;&#x5206;&#x522B;&#x6807;&#x8BB0;&#x4E3A;1,2,4,5....17&#x3002;1&#x53F7;&#x5565;&#x90FD;&#x770B;&#x4E0D;&#x5230;&#xFF0C;17&#x53F7;&#x80FD;&#x770B;&#x5230;1~16&#x53F7;&#x5E3D;&#x5B50;&#x7684;&#x989C;&#x8272;&#x3002;&#x8FD9;17&#x540D;&#x5B66;&#x751F;&#x77E5;&#x9053;&#x5E3D;&#x5B50;&#x90FD;&#x6709;&#x4EC0;&#x4E48;&#x989C;&#x8272;&#x4EE5;&#x53CA;&#x6709;&#x591A;&#x5C11;&#x9876;&#x3002; &#x73B0;&#x5728;&#x4ECE;&#x961F;&#x5C3E;&#x5F00;&#x59CB;&#xFF0C;&#x5373;17&#x53F7;&#xFF0C;&#x5F00;&#x59CB;&#x4F9D;&#x6B21;&#x95EE;&#xFF0C;&#x4F60;&#x662F;&#x5426;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x6234;&#x7684;&#x5E3D;&#x5B50;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x5982;&#x679C;&#x4ED6;&#x56DE;&#x7B54;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x5C31;&#x7EE7;&#x7EED;&#x95EE;&#x4ED6;&#x524D;&#x9762;&#x7684;&#x4EBA;&#xFF0C;&#x5373;16,15,14...&#x4F9D;&#x6B21;&#x5F80;&#x524D;&#x95EE;&#x3002;&#x95EE;&#x6700;&#x591A;&#x95EE;&#x5230;&#x51E0;&#x53F7;&#xFF0C;&#x4ED6;&#x5C31;&#x4E00;&#x5B9A;&#x80FD;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x6234;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x989C;&#x8272;&#x7684;&#x5E3D;&#x5B50;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x5B66;&#x6821;&#x6700;&#x8FD1;&#x4E3E;&#x884C;&#x4E00;&#x573A;&#x8FD0;&#x52A8;&#x4F1A;&#xFF0C;&#x5171;&#x6709;17&#x540D;&#x8EAB;&#x9AD8;&#x4E0D;&#x540C;&#x7684;&#x5B66;&#x751F;&#x53C2;&#x52A0;&#x3002;&#x88C1;&#x5224;&#x51C6;&#x5907;&#x4E86;&#x5982;&#x4E0B;&#x989C;&#x8272;&#x7684;&#x5E3D;&#x5B50;&#xFF1A;3&#x9876;&#x7EA2;&#x8272;&#xFF0C;4&#x9876;&#x9EC4;&#x8272;&#xFF0C;5&#x9876;&#x84DD;&#x8272;&#xFF0C;7&#x9876;&#x7EFF;&#x8272;&#x3002;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;&#x8BA9;17&#x4E2A;&#x4EBA;&#x6309;&#x987A;&#x5E8F;&#x7AD9;&#x6210;&#x4E00;&#x5217;&#xFF0C;&#x7ED9;&#x4ED6;&#x4EEC;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x6234;&#x4E00;&#x9876;&#x5E3D;&#x5B50;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EBA;&#x770B;&#x4E0D;&#x89C1;&#x81EA;&#x5DF1;&#x5E3D;&#x5B50;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x5374;&#x80FD;&#x770B;&#x5230;&#x7AD9;&#x5728;&#x524D;&#x9762;&#x7684;&#x90A3;&#x4E9B;&#x4EBA;&#x7684;&#x5E3D;&#x5B50;&#x989C;&#x8272;&#x3002;&#x5373;&#xFF0C; &#x4ECE;&#x961F;&#x5934;&#x5230;&#x961F;&#x5C3E;&#xFF0C;&#x5206;&#x522B;&#x6807;&#x8BB0;&#x4E3A;1,2,4,5&#x2026;.17&#x3002;1&#x53F7;&#x5565;&#x90FD;&#x770B;&#x4E0D;&#x5230;&#xFF0C;17&#x53F7;&#x80FD;&#x770B;&#x5230;1~16&#x53F7;&#x5E3D;&#x5B50;&#x7684;&#x989C;&#x8272;&#x3002;&#x8FD9;17&#x540D;&#x5B66;&#x751F;&#x77E5;&#x9053;&#x5E3D;&#x5B50;&#x90FD;&#x6709;&#x4EC0;&#x4E48;&#x989C;&#x8272;&#x4EE5;&#x53CA;&#x6709;&#x591A;&#x5C11;&#x9876;&#x3002; &#x73B0;&#x5728;&#x4ECE;&#x961F;&#x5C3E;&#x5F00;&#x59CB;&#xFF0C;&#x5373;17&#x53F7;&#xFF0C;&#x5F00;&#x59CB;&#x4F9D;&#x6B21;&#x95EE;&#xFF0C;&#x4F60;&#x662F;&#x5426;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x6234;&#x7684;&#x5E3D;&#x5B50;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x5982;&#x679C;&#x4ED6;&#x56DE;&#x7B54;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x5C31;&#x7EE7;&#x7EED;&#x95EE;&#x4ED6;&#x524D;&#x9762;&#x7684;&#x4EBA;&#xFF0C;&#x5373;16,15,14&#x2026;&#x4F9D;&#x6B21;&#x5F80;&#x524D;&#x95EE;&#x3002;&#x95EE;&#x6700;&#x591A;&#x95EE;&#x5230;&#x51E0;&#x53F7;&#xFF0C;&#x4ED6;&#x5C31;&#x4E00;&#x5B9A;&#x80FD;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x6234;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x989C;&#x8272;&#x7684;&#x5E3D;&#x5B50;&#x3002;]]></content>
       <categories>
         <category>数学</category>
       </categories>
@@ -1326,7 +1376,7 @@
   <entry>
     <title><![CDATA[X86与ARM中的原子操作-原理及实现]]></title>
     <url>%2F%2Fposts%2F2a85d31f%2F</url>
-    <content type="text"><![CDATA[&#x524D;&#x8A00; &#x8FD9;&#x4E2A;&#x662F;&#x5728;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x65F6;&#x6CA1;&#x6709;&#x7B54;&#x51FA;&#x6765;&#x3002;&#x56DE;&#x5230;&#x5BB6;&#x4EE5;&#x540E;&#x67E5;&#x4E86;&#x67E5;&#xFF0C;&#x6574;&#x7406;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002; &#x539F;&#x95EE;&#x9898;&#xFF1A;&#x4EC0;&#x4E48;&#x6307;&#x4EE4;&#x96C6;&#x652F;&#x6301;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF1F;&#x5176;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;]]></content>
+    <content type="text"><![CDATA[&#x524D;&#x8A00;&#x8FD9;&#x4E2A;&#x662F;&#x5728;&#x9762;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x65F6;&#x6CA1;&#x6709;&#x7B54;&#x51FA;&#x6765;&#x3002;&#x56DE;&#x5230;&#x5BB6;&#x4EE5;&#x540E;&#x67E5;&#x4E86;&#x67E5;&#xFF0C;&#x6574;&#x7406;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002; &#x539F;&#x95EE;&#x9898;&#xFF1A;&#x4EC0;&#x4E48;&#x6307;&#x4EE4;&#x96C6;&#x652F;&#x6301;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF1F;&#x5176;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -1341,7 +1391,7 @@
   <entry>
     <title><![CDATA[POJ-1852 Ants]]></title>
     <url>%2F%2Fposts%2F1ddc535a%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8682;&#x8681;&#x5728;&#x6746;&#x5B50;&#x4E0A;&#x884C;&#x8D70;&#xFF0C;&#x6C42;&#x8682;&#x8681;&#x6389;&#x843D;&#x7684;&#x6700;&#x5FEB;&#x548C;&#x6700;&#x6162;&#x65F6;&#x95F4;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x8682;&#x8681;&#x5728;&#x6746;&#x5B50;&#x4E0A;&#x884C;&#x8D70;&#xFF0C;&#x6C42;&#x8682;&#x8681;&#x6389;&#x843D;&#x7684;&#x6700;&#x5FEB;&#x548C;&#x6700;&#x6162;&#x65F6;&#x95F4;&#x3002;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -1354,7 +1404,7 @@
   <entry>
     <title><![CDATA[POJ-2386 Lake Counting]]></title>
     <url>%2F%2Fposts%2Fb1ffa901%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4E00;&#x7247;&#x5730;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E9B;&#x79EF;&#x6C34;&#xFF0C;&#x8981;&#x6C42;&#x6570;&#x6E05;&#x695A;&#x4E00;&#x5171;&#x6709;&#x51E0;&#x7247;&#x79EF;&#x6C34;&#xFF0C;W&#x8868;&#x793A;&#x6C34;&#xFF0C;&quot; . &quot; &#x8868;&#x793A;&#x65F1;&#x5730;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4E00;&#x7247;&#x5730;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E9B;&#x79EF;&#x6C34;&#xFF0C;&#x8981;&#x6C42;&#x6570;&#x6E05;&#x695A;&#x4E00;&#x5171;&#x6709;&#x51E0;&#x7247;&#x79EF;&#x6C34;&#xFF0C;W&#x8868;&#x793A;&#x6C34;&#xFF0C;&#x201D; . &#x201C; &#x8868;&#x793A;&#x65F1;&#x5730;&#x3002;]]></content>
       <categories>
         <category>POJ</category>
       </categories>
@@ -1367,7 +1417,7 @@
   <entry>
     <title><![CDATA[PAT-A-1064 Complete Binary Search Tree (30)]]></title>
     <url>%2F%2Fposts%2Fd57071f2%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x5B9A;&#x4E00;&#x4E32;&#x5E8F;&#x5217;&#xFF0C;&#x5DF2;&#x77E5;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x80FD;&#x591F;&#x6210;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#xFF0C;&#x6C42;&#x51FA;&#x8FD9;&#x4E2A;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x5C42;&#x6B21;&#x904D;&#x5386;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7ED9;&#x5B9A;&#x4E00;&#x4E32;&#x5E8F;&#x5217;&#xFF0C;&#x5DF2;&#x77E5;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x80FD;&#x591F;&#x6210;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#xFF0C;&#x6C42;&#x51FA;&#x8FD9;&#x4E2A;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x5C42;&#x6B21;&#x904D;&#x5386;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1381,7 +1431,7 @@
   <entry>
     <title><![CDATA[PAT-A-1063 Set Similarity (25)]]></title>
     <url>%2F%2Fposts%2F4b14e451%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6C42;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1395,7 +1445,7 @@
   <entry>
     <title><![CDATA[PAT-A-1049 Counting Ones (30)]]></title>
     <url>%2F%2Fposts%2F7987c544%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570;N&#xFF0C;&#x6C42;1~N&#x4E4B;&#x95F4;&#x7684;&#x5341;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x7684;&#x6240;&#x6709;&#x6570;&#x4E2D;&#xFF0C;1&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570;N&#xFF0C;&#x6C42;1~N&#x4E4B;&#x95F4;&#x7684;&#x5341;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x7684;&#x6240;&#x6709;&#x6570;&#x4E2D;&#xFF0C;1&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1411,7 +1461,7 @@
   <entry>
     <title><![CDATA[求最长上升子序列的长度]]></title>
     <url>%2F%2Fposts%2Feacf7b1a%2F</url>
-    <content type="text"><![CDATA[&#x5F15;&#x8A00; &#x6709;&#x4E00;&#x4E2A;&#x957F;&#x4E3A;n&#x7684;&#x6570;&#x5217; a0,a1,a2...an-1 &#xFF0C;&#x6C42;&#x51FA;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x4E2D;&#x6700;&#x957F;&#x7684;&#x4E0A;&#x5347;&#x5B50;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x4E0A;&#x5347;&#x5B50;&#x5E8F;&#x5217;&#x6307;&#x7684;&#x662F;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;i&lt;j&#xFF0C;&#x90FD;&#x6709;ai&lt;aj&#x7684;&#x5B50;&#x5E8F;&#x5217;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x5F15;&#x8A00;&#x6709;&#x4E00;&#x4E2A;&#x957F;&#x4E3A;n&#x7684;&#x6570;&#x5217; a0,a1,a2&#x2026;an-1 &#xFF0C;&#x6C42;&#x51FA;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x4E2D;&#x6700;&#x957F;&#x7684;&#x4E0A;&#x5347;&#x5B50;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x4E0A;&#x5347;&#x5B50;&#x5E8F;&#x5217;&#x6307;&#x7684;&#x662F;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;i&lt;j&#xFF0C;&#x90FD;&#x6709;ai&lt;aj&#x7684;&#x5B50;&#x5E8F;&#x5217;&#x3002;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -1426,7 +1476,7 @@
   <entry>
     <title><![CDATA[PAT-A-1045 Favorite Color Stripe (30)]]></title>
     <url>%2F%2Fposts%2F904123e6%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x559C;&#x6B22;&#x7684;&#x5F69;&#x6761;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x559C;&#x6B22;&#x7684;&#x5F69;&#x6761;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1440,7 +1490,7 @@
   <entry>
     <title><![CDATA[PAT-A-1068 Find More Coins (30)]]></title>
     <url>%2F%2Fposts%2F5c4b01e5%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5728;&#x4E00;&#x5806;&#x786C;&#x5E01;&#x4E2D;&#x627E;&#x5230;&#x603B;&#x9762;&#x989D;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E00;&#x4E9B;&#x786C;&#x5E01;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5728;&#x4E00;&#x5806;&#x786C;&#x5E01;&#x4E2D;&#x627E;&#x5230;&#x603B;&#x9762;&#x989D;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E00;&#x4E9B;&#x786C;&#x5E01;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1454,7 +1504,7 @@
   <entry>
     <title><![CDATA[PAT-A-1072 Gas Station (30)]]></title>
     <url>%2F%2Fposts%2F67237530%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x52A0;&#x6CB9;&#x7AD9;&#x7684;&#x4F4D;&#x7F6E;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6C42;&#x52A0;&#x6CB9;&#x7AD9;&#x7684;&#x4F4D;&#x7F6E;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1468,7 +1518,7 @@
   <entry>
     <title><![CDATA[PAT-A-1076 Forwards on Weibo (30)]]></title>
     <url>%2F%2Fposts%2F9486a851%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5FAE;&#x535A;&#x7684;&#x5173;&#x6CE8;&#x8005;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5FAE;&#x535A;&#x7684;&#x5173;&#x6CE8;&#x8005;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1481,7 +1531,7 @@
   <entry>
     <title><![CDATA[PAT-A-1075 PAT Judge (25)]]></title>
     <url>%2F%2Fposts%2F73f16db0%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8F93;&#x51FA;PAT&#x7684;&#x6392;&#x540D;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x8F93;&#x51FA;PAT&#x7684;&#x6392;&#x540D;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1494,7 +1544,7 @@
   <entry>
     <title><![CDATA[PAT-A-1074 Reversing Linked List (25)]]></title>
     <url>%2F%2Fposts%2F892b22de%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x94FE;&#x8868;&#x7684;&#x9006;&#x7F6E;&#x3002;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5E38;&#x6570;K&#x548C;&#x4E00;&#x4E2A;&#x5355;&#x94FE;&#x8868;L&#x3002;&#x5BF9;&#x4E8E;&#x94FE;&#x8868;&#x4E0A;&#x6BCF;K&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5C06;&#x5176;&#x9006;&#x7F6E;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x94FE;&#x8868;&#x7684;&#x9006;&#x7F6E;&#x3002;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5E38;&#x6570;K&#x548C;&#x4E00;&#x4E2A;&#x5355;&#x94FE;&#x8868;L&#x3002;&#x5BF9;&#x4E8E;&#x94FE;&#x8868;&#x4E0A;&#x6BCF;K&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5C06;&#x5176;&#x9006;&#x7F6E;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1507,7 +1557,7 @@
   <entry>
     <title><![CDATA[PAT-A-1073 Scientific Notation (20)]]></title>
     <url>%2F%2Fposts%2Ffc7b145c%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;&#xFF0C;&#x6C42;&#x8FD9;&#x4E2A;&#x6570;&#x7684;&#x4F20;&#x7EDF;&#x8BA1;&#x6570;&#x6CD5;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;&#xFF0C;&#x6C42;&#x8FD9;&#x4E2A;&#x6570;&#x7684;&#x4F20;&#x7EDF;&#x8BA1;&#x6570;&#x6CD5;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1521,7 +1571,7 @@
   <entry>
     <title><![CDATA[PAT-A-1071 Speech Patterns (25)]]></title>
     <url>%2F%2Fposts%2Fe490869c%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7EDF;&#x8BA1;&#x4E00;&#x884C;&#x5185;&#x51FA;&#x73B0;&#x6700;&#x591A;&#x6B21;&#x6570;&#x7684;&#x5355;&#x8BCD;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7EDF;&#x8BA1;&#x4E00;&#x884C;&#x5185;&#x51FA;&#x73B0;&#x6700;&#x591A;&#x6B21;&#x6570;&#x7684;&#x5355;&#x8BCD;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1535,7 +1585,7 @@
   <entry>
     <title><![CDATA[PAT-A-1070 Mooncake (25)]]></title>
     <url>%2F%2Fposts%2Fcb0684aa%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x51FA;&#x5404;&#x79CD;&#x6708;&#x997C;&#x7684;&#x5E93;&#x5B58;&#x548C;&#x4EF7;&#x683C;&#xFF0C;&#x4EE5;&#x53CA;&#x5E02;&#x573A;&#x7684;&#x6700;&#x5927;&#x9700;&#x6C42;&#xFF0C;&#x6C42;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x7ED9;&#x51FA;&#x5404;&#x79CD;&#x6708;&#x997C;&#x7684;&#x5E93;&#x5B58;&#x548C;&#x4EF7;&#x683C;&#xFF0C;&#x4EE5;&#x53CA;&#x5E02;&#x573A;&#x7684;&#x6700;&#x5927;&#x9700;&#x6C42;&#xFF0C;&#x6C42;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1548,7 +1598,7 @@
   <entry>
     <title><![CDATA[PAT-A-1069 The Black Hole of Numbers (20)]]></title>
     <url>%2F%2Fposts%2Fabc10d4f%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6570;&#x5B57;&#x7684;&#x9ED1;&#x6D1E;&#x3002; &#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x56DB;&#x4F4D;&#x4E0D;&#x76F8;&#x540C;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5148;&#x628A;&#x8FD9;4&#x4E2A;&#x6570;&#x5B57;&#x964D;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x51CF;&#x53BB;&#x5176;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x6240;&#x5F97;&#x7684;&#x6570;&#xFF0C;&#x4F9D;&#x6B21;&#x53CD;&#x590D;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x6C38;&#x8FDC;&#x90FD;&#x4F1A;&#x5F97;&#x5230;6174.&#x79F0;&#x4E4B;&#x4E3A;&#x6570;&#x5B57;&#x9ED1;&#x6D1E;&#xFF0C;&#x7ED9;&#x5B9A;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;4&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x6C42;&#x51FA;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x8FDB;&#x5165;&#x9ED1;&#x6D1E;&#x7684;&#x6B65;&#x9AA4;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6570;&#x5B57;&#x7684;&#x9ED1;&#x6D1E;&#x3002; &#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x56DB;&#x4F4D;&#x4E0D;&#x76F8;&#x540C;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5148;&#x628A;&#x8FD9;4&#x4E2A;&#x6570;&#x5B57;&#x964D;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x51CF;&#x53BB;&#x5176;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x6240;&#x5F97;&#x7684;&#x6570;&#xFF0C;&#x4F9D;&#x6B21;&#x53CD;&#x590D;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x6C38;&#x8FDC;&#x90FD;&#x4F1A;&#x5F97;&#x5230;6174.&#x79F0;&#x4E4B;&#x4E3A;&#x6570;&#x5B57;&#x9ED1;&#x6D1E;&#xFF0C;&#x7ED9;&#x5B9A;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;4&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x6C42;&#x51FA;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x8FDB;&#x5165;&#x9ED1;&#x6D1E;&#x7684;&#x6B65;&#x9AA4;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1561,7 +1611,7 @@
   <entry>
     <title><![CDATA[PAT-A-1067 Sort with Swap(0,*) (25)]]></title>
     <url>%2F%2Fposts%2F4c792048%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x4F7F;&#x7528;Swap(0,* )&#x6765;&#x6392;&#x5E8F;&#x3002;&#x6C42;&#x5BF9;&#x4E8E;&#x7ED9;&#x5B9A;&#x5E8F;&#x5217;&#xFF0C;&#x6700;&#x5C11;&#x7684;&#x4EA4;&#x6362;&#x6B21;&#x6570;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x4F7F;&#x7528;Swap(0,* )&#x6765;&#x6392;&#x5E8F;&#x3002;&#x6C42;&#x5BF9;&#x4E8E;&#x7ED9;&#x5B9A;&#x5E8F;&#x5217;&#xFF0C;&#x6700;&#x5C11;&#x7684;&#x4EA4;&#x6362;&#x6B21;&#x6570;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1574,7 +1624,7 @@
   <entry>
     <title><![CDATA[PAT-A-1065 A+B and C (64bit) (20)]]></title>
     <url>%2F%2Fposts%2Fa2774164%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; 64&#x4F4D;&#x7684;A+B&#x548C;C&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;A+B&gt;C&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;64&#x4F4D;&#x7684;A+B&#x548C;C&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;A+B&gt;C&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1587,7 +1637,7 @@
   <entry>
     <title><![CDATA[PAT-A-1066 Root of AVL Tree (25)]]></title>
     <url>%2F%2Fposts%2F3b7e10de%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4E00;&#x4E2A;AVL&#x6811;&#x7684;&#x6839;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6C42;&#x4E00;&#x4E2A;AVL&#x6811;&#x7684;&#x6839;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1601,7 +1651,7 @@
   <entry>
     <title><![CDATA[PAT-A-1062 Talent and Virtue (25)]]></title>
     <url>%2F%2Fposts%2F3c13d4c7%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x89C4;&#x5219;&#xFF0C;&#x5BF9;&#x5723;&#x4EBA;&#xFF0C;&#x541B;&#x5B50;&#xFF0C;&#x611A;&#x4EBA;&#xFF0C;&#x5C0F;&#x4EBA;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x89C4;&#x5219;&#xFF0C;&#x5BF9;&#x5723;&#x4EBA;&#xFF0C;&#x541B;&#x5B50;&#xFF0C;&#x611A;&#x4EBA;&#xFF0C;&#x5C0F;&#x4EBA;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1614,7 +1664,7 @@
   <entry>
     <title><![CDATA[PAT-A-1061 Dating (20)]]></title>
     <url>%2F%2Fposts%2Fa51a857d%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x798F;&#x5C14;&#x6469;&#x65AF;&#x7834;&#x89E3;&#x5B57;&#x7B26;&#x4E32;&#x5BC6;&#x7801;&#xFF0C;&#x5F97;&#x5230;&#x7EA6;&#x4F1A;&#x65F6;&#x95F4;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x798F;&#x5C14;&#x6469;&#x65AF;&#x7834;&#x89E3;&#x5B57;&#x7B26;&#x4E32;&#x5BC6;&#x7801;&#xFF0C;&#x5F97;&#x5230;&#x7EA6;&#x4F1A;&#x65F6;&#x95F4;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1627,7 +1677,7 @@
   <entry>
     <title><![CDATA[PAT-A-1059 Prime Factors (25)]]></title>
     <url>%2F%2Fposts%2F80ec5e8c%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x5206;&#x89E3;&#x8D28;&#x56E0;&#x6570;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x5206;&#x89E3;&#x8D28;&#x56E0;&#x6570;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1640,7 +1690,7 @@
   <entry>
     <title><![CDATA[PAT-A-1058 A+B in Hogwarts (20)]]></title>
     <url>%2F%2Fposts%2Ff7eb6e1a%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x970D;&#x683C;&#x6C83;&#x5179;&#x7684;&#x8D27;&#x5E01;&#x8BA1;&#x7B97;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#x970D;&#x683C;&#x6C83;&#x5179;&#x7684;&#x8D27;&#x5E01;&#x8BA1;&#x7B97;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1653,7 +1703,7 @@
   <entry>
     <title><![CDATA[PAT-A-1054 The Dominant Color (20)]]></title>
     <url>%2F%2Fposts%2Ffe5d2231%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4E00;&#x4E9B;&#x6570;&#x5B57;&#x4E2D;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x8D85;&#x8FC7;&#x4E00;&#x534A;&#x7684;&#x6570;&#x5B57;.]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4E00;&#x4E9B;&#x6570;&#x5B57;&#x4E2D;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x8D85;&#x8FC7;&#x4E00;&#x534A;&#x7684;&#x6570;&#x5B57;.]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1667,7 +1717,7 @@
   <entry>
     <title><![CDATA[PAT-A-1052 Linked List Sorting (25)]]></title>
     <url>%2F%2Fposts%2F173e8704%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x8981;&#x6C42;&#x6309;&#x952E;&#x503C;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x8981;&#x6C42;&#x6309;&#x952E;&#x503C;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1680,7 +1730,7 @@
   <entry>
     <title><![CDATA[PAT-A-1048 Find Coins (25)]]></title>
     <url>%2F%2Fposts%2Feef05f5b%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x627E;&#x51FA;&#x4E24;&#x679A;&#x786C;&#x5E01;&#xFF0C;&#x4F7F;&#x5176;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x503C;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x627E;&#x51FA;&#x4E24;&#x679A;&#x786C;&#x5E01;&#xFF0C;&#x4F7F;&#x5176;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x503C;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1693,7 +1743,7 @@
   <entry>
     <title><![CDATA[PAT-A-1041 Be Unique (20)]]></title>
     <url>%2F%2Fposts%2F972ce7ff%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x627E;&#x51FA;&#x4E00;&#x5217;&#x6570;&#x5B57;&#x4E2D;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x8FC7;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x627E;&#x51FA;&#x4E00;&#x5217;&#x6570;&#x5B57;&#x4E2D;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x8FC7;&#x4E00;&#x6B21;&#x7684;&#x6570;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1706,7 +1756,7 @@
   <entry>
     <title><![CDATA[PAT-A-1040 Longest Symmetric String (25)]]></title>
     <url>%2F%2Fposts%2Fe02bd769%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6C42;&#x5176;&#x6700;&#x957F;&#x7684;&#x5BF9;&#x79F0;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6C42;&#x5176;&#x6700;&#x957F;&#x7684;&#x5BF9;&#x79F0;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1719,7 +1769,7 @@
   <entry>
     <title><![CDATA[PAT-A-1037 Magic Coupon (25)]]></title>
     <url>%2F%2Fposts%2F310ed40d%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6765;&#x81EA;&#x706B;&#x661F;&#x7684;&#x9B54;&#x6CD5;&#x8D34;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6765;&#x81EA;&#x706B;&#x661F;&#x7684;&#x9B54;&#x6CD5;&#x8D34;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1732,7 +1782,7 @@
   <entry>
     <title><![CDATA[PAT-A-1036 Boys vs Girls (25)]]></title>
     <url>%2F%2Fposts%2F4609e49b%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x6210;&#x7EE9;&#x6700;&#x597D;&#x7684;&#x5973;&#x751F;&#x548C;&#x6210;&#x7EE9;&#x6700;&#x5DEE;&#x7684;&#x7537;&#x751F;&#x4E4B;&#x95F4;&#x7684;&#x5206;&#x6570;&#x5DEE;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x6210;&#x7EE9;&#x6700;&#x597D;&#x7684;&#x5973;&#x751F;&#x548C;&#x6210;&#x7EE9;&#x6700;&#x5DEE;&#x7684;&#x7537;&#x751F;&#x4E4B;&#x95F4;&#x7684;&#x5206;&#x6570;&#x5DEE;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1746,7 +1796,7 @@
   <entry>
     <title><![CDATA[PAT-A-1033 To Fill or Not to Fill (25)]]></title>
     <url>%2F%2Fposts%2F36631014%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8F66;&#x5728;&#x9AD8;&#x901F;&#x8DEF;&#x4E0A;&#x8DD1;&#xFF0C;&#x7531;&#x4E8E;&#x6CB9;&#x7BB1;&#x5BB9;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x9700;&#x8981;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x52A0;&#x6CB9;&#xFF0C;&#x52A0;&#x591A;&#x5C11;&#x3002;&#x6C42;&#x6700;&#x7701;&#x94B1;&#x7684;&#x65B9;&#x5F0F;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x8F66;&#x5728;&#x9AD8;&#x901F;&#x8DEF;&#x4E0A;&#x8DD1;&#xFF0C;&#x7531;&#x4E8E;&#x6CB9;&#x7BB1;&#x5BB9;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x9700;&#x8981;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x52A0;&#x6CB9;&#xFF0C;&#x52A0;&#x591A;&#x5C11;&#x3002;&#x6C42;&#x6700;&#x7701;&#x94B1;&#x7684;&#x65B9;&#x5F0F;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1759,7 +1809,7 @@
   <entry>
     <title><![CDATA[PAT-A-1032 Sharing (25)]]></title>
     <url>%2F%2Fposts%2F41642082%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x94FE;&#x8868;&#x904D;&#x5386;&#xFF0C;&#x6C42;&#x6700;&#x65E9;&#x7684;&#x516C;&#x5171;&#x8282;&#x70B9;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x94FE;&#x8868;&#x904D;&#x5386;&#xFF0C;&#x6C42;&#x6700;&#x65E9;&#x7684;&#x516C;&#x5171;&#x8282;&#x70B9;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1772,7 +1822,7 @@
   <entry>
     <title><![CDATA[PAT-A-1029 Median (25)]]></title>
     <url>%2F%2Fposts%2Fcfadc84b%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x7684;&#x4E0A;&#x5347;&#x5E8F;&#x5217;&#xFF0C;&#x8981;&#x6C42;&#x627E;&#x5230;&#x4ED6;&#x4EEC;&#x7684;&#x4E2D;&#x4F4D;&#x6570;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x7ED9;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x7684;&#x4E0A;&#x5347;&#x5E8F;&#x5217;&#xFF0C;&#x8981;&#x6C42;&#x627E;&#x5230;&#x4ED6;&#x4EEC;&#x7684;&#x4E2D;&#x4F4D;&#x6570;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1786,7 +1836,7 @@
   <entry>
     <title><![CDATA[PAT-A-1028 List Sorting (25)]]></title>
     <url>%2F%2Fposts%2Fb8aaf8dd%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6309;&#x7ED9;&#x5B9A;&#x8981;&#x6C42;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6309;&#x7ED9;&#x5B9A;&#x8981;&#x6C42;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1799,7 +1849,7 @@
   <entry>
     <title><![CDATA[PAT-A-1025 PAT Ranking (25)]]></title>
     <url>%2F%2Fposts%2Fc61b8460%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; PAT&#x8003;&#x8BD5;&#x5728;&#x597D;&#x51E0;&#x4E2A;&#x5730;&#x65B9;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#xFF0C;&#x6D4B;&#x8BD5;&#x540E;&#x5C31;&#x8FDB;&#x884C;&#x6392;&#x540D;&#xFF0C;&#x8981;&#x6C42;&#x4F60;&#x7EDF;&#x8BA1;&#x6392;&#x540D;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; PAT&#x8003;&#x8BD5;&#x5728;&#x597D;&#x51E0;&#x4E2A;&#x5730;&#x65B9;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#xFF0C;&#x6D4B;&#x8BD5;&#x540E;&#x5C31;&#x8FDB;&#x884C;&#x6392;&#x540D;&#xFF0C;&#x8981;&#x6C42;&#x4F60;&#x7EDF;&#x8BA1;&#x6392;&#x540D;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1812,7 +1862,7 @@
   <entry>
     <title><![CDATA[PAT-A-1024 Palindromic Number (25)]]></title>
     <url>%2F%2Fposts%2Fb11cb4f6%2F</url>
-    <content type="text"><![CDATA[&#x9898;&#x76EE; &#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4E00;&#x4E2A;&#x6570;&#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x6587;&#x6570;&#x3002;&#x6BD4;&#x5982;&#x8F93;&#x5165;67&#x3000;3&#x3002;&#x5373;&#x8981;&#x6C42;&#x662F;&#x5728;3&#x6B65;&#x4E4B;&#x5185;&#x627E;&#x5230;&#x56DE;&#x6587;&#x6570;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x9898;&#x76EE;&#x9898;&#x76EE;&#x94FE;&#x63A5; &#x6C42;&#x4E00;&#x4E2A;&#x6570;&#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x6587;&#x6570;&#x3002;&#x6BD4;&#x5982;&#x8F93;&#x5165;67&#x3000;3&#x3002;&#x5373;&#x8981;&#x6C42;&#x662F;&#x5728;3&#x6B65;&#x4E4B;&#x5185;&#x627E;&#x5230;&#x56DE;&#x6587;&#x6570;&#x3002;]]></content>
       <categories>
         <category>PAT-A</category>
       </categories>
@@ -1825,7 +1875,7 @@
   <entry>
     <title><![CDATA[并查集]]></title>
     <url>%2F%2Fposts%2Fc517589e%2F</url>
-    <content type="text"><![CDATA[&#x6982;&#x8FF0; &#x6211;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#x5E76;&#x67E5;&#x96C6;&#x66F4;&#x50CF;&#x662F;&#x6811;&#x7684;&#x7236;&#x6BCD;&#x8868;&#x793A;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x56FE;&#x662F;&#x5426;&#x8FDE;&#x901A;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x6982;&#x8FF0;&#x6211;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#x5E76;&#x67E5;&#x96C6;&#x66F4;&#x50CF;&#x662F;&#x6811;&#x7684;&#x7236;&#x6BCD;&#x8868;&#x793A;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x56FE;&#x662F;&#x5426;&#x8FDE;&#x901A;&#x3002;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -1838,7 +1888,7 @@
   <entry>
     <title><![CDATA[快排为什么那么快]]></title>
     <url>%2F%2Fposts%2Fae807e52%2F</url>
-    <content type="text"><![CDATA[&#x603B;&#x8FF0; &#x3000;&#x3000;&#x6709;&#x8BB8;&#x591A;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(nlog2n)&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5FEB;&#x6392;&#xFF0C;&#x7406;&#x7531;&#x5982;&#x4E0B;&#xFF1A; &#x3000;&#x3000;&#x8FD9;&#x4E9B;&#x7B97;&#x6CD5;&#x7684;&#x57FA;&#x672C;&#x6267;&#x884C;&#x6B21;&#x6570;&#x7684;&#x591A;&#x9879;&#x5F0F;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x4E3A;X*nlog2n&#xFF0C;X&#x4E3A;&#x7CFB;&#x6570;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x7684;X&#x6700;&#x5C0F;&#x3002;&#x4ED6;&#x5728;&#x540C;&#x7EA7;&#x522B;&#x7684;&#x7B97;&#x6CD5;&#x4E2D;&#x662F;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x53EB;&#x5FEB;&#x6392;&#x3002; # &#x4E3A;&#x4EC0;&#x4E48;X&#x662F;&#x6700;&#x5C0F;&#x7684; &#x3000;&#x3000;&#x5176;&#x5B9E;&#x4E0A;&#x9762;&#x90A3;&#x53E5;&#x8BDD;&#xFF0C;&#x8BF4;&#x4E86;&#x548C;&#x6CA1;&#x8BF4;&#x6CA1;&#x4EC0;&#x4E48;&#x4E24;&#x6837;&#x3002;&#x672C;&#x8D28;&#x5728;&#x4E8E;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;X&#x662F;&#x6700;&#x5C0F;&#x7684;&#x3002;]]></content>
+    <content type="text"><![CDATA[&#x603B;&#x8FF0;&#x3000;&#x3000;&#x6709;&#x8BB8;&#x591A;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(nlog2n)&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5FEB;&#x6392;&#xFF0C;&#x7406;&#x7531;&#x5982;&#x4E0B;&#xFF1A; &#x3000;&#x3000;&#x8FD9;&#x4E9B;&#x7B97;&#x6CD5;&#x7684;&#x57FA;&#x672C;&#x6267;&#x884C;&#x6B21;&#x6570;&#x7684;&#x591A;&#x9879;&#x5F0F;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x4E3A;X*nlog2n&#xFF0C;X&#x4E3A;&#x7CFB;&#x6570;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x7684;X&#x6700;&#x5C0F;&#x3002;&#x4ED6;&#x5728;&#x540C;&#x7EA7;&#x522B;&#x7684;&#x7B97;&#x6CD5;&#x4E2D;&#x662F;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x53EB;&#x5FEB;&#x6392;&#x3002; &#x4E3A;&#x4EC0;&#x4E48;X&#x662F;&#x6700;&#x5C0F;&#x7684;&#x3000;&#x3000;&#x5176;&#x5B9E;&#x4E0A;&#x9762;&#x90A3;&#x53E5;&#x8BDD;&#xFF0C;&#x8BF4;&#x4E86;&#x548C;&#x6CA1;&#x8BF4;&#x6CA1;&#x4EC0;&#x4E48;&#x4E24;&#x6837;&#x3002;&#x672C;&#x8D28;&#x5728;&#x4E8E;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;X&#x662F;&#x6700;&#x5C0F;&#x7684;&#x3002;]]></content>
       <categories>
         <category>算法</category>
       </categories>
