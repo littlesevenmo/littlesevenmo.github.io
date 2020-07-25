@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[01背包算法笔记]]></title>
+    <url>%2F%2Fposts%2Fb07a74da%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>背包问题</category>
+      </categories>
+      <tags>
+        <tag>背包问题</tag>
+        <tag>01背包</tag>
+        <tag>算法笔记</tag>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[浅谈DNS智能解析]]></title>
     <url>%2F%2Fposts%2F204f772a%2F</url>
     <content type="text"><![CDATA[&#x5982;&#x4F55;&#x8BA9;DNS&#x89E3;&#x6790;&#x66F4;&#x52A0;&#x667A;&#x80FD;&#xFF1F;]]></content>
@@ -178,7 +192,6 @@
         <category>算法题</category>
       </categories>
       <tags>
-        <tag>旷视</tag>
         <tag>面试</tag>
         <tag>找实习</tag>
         <tag>数论</tag>
@@ -223,8 +236,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -276,8 +289,8 @@
         <category>校招真题</category>
       </categories>
       <tags>
-        <tag>校招真题</tag>
         <tag>算法</tag>
+        <tag>校招真题</tag>
       </tags>
   </entry>
   <entry>
@@ -453,8 +466,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
+        <tag>笔记</tag>
         <tag>复习</tag>
       </tags>
   </entry>
@@ -466,8 +479,8 @@
         <category>智能机器人</category>
       </categories>
       <tags>
-        <tag>实验报告</tag>
         <tag>C++</tag>
+        <tag>实验报告</tag>
         <tag>OpenCV</tag>
         <tag>双目相机</tag>
         <tag>单目相机</tag>
@@ -545,8 +558,8 @@
         <category>智能机器人</category>
       </categories>
       <tags>
-        <tag>实验报告</tag>
         <tag>C++</tag>
+        <tag>实验报告</tag>
         <tag>OpenCV</tag>
         <tag>物体检测</tag>
         <tag>掩模</tag>
@@ -562,8 +575,8 @@
         <category>智能机器人</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>C++</tag>
+        <tag>笔记</tag>
         <tag>Eigen</tag>
         <tag>Cmake</tag>
       </tags>
@@ -670,15 +683,15 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>01背包</tag>
         <tag>动态规划</tag>
         <tag>NP-Hard</tag>
-        <tag>01背包</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[读研日记]]></title>
     <url>%2F%2Fposts%2F52379290%2F</url>
-    <content type="text"><![CDATA[我的读研日记。谨以此文记录我的研究生生涯。]]></content>
+    <content type="text"><![CDATA[&#x6211;&#x7684;&#x8BFB;&#x7814;&#x65E5;&#x8BB0;&#x3002;&#x8C28;&#x4EE5;&#x6B64;&#x6587;&#x8BB0;&#x5F55;&#x6211;&#x7684;&#x7814;&#x7A76;&#x751F;&#x751F;&#x6DAF;&#x3002;]]></content>
       <categories>
         <category>日记</category>
       </categories>
@@ -850,8 +863,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>并查集</tag>
       </tags>
   </entry>
@@ -863,8 +876,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -876,8 +889,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -889,8 +902,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>二叉搜索树</tag>
         <tag>层次遍历</tag>
       </tags>
@@ -903,8 +916,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>Dijkstra</tag>
         <tag>DFS</tag>
         <tag>最短路径</tag>
@@ -918,8 +931,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>完全二叉树</tag>
         <tag>层次遍历</tag>
       </tags>
@@ -932,8 +945,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -945,8 +958,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -958,8 +971,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>并查集</tag>
       </tags>
   </entry>
@@ -971,8 +984,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>层次遍历</tag>
         <tag>树</tag>
       </tags>
@@ -985,8 +998,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -998,8 +1011,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>数学</tag>
       </tags>
   </entry>
@@ -1011,8 +1024,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>DFS</tag>
         <tag>记忆化搜索</tag>
       </tags>
@@ -1025,8 +1038,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>二叉树</tag>
       </tags>
   </entry>
@@ -1038,8 +1051,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
         <tag>Map</tag>
       </tags>
@@ -1052,8 +1065,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
         <tag>插入排序</tag>
         <tag>堆排序</tag>
@@ -1068,8 +1081,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>BFS</tag>
         <tag>DFS</tag>
         <tag>图的遍历</tag>
@@ -1083,8 +1096,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>Dijkstra</tag>
         <tag>DFS</tag>
         <tag>最短路径</tag>
@@ -1098,8 +1111,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>快速排序</tag>
       </tags>
   </entry>
@@ -1111,8 +1124,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>C++ STL</tag>
         <tag>字符串处理</tag>
         <tag>Map</tag>
@@ -1126,8 +1139,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -1139,8 +1152,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>逻辑</tag>
       </tags>
   </entry>
@@ -1152,8 +1165,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>层次遍历</tag>
         <tag>树的遍历</tag>
       </tags>
@@ -1166,8 +1179,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>乘法原理</tag>
         <tag>数学</tag>
       </tags>
@@ -1180,8 +1193,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串</tag>
         <tag>Hash</tag>
       </tags>
@@ -1194,8 +1207,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>分数</tag>
         <tag>四则运算</tag>
       </tags>
@@ -1208,8 +1221,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>层次遍历</tag>
         <tag>树</tag>
       </tags>
@@ -1222,8 +1235,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
         <tag>插入排序</tag>
         <tag>归并排序</tag>
@@ -1237,8 +1250,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>二叉树</tag>
         <tag>前序遍历</tag>
         <tag>中序遍历</tag>
@@ -1252,8 +1265,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>STL</tag>
         <tag>二分法查找</tag>
       </tags>
@@ -1266,8 +1279,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串处理</tag>
         <tag>STL</tag>
       </tags>
@@ -1280,8 +1293,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -1293,8 +1306,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>分数加法</tag>
         <tag>辗转相除法</tag>
         <tag>最大公约数</tag>
@@ -1308,8 +1321,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -1321,8 +1334,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -1334,8 +1347,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -1347,8 +1360,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>Hash</tag>
         <tag>平方探查法</tag>
       </tags>
@@ -1361,8 +1374,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -1451,8 +1464,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>二叉搜索树</tag>
         <tag>完全二叉树</tag>
       </tags>
@@ -1465,8 +1478,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>C++ STL</tag>
         <tag>C++ set</tag>
       </tags>
@@ -1479,8 +1492,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>数学问题</tag>
         <tag>乘法原理</tag>
         <tag>加法原理</tag>
@@ -1511,8 +1524,8 @@
       </categories>
       <tags>
         <tag>动态规划</tag>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>最长上升子序列</tag>
       </tags>
   </entry>
@@ -1524,10 +1537,10 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>01背包</tag>
-        <tag>算法</tag>
-        <tag>PAT</tag>
         <tag>背包问题</tag>
+        <tag>01背包</tag>
+        <tag>PAT</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1538,8 +1551,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>图论</tag>
         <tag>Dijkstra</tag>
       </tags>
@@ -1552,8 +1565,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>BFS</tag>
       </tags>
   </entry>
@@ -1565,8 +1578,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -1578,8 +1591,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -1591,8 +1604,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>C++ STL</tag>
         <tag>字符串处理</tag>
       </tags>
@@ -1605,8 +1618,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>C++ STL</tag>
         <tag>Map映射</tag>
       </tags>
@@ -1619,8 +1632,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -1632,8 +1645,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -1645,8 +1658,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -1658,8 +1671,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>判断溢出</tag>
       </tags>
   </entry>
@@ -1671,10 +1684,10 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
-        <tag>AVL Tree</tag>
+        <tag>算法</tag>
         <tag>模拟</tag>
+        <tag>AVL Tree</tag>
       </tags>
   </entry>
   <entry>
@@ -1685,8 +1698,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -1698,8 +1711,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -1711,8 +1724,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>分解质因数</tag>
       </tags>
   </entry>
@@ -1724,8 +1737,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>进制转换</tag>
       </tags>
   </entry>
@@ -1737,8 +1750,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>map映射</tag>
         <tag>C++ STL</tag>
       </tags>
@@ -1751,8 +1764,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -1764,8 +1777,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>Hash散列</tag>
       </tags>
   </entry>
@@ -1777,8 +1790,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>Hash散列</tag>
       </tags>
   </entry>
@@ -1791,8 +1804,8 @@
       </categories>
       <tags>
         <tag>动态规划</tag>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1803,8 +1816,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -1816,8 +1829,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
         <tag>查找</tag>
       </tags>
@@ -1830,8 +1843,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -1843,8 +1856,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -1856,8 +1869,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
         <tag>中位数</tag>
       </tags>
@@ -1870,8 +1883,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -1883,8 +1896,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>排序</tag>
       </tags>
   </entry>
@@ -1896,8 +1909,8 @@
         <category>PAT-A</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>PAT</tag>
+        <tag>算法</tag>
         <tag>回文数</tag>
       </tags>
   </entry>
