@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://www.windsings.com/posts/742bf6ac/1595622696669.png">
 <meta property="og:image" content="https://www.windsings.com/posts/742bf6ac/1595626403791.png">
 <meta property="og:image" content="https://www.windsings.com/posts/742bf6ac/zh-cn_image_0253273506.png">
-<meta property="og:updated_time" content="2020-07-24T22:09:37.320Z">
+<meta property="og:updated_time" content="2020-07-25T05:06:00.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈DNS解析">
 <meta name="twitter:description" content="&amp;#x5F53;&amp;#x4F60;&amp;#x8BBF;&amp;#x95EE;windsings.com&amp;#x65F6;&amp;#xFF0C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x4E16;&amp;#x754C;&amp;#x90FD;&amp;#x53D1;&amp;#x751F;&amp;#x4E86;&amp;#x4EC0;&amp;#x4E48;&amp;#xFF1F;">
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="创建时间：2020-07-25 04:28:59 / 修改时间：06:09:37" itemprop="dateCreated datePublished" datetime="2020-07-25T04:28:59+08:00">2020-07-25</time>
+              <time title="创建时间：2020-07-25 04:28:59 / 修改时间：13:06:00" itemprop="dateCreated datePublished" datetime="2020-07-25T04:28:59+08:00">2020-07-25</time>
             
 
             
@@ -484,7 +484,7 @@
 <p>&#x8FD9;&#x65F6;&#xFF0C;&#x8BBF;&#x95EE;106.11.141.115&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x4ED6;&#x7684;&#x535A;&#x5BA2;&#x3002;</p>
 <h1 id="&#x4E00;&#x4E2A;ip&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;">&#x4E00;&#x4E2A;IP&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;</h1>
 <p>&#x8FD9;&#x662F;&#x6211;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x540C;&#x5B66;&#x7684;&#x535A;&#x5BA2;&#xFF1A;cjh.zone&#xFF0C;&#x5F53;dig cjh.zone&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    intel@intel-pc:~$ dig cjh.zone</span><br><span class="line">    </span><br><span class="line">    ; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; cjh.zone</span><br><span class="line">    ;; global options: +cmd</span><br><span class="line">    ;; Got answer:</span><br><span class="line">    ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 47702</span><br><span class="line">    ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line">    </span><br><span class="line">    ;; QUESTION SECTION:</span><br><span class="line">    ;cjh.zone.                      IN      A</span><br><span class="line">    </span><br><span class="line">    ;; ANSWER SECTION:</span><br><span class="line">    cjh.zone.               300     IN      A       185.199.111.153</span><br><span class="line">    </span><br><span class="line">    ;; Query time: 64 msec</span><br><span class="line">    ;; SERVER: 127.0.1.1#53(127.0.1.1)</span><br><span class="line">    ;; WHEN: Fri Jul 24 18:09:24 CST 2020</span><br><span class="line">;; MSG SIZE  rcvd: 42</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig cjh.zone</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; cjh.zone</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 47702</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;cjh.zone.                      IN      A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">cjh.zone.               300     IN      A       185.199.111.153</span><br><span class="line"></span><br><span class="line">;; Query time: 64 msec</span><br><span class="line">;; SERVER: 127.0.1.1#53(127.0.1.1)</span><br><span class="line">;; WHEN: Fri Jul 24 18:09:24 CST 2020</span><br><span class="line">;; MSG SIZE  rcvd: 42</span><br></pre></td></tr></table></figure>
 <p>&#x5F53;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;IP&#xFF1A;185.199.111.153 &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;github&#x7684;404&#x754C;&#x9762;&#xFF1A;</p>
 <p><img src="/posts/742bf6ac/1595626403791.png"></p>
 <p>&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x4E2A;&#x4E3B;&#x673A;&#x4E0B;&#xFF0C;&#x6709;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;&#x3002;</p>
@@ -555,6 +555,8 @@
 <p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ gcc code1.cpp</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ls</span><br><span class="line">a.out  code1.cpp</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">119.28.89.140</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">45.137.10.76</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">119.28.89.140</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">154.209.235.56</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$</span><br></pre></td></tr></table></figure>
 <p>&#x53EF;&#x89C1;&#xFF0C;3&#x4E2A;IP&#x90FD;&#x88AB;&#x6253;&#x5370;&#x51FA;&#x6765;&#x4E86;&#x3002;</p>
+<p>&#x5728;&#x8FFD;&#x8E2A;&#x7684;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;DNS&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;&#x662F;smartgslb&#xFF0C;&#x81EA;&#x7136;&#x60F3;&#x5230;&#x4E86;&#x57FA;&#x4E8E;DNS&#x89E3;&#x6790;&#x7684;&#x5168;&#x5C40;&#x8D1F;&#x8F7D;&#x5747;&#x8861;GSLB&#xFF0C;&#x6211;&#x539A;&#x7740;&#x8138;&#x76AE;&#x53D1;&#x5DE5;&#x5355;&#x95EE;&#x5BA2;&#x670D;&#xFF0C;&#x8BE2;&#x95EE;&#x5230;&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x80CC;&#x540E;&#x662F;&#x4E00;&#x4E2A;&#x53EB;&#x667A;&#x80FD;&#x89E3;&#x6790;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5F53;&#x6211;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x7684;IP&#x5730;&#x5740;&#x5728;&#x4E9A;&#x6D32;&#xFF0C;&#x56E0;&#x6B64;&#x667A;&#x80FD;DNS&#x89E3;&#x6790;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E9A;&#x6D32;&#x7684;IP&#x3002;&#x8FD9;&#x4E09;&#x4E2A;IP&#x7531;&#x6211;&#x7684;&#x7535;&#x8111;&#x81EA;&#x884C;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#xFF08;&#x4E00;&#x822C;&#x5C31;&#x662F;&#x8BBF;&#x95EE;&#x7B2C;&#x4E00;&#x4E2A;&#xFF09;&#xFF0C;&#x5173;&#x4E8E;&#x667A;&#x80FD;&#x89E3;&#x6790;&#xFF0C;&#x6211;&#x53E6;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x7B80;&#x8FF0;&#x3002;</p>
 <p>&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x4F7F;&#x7528;&#x4E86;CDN&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E09;&#x4E2A;IP&#x5176;&#x5B9E;&#x662F;CDN&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5173;&#x4E8E;CDN&#xFF0C;&#x6211;&#x53E6;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x7B80;&#x8FF0;&#x3002;</p>
 
       
@@ -604,6 +606,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/204f772a/" rel="prev" title="浅谈DNS智能解析">
+                浅谈DNS智能解析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -682,7 +688,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">137</span>
+                    <span class="site-state-item-count">138</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1128,7 +1134,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">187</span>
+                      
+                    
+                    <span class="site-state-item-count">188</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
