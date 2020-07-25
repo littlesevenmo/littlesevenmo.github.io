@@ -6,7 +6,7 @@
       <title>01背包算法笔记</title>
       <link href="//posts/b07a74da/"/>
       <url>//posts/b07a74da/</url>
-      <content type="html"><![CDATA[<h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1><p>&#x7ED9;&#x5B9A;&#x4E00;&#x7EC4;&#x7269;&#x54C1;&#xFF0C;&#x4E00;&#x5171;<span class="math inline">\(n\)</span>&#x4E2A;&#xFF0C;&#x6BCF;&#x4EF6;&#x7269;&#x54C1;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x91CD;&#x91CF;&#xFF08;<span class="math inline">\(weight\)</span>&#xFF09;&#x548C;&#x4EF7;&#x503C;&#xFF08;<span class="math inline">\(value\)</span>&#xFF09;&#xFF0C;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x627F;&#x91CD;&#x4E3A;<span class="math inline">\(C\)</span>&#x7684;&#x80CC;&#x5305;&#xFF0C;&#x6BCF;&#x4E2A;&#x7269;&#x54C1;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x62FF;&#x6216;&#x8005;&#x4E0D;&#x62FF;&#xFF0C;&#x95EE;&#x8FD9;&#x4E2A;&#x80CC;&#x5305;&#x6700;&#x591A;&#x80FD;&#x5E26;&#x8D70;&#x7684;&#x6700;&#x591A;&#x7684;&#x7269;&#x54C1;&#x603B;&#x4EF7;&#x503C;&#x662F;&#x591A;&#x5C11;</p><h1 id="&#x95EE;&#x9898;&#x5206;&#x6790;">&#x95EE;&#x9898;&#x5206;&#x6790;</h1><p>&#x8D2A;&#x5A6A;&#x7B97;&#x6CD5;&#x662F;&#x65E0;&#x6CD5;&#x6C42;&#x6700;&#x4F18;&#x89E3;&#x7684;&#x3002;</p><p>&#x80CC;&#x5305;&#x95EE;&#x9898;&#x5177;&#x6709;&#x6700;&#x4F18;&#x5B50;&#x7ED3;&#x6784;&#x6027;&#x8D28;&#xFF0C;&#x6240;&#x8C13;&#x6700;&#x4F18;&#x5B50;&#x7ED3;&#x6784;&#x6027;&#x8D28;&#x662F;&#x6307;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x6700;&#x4F18;&#x89E3;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x90FD;&#x662F;&#x6700;&#x4F18;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x6C42;&#x89E3;&#x3002;</p><p>&#x5B9A;&#x4E49;&#x5B50;&#x95EE;&#x9898;<span class="math inline">\(P(i, W)\)</span>&#x4E3A;&#x5728;&#x524D;<span class="math inline">\(i\)</span>&#x4E2A;&#x7269;&#x54C1;&#x603B;&#x6311;&#x9009;&#x603B;&#x91CD;&#x91CF;&#x4E0D;&#x8D85;&#x8FC7;<span class="math inline">\(W\)</span>&#x7684;&#x7269;&#x54C1;&#xFF0C;&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x9009;&#x4E00;&#x4E2A;&#xFF0C;&#x4F7F;&#x603B;&#x4EF7;&#x503C;&#x6700;&#x5927;&#x3002;</p><p>&#x8003;&#x8651;&#x7B2C;<span class="math inline">\(i\)</span>&#x4E2A;&#x7269;&#x54C1;&#xFF0C;&#x5C31;&#x4E24;&#x4E2A;&#x9009;&#x62E9;&#xFF1A;&#x9009;&#x6216;&#x8005;&#x4E0D;&#x9009;&#x3002;</p><p>&#x4E0D;&#x9009;&#x7684;&#x8BDD;&#xFF0C;&#x80CC;&#x5305;&#x7684;&#x5BB9;&#x91CF;&#x4E0D;&#x53D8;&#xFF0C;&#x53D8;&#x6210;&#x5B50;&#x95EE;&#x9898;&#xFF1A;<span class="math inline">\(P(i-1, W)\)</span></p><p>&#x9009;&#x7684;&#x8BDD;&#xFF0C;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x53D8;&#x5C0F;&#xFF0C;&#x53D8;&#x6210;&#x5B50;&#x95EE;&#x9898;&#xFF1A;<span class="math inline">\(P(i-1, W-w_i)\)</span>&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x6B64;&#x65F6;&#x80CC;&#x5305;&#x5185;&#x7684;&#x5546;&#x54C1;&#x4EF7;&#x503C;&#x53D8;&#x9AD8;&#x3002;</p><p>&#x6700;&#x4F18;&#x7684;&#x65B9;&#x6848;&#x5C31;&#x662F;&#x6BD4;&#x8F83;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6848;&#xFF0C;&#x54EA;&#x4E2A;&#x80CC;&#x5305;&#x91CC;&#x9762;&#x7684;&#x4EF7;&#x503C;&#x66F4;&#x9AD8;&#x3002;</p><p>&#x5B9A;&#x4E49;<span class="math inline">\(m(i, W)\)</span>&#x4E3A;&#x5728;<span class="math inline">\(P(i, W)\)</span>&#x4E0B;&#x7684;&#x6700;&#x5927;&#x4EF7;&#x503C;&#x3002;&#x90A3;&#x4E48;&#x6709;&#xFF1A;</p><p><span class="math display">\[m(i, W)=max(m(i-1,W),m(i-1,W-w_i)+v_i)\]</span></p><p><img src="/posts/b07a74da/v2-1d8090c991ca13cee3cb43c027b72304_r.jpg"></p><p>&#x53E6;&#x5916;&#x8003;&#x8651;&#x5230;&#x8FB9;&#x754C;&#x60C5;&#x51B5;&#xFF0C;&#x6700;&#x540E;&#x5F97;&#x5230;&#x7684;&#x89E3;&#x9898;&#x516C;&#x5F0F;&#x662F;&#xFF1A; <span class="math display">\[m(i, W)=\left\{\begin{array}{ll}0 &amp; \text { if } i=0 \\ 0 &amp; \text { if } W=0 \\ m(i-1, W) &amp; \text { if } w_{i}&gt;W \\ \max \left\{m(i-1, W), v_{i}+m\left(i-1, W-w_{i}\right)\right\} &amp; \text { otherwise }\end{array}\right.\]</span></p><h1 id="&#x4F8B;">&#x4F8B;</h1><p>&#x6709;5&#x4E2A;&#x7269;&#x54C1;&#xFF0C;&#xFF08;&#x91CD;&#x91CF;&#xFF0C;&#x4EF7;&#x503C;&#xFF09;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#xFF08;5&#xFF0C;12&#xFF09;&#xFF0C;&#xFF08;4&#xFF0C;3&#xFF09;&#xFF0C;&#xFF08;7&#xFF0C;10&#xFF09;&#xFF0C;&#xFF08;2&#xFF0C;3&#xFF09;&#xFF0C;&#xFF08;6&#xFF0C;6&#xFF09;&#x3002;</p><p>&#x6709;&#x5982;&#x4E0B;&#x9012;&#x63A8;&#x8868;&#x683C;&#xFF1A;</p><table><thead><tr class="header"><th>&#x80CC;&#x5305;&#x5BB9;&#x91CF;</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr></thead><tbody><tr class="odd"><td>&#x6700;&#x591A;&#x653E;5&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>6</td><td>12</td><td>12</td><td>15</td><td>15</td><td>18</td><td>22</td><td>22</td><td>25</td><td>25</td></tr><tr class="even"><td>&#x6700;&#x591A;&#x653E;4&#x4EF6;</td><td>0</td><td>0</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>12</td><td>12</td><td>15</td><td>15</td><td>18</td><td>22</td><td>22</td><td>25</td><td>25</td></tr><tr class="odd"><td>&#x6700;&#x591A;&#x653E;3&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td>12</td><td>15</td><td>15</td><td>15</td><td>22</td><td>22</td><td>22</td><td>22</td></tr><tr class="even"><td>&#x6700;&#x591A;&#x653E;2&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>12</td><td>12</td><td>12</td><td>12</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td></tr><tr class="odd"><td>&#x6700;&#x591A;&#x653E;1&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td></tr></tbody></table><p>&#x4EE3;&#x7801;&#xFF1A;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> w[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> v[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;<span class="comment">//&#x6709;5&#x4E2A;&#x7269;&#x54C1;</span></span><br><span class="line">    <span class="keyword">int</span> C = <span class="number">15</span>;<span class="comment">//&#x5047;&#x5B9A;&#x80CC;&#x5305;&#x7684;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x4E3A;15</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; i++)</span><br><span class="line">    {</span><br><span class="line">        dp[i].resize(C + <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= C; j++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (j &lt; w[i])<span class="comment">//&#x653E;&#x4E0D;&#x4E0B;</span></span><br><span class="line">                dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - w[i]] + v[i]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[n][C] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="math inline">\(O(Cn)\)</span>&#xFF0C;<span class="math inline">\(C\)</span>&#x8868;&#x793A;&#x80CC;&#x5305;&#x7684;&#x5BB9;&#x91CF;&#xFF0C;<span class="math inline">\(n\)</span>&#x8868;&#x793A;&#x7269;&#x54C1;&#x7684;&#x6570;&#x91CF;&#x3002;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E0D;&#x80FD;&#x5728;&#x4F18;&#x5316;&#x4E86;</p><p>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x5230;<span class="math inline">\(O(C)\)</span></p><p>&#x5728;&#x4F18;&#x5316;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x80AF;&#x5B9A;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x5FAA;&#x73AF;<span class="math inline">\(i=1...n\)</span>&#xFF0C;&#x6BCF;&#x6B21;&#x7B97;&#x51FA;&#x6765;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;<span class="math inline">\(dp[i][0...C]\)</span>&#x7684;&#x6240;&#x6709;&#x503C;&#x3002;&#x5982;&#x679C;&#x60F3;&#x53EA;&#x7528;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x7B2C;<span class="math inline">\(i\)</span>&#x6B21;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;<span class="math inline">\(dp\)</span>&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;<span class="math inline">\(dp[i]\)</span>&#x3002;</p><p>&#x53C8;&#x7531;&#x4E8E;<span class="math inline">\(dp[i][j]\)</span>&#x662F;&#x7531;<span class="math inline">\(dp[i-1][j]\)</span>&#x548C;<span class="math inline">\(dp[i-1][j-w[i]]\)</span>&#x8FD9;&#x4E24;&#x4E2A;&#x5B50;&#x95EE;&#x9898;&#x9012;&#x63A8;&#x800C;&#x6765;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x4E00;&#x4F4D;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;<span class="math inline">\(C...0\)</span>&#x7684;&#x987A;&#x5E8F;&#x9012;&#x63A8;<span class="math inline">\(dp[i]\)</span>&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x8BA1;&#x7B97;<span class="math inline">\(dp[i]\)</span>&#x65F6;&#xFF0C;<span class="math inline">\(dp[i]\)</span>&#x73B0;&#x6709;&#x7684;&#x503C;&#x662F;<span class="math inline">\(dp[i-1][j]\)</span>&#xFF0C;<span class="math inline">\(dp[j-w[i]]\)</span>&#x662F;<span class="math inline">\(dp[i-1][j-w[i]]\)</span>&#x3002;</p><p>&#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> w[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> v[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;<span class="comment">//&#x6709;5&#x4E2A;&#x7269;&#x54C1;</span></span><br><span class="line">    <span class="keyword">int</span> C = <span class="number">15</span>;<span class="comment">//&#x5047;&#x5B9A;&#x80CC;&#x5305;&#x7684;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x4E3A;15</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(C + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = C; j &gt; w[i]; j--)</span><br><span class="line">        {</span><br><span class="line">            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[C] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x5173;&#x4E8E;01&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x95EE;&#x6CD5;&#xFF1A;&#x8981;&#x6C42;&#x6070;&#x597D;&#x88C5;&#x6EE1;&#x80CC;&#x5305;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x662F;&#x5E0C;&#x671B;&#x4EF7;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5927;&#x3002;</p><p>&#x5982;&#x679C;&#x662F;&#x6070;&#x597D;&#x88C5;&#x6EE1;&#x80CC;&#x5305;&#xFF0C;&#x5219;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x628A;&#x9664;&#x4E86;<span class="math inline">\(dp[0]=0\)</span>&#x5176;&#x4ED6;&#x7684;<span class="math inline">\(dp[1...C]= -&#x221E;\)</span>&#x3002;</p><p>&#x5982;&#x679C;&#x662F;&#x4EF7;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5927;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;<span class="math inline">\(dp[0...C]=0\)</span></p>]]></content>
+      <content type="html"><![CDATA[<a id="more"></a><h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1><p>&#x7ED9;&#x5B9A;&#x4E00;&#x7EC4;&#x7269;&#x54C1;&#xFF0C;&#x4E00;&#x5171;<span class="math inline">\(n\)</span>&#x4E2A;&#xFF0C;&#x6BCF;&#x4EF6;&#x7269;&#x54C1;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x91CD;&#x91CF;&#xFF08;<span class="math inline">\(weight\)</span>&#xFF09;&#x548C;&#x4EF7;&#x503C;&#xFF08;<span class="math inline">\(value\)</span>&#xFF09;&#xFF0C;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x627F;&#x91CD;&#x4E3A;<span class="math inline">\(C\)</span>&#x7684;&#x80CC;&#x5305;&#xFF0C;&#x6BCF;&#x4E2A;&#x7269;&#x54C1;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x62FF;&#x6216;&#x8005;&#x4E0D;&#x62FF;&#xFF0C;&#x95EE;&#x8FD9;&#x4E2A;&#x80CC;&#x5305;&#x6700;&#x591A;&#x80FD;&#x5E26;&#x8D70;&#x7684;&#x6700;&#x591A;&#x7684;&#x7269;&#x54C1;&#x603B;&#x4EF7;&#x503C;&#x662F;&#x591A;&#x5C11;</p><h1 id="&#x95EE;&#x9898;&#x5206;&#x6790;">&#x95EE;&#x9898;&#x5206;&#x6790;</h1><p>&#x8D2A;&#x5A6A;&#x7B97;&#x6CD5;&#x662F;&#x65E0;&#x6CD5;&#x6C42;&#x6700;&#x4F18;&#x89E3;&#x7684;&#x3002;</p><p>&#x80CC;&#x5305;&#x95EE;&#x9898;&#x5177;&#x6709;&#x6700;&#x4F18;&#x5B50;&#x7ED3;&#x6784;&#x6027;&#x8D28;&#xFF0C;&#x6240;&#x8C13;&#x6700;&#x4F18;&#x5B50;&#x7ED3;&#x6784;&#x6027;&#x8D28;&#x662F;&#x6307;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x6700;&#x4F18;&#x89E3;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x90FD;&#x662F;&#x6700;&#x4F18;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x6C42;&#x89E3;&#x3002;</p><p>&#x5B9A;&#x4E49;&#x5B50;&#x95EE;&#x9898;<span class="math inline">\(P(i, W)\)</span>&#x4E3A;&#x5728;&#x524D;<span class="math inline">\(i\)</span>&#x4E2A;&#x7269;&#x54C1;&#x603B;&#x6311;&#x9009;&#x603B;&#x91CD;&#x91CF;&#x4E0D;&#x8D85;&#x8FC7;<span class="math inline">\(W\)</span>&#x7684;&#x7269;&#x54C1;&#xFF0C;&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x9009;&#x4E00;&#x4E2A;&#xFF0C;&#x4F7F;&#x603B;&#x4EF7;&#x503C;&#x6700;&#x5927;&#x3002;</p><p>&#x8003;&#x8651;&#x7B2C;<span class="math inline">\(i\)</span>&#x4E2A;&#x7269;&#x54C1;&#xFF0C;&#x5C31;&#x4E24;&#x4E2A;&#x9009;&#x62E9;&#xFF1A;&#x9009;&#x6216;&#x8005;&#x4E0D;&#x9009;&#x3002;</p><p>&#x4E0D;&#x9009;&#x7684;&#x8BDD;&#xFF0C;&#x80CC;&#x5305;&#x7684;&#x5BB9;&#x91CF;&#x4E0D;&#x53D8;&#xFF0C;&#x53D8;&#x6210;&#x5B50;&#x95EE;&#x9898;&#xFF1A;<span class="math inline">\(P(i-1, W)\)</span></p><p>&#x9009;&#x7684;&#x8BDD;&#xFF0C;&#x80CC;&#x5305;&#x5BB9;&#x91CF;&#x53D8;&#x5C0F;&#xFF0C;&#x53D8;&#x6210;&#x5B50;&#x95EE;&#x9898;&#xFF1A;<span class="math inline">\(P(i-1, W-w_i)\)</span>&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x6B64;&#x65F6;&#x80CC;&#x5305;&#x5185;&#x7684;&#x5546;&#x54C1;&#x4EF7;&#x503C;&#x53D8;&#x9AD8;&#x3002;</p><p>&#x6700;&#x4F18;&#x7684;&#x65B9;&#x6848;&#x5C31;&#x662F;&#x6BD4;&#x8F83;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6848;&#xFF0C;&#x54EA;&#x4E2A;&#x80CC;&#x5305;&#x91CC;&#x9762;&#x7684;&#x4EF7;&#x503C;&#x66F4;&#x9AD8;&#x3002;</p><p>&#x5B9A;&#x4E49;<span class="math inline">\(m(i, W)\)</span>&#x4E3A;&#x5728;<span class="math inline">\(P(i, W)\)</span>&#x4E0B;&#x7684;&#x6700;&#x5927;&#x4EF7;&#x503C;&#x3002;&#x90A3;&#x4E48;&#x6709;&#xFF1A;</p><p><span class="math display">\[m(i, W)=max(m(i-1,W),m(i-1,W-w_i)+v_i)\]</span></p><p><img src="/posts/b07a74da/v2-1d8090c991ca13cee3cb43c027b72304_r.jpg"></p><p>&#x53E6;&#x5916;&#x8003;&#x8651;&#x5230;&#x8FB9;&#x754C;&#x60C5;&#x51B5;&#xFF0C;&#x6700;&#x540E;&#x5F97;&#x5230;&#x7684;&#x89E3;&#x9898;&#x516C;&#x5F0F;&#x662F;&#xFF1A; <span class="math display">\[m(i, W)=\left\{\begin{array}{ll}0 &amp; \text { if } i=0 \\ 0 &amp; \text { if } W=0 \\ m(i-1, W) &amp; \text { if } w_{i}&gt;W \\ \max \left\{m(i-1, W), v_{i}+m\left(i-1, W-w_{i}\right)\right\} &amp; \text { otherwise }\end{array}\right.\]</span></p><h1 id="&#x4F8B;">&#x4F8B;</h1><p>&#x6709;5&#x4E2A;&#x7269;&#x54C1;&#xFF0C;&#xFF08;&#x91CD;&#x91CF;&#xFF0C;&#x4EF7;&#x503C;&#xFF09;&#x5206;&#x522B;&#x4E3A;&#xFF1A;&#xFF08;5&#xFF0C;12&#xFF09;&#xFF0C;&#xFF08;4&#xFF0C;3&#xFF09;&#xFF0C;&#xFF08;7&#xFF0C;10&#xFF09;&#xFF0C;&#xFF08;2&#xFF0C;3&#xFF09;&#xFF0C;&#xFF08;6&#xFF0C;6&#xFF09;&#x3002;</p><p>&#x6709;&#x5982;&#x4E0B;&#x9012;&#x63A8;&#x8868;&#x683C;&#xFF1A;</p><table><thead><tr class="header"><th>&#x80CC;&#x5305;&#x5BB9;&#x91CF;</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr></thead><tbody><tr class="odd"><td>&#x6700;&#x591A;&#x653E;5&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>6</td><td>12</td><td>12</td><td>15</td><td>15</td><td>18</td><td>22</td><td>22</td><td>25</td><td>25</td></tr><tr class="even"><td>&#x6700;&#x591A;&#x653E;4&#x4EF6;</td><td>0</td><td>0</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>12</td><td>12</td><td>15</td><td>15</td><td>18</td><td>22</td><td>22</td><td>25</td><td>25</td></tr><tr class="odd"><td>&#x6700;&#x591A;&#x653E;3&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td>12</td><td>15</td><td>15</td><td>15</td><td>22</td><td>22</td><td>22</td><td>22</td></tr><tr class="even"><td>&#x6700;&#x591A;&#x653E;2&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>12</td><td>12</td><td>12</td><td>12</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td></tr><tr class="odd"><td>&#x6700;&#x591A;&#x653E;1&#x4EF6;</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td><td>12</td></tr></tbody></table><p>&#x4EE3;&#x7801;&#xFF1A;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> w[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> v[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;<span class="comment">//&#x6709;5&#x4E2A;&#x7269;&#x54C1;</span></span><br><span class="line">    <span class="keyword">int</span> C = <span class="number">15</span>;<span class="comment">//&#x5047;&#x5B9A;&#x80CC;&#x5305;&#x7684;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x4E3A;15</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; i++)</span><br><span class="line">    {</span><br><span class="line">        dp[i].resize(C + <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= C; j++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (j &lt; w[i])<span class="comment">//&#x653E;&#x4E0D;&#x4E0B;</span></span><br><span class="line">                dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - w[i]] + v[i]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[n][C] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="math inline">\(O(Cn)\)</span>&#xFF0C;<span class="math inline">\(C\)</span>&#x8868;&#x793A;&#x80CC;&#x5305;&#x7684;&#x5BB9;&#x91CF;&#xFF0C;<span class="math inline">\(n\)</span>&#x8868;&#x793A;&#x7269;&#x54C1;&#x7684;&#x6570;&#x91CF;&#x3002;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E0D;&#x80FD;&#x5728;&#x4F18;&#x5316;&#x4E86;</p><p>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x5230;<span class="math inline">\(O(C)\)</span></p><p>&#x5728;&#x4F18;&#x5316;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x80AF;&#x5B9A;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x5FAA;&#x73AF;<span class="math inline">\(i=1...n\)</span>&#xFF0C;&#x6BCF;&#x6B21;&#x7B97;&#x51FA;&#x6765;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;<span class="math inline">\(dp[i][0...C]\)</span>&#x7684;&#x6240;&#x6709;&#x503C;&#x3002;&#x5982;&#x679C;&#x60F3;&#x53EA;&#x7528;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x7B2C;<span class="math inline">\(i\)</span>&#x6B21;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;<span class="math inline">\(dp\)</span>&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;<span class="math inline">\(dp[i]\)</span>&#x3002;</p><p>&#x53C8;&#x7531;&#x4E8E;<span class="math inline">\(dp[i][j]\)</span>&#x662F;&#x7531;<span class="math inline">\(dp[i-1][j]\)</span>&#x548C;<span class="math inline">\(dp[i-1][j-w[i]]\)</span>&#x8FD9;&#x4E24;&#x4E2A;&#x5B50;&#x95EE;&#x9898;&#x9012;&#x63A8;&#x800C;&#x6765;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x4E00;&#x4F4D;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;<span class="math inline">\(C...0\)</span>&#x7684;&#x987A;&#x5E8F;&#x9012;&#x63A8;<span class="math inline">\(dp[i]\)</span>&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x8BA1;&#x7B97;<span class="math inline">\(dp[i]\)</span>&#x65F6;&#xFF0C;<span class="math inline">\(dp[i]\)</span>&#x73B0;&#x6709;&#x7684;&#x503C;&#x662F;<span class="math inline">\(dp[i-1][j]\)</span>&#xFF0C;<span class="math inline">\(dp[j-w[i]]\)</span>&#x662F;<span class="math inline">\(dp[i-1][j-w[i]]\)</span>&#x3002;</p><p>&#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> w[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> v[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">6</span> };</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;<span class="comment">//&#x6709;5&#x4E2A;&#x7269;&#x54C1;</span></span><br><span class="line">    <span class="keyword">int</span> C = <span class="number">15</span>;<span class="comment">//&#x5047;&#x5B9A;&#x80CC;&#x5305;&#x7684;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#x4E3A;15</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(C + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = C; j &gt; w[i]; j--)</span><br><span class="line">        {</span><br><span class="line">            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[C] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x5173;&#x4E8E;01&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x95EE;&#x6CD5;&#xFF1A;&#x8981;&#x6C42;&#x6070;&#x597D;&#x88C5;&#x6EE1;&#x80CC;&#x5305;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x662F;&#x5E0C;&#x671B;&#x4EF7;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5927;&#x3002;</p><p>&#x5982;&#x679C;&#x662F;&#x6070;&#x597D;&#x88C5;&#x6EE1;&#x80CC;&#x5305;&#xFF0C;&#x5219;&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x628A;&#x9664;&#x4E86;<span class="math inline">\(dp[0]=0\)</span>&#x5176;&#x4ED6;&#x7684;<span class="math inline">\(dp[1...C]= -&#x221E;\)</span>&#x3002;</p><p>&#x5982;&#x679C;&#x662F;&#x4EF7;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5927;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;<span class="math inline">\(dp[0...C]=0\)</span></p>]]></content>
       
       <categories>
           
@@ -62,7 +62,7 @@
       <title>浅谈DNS解析</title>
       <link href="//posts/742bf6ac/"/>
       <url>//posts/742bf6ac/</url>
-      <content type="html"><![CDATA[<p>&#x5F53;&#x4F60;&#x8BBF;&#x95EE;windsings.com&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E16;&#x754C;&#x90FD;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</p><a id="more"></a><h1 id="&#x6700;&#x666E;&#x901A;&#x7684;DNS&#x89E3;&#x6790;"><a href="#&#x6700;&#x666E;&#x901A;&#x7684;DNS&#x89E3;&#x6790;" class="headerlink" title="&#x6700;&#x666E;&#x901A;&#x7684;DNS&#x89E3;&#x6790;"></a>&#x6700;&#x666E;&#x901A;&#x7684;DNS&#x89E3;&#x6790;</h1><p>&#x6839;&#x636E;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x8BFE;&#x672C;&#xFF0C;&#x8BBF;&#x95EE;&#x67D0;&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x8FD9;&#x4E2A;&#x57DF;&#x540D;&#x600E;&#x4E48;&#x8DF3;&#x8F6C;&#x5230;&#x5177;&#x4F53;&#x7684;IP&#x4E0A;&#xFF0C;&#x662F;&#x4F7F;&#x7528;&#x4E86;DNS&#x89E3;&#x6790;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p><p>&#x4E3B;&#x673A;&#x5411;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x7684;&#x8FC7;&#x7A0B;&#x91C7;&#x7528;&#x9012;&#x5F52;&#xFF0C;&#x800C;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5411;&#x5176;&#x5B83;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x548C;&#x8FED;&#x4EE3;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p><p>&#x8FED;&#x4EE3;&#x7684;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5411;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#x4E4B;&#x540E;&#xFF0C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x5230;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x7EE7;&#x7EED;&#x5411;&#x5176;&#x5B83;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#xFF1B;&#x800C;&#x9012;&#x5F52;&#x5730;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7EE7;&#x7EED;&#x5411;&#x524D;&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x624D;&#x4F1A;&#x8FD4;&#x56DE;&#x3002;</p><p><img src="/posts/742bf6ac/clip_image001.jpg" alt=""></p><h1 id="&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x89E3;&#x6790;"><a href="#&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x89E3;&#x6790;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x89E3;&#x6790;"></a>&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x89E3;&#x6790;</h1><p>&#x5F53;&#x6211;&#x4ECE;&#x67D0;&#x4E2A;&#x57DF;&#x540D;&#x5546;&#x90A3;&#x91CC;&#x4E70;&#x4E86;&#x67D0;&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x8981;&#x5BF9;&#x57DF;&#x540D;&#x7684;&#x89E3;&#x6790;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;&#x963F;&#x91CC;&#x4E91;&#x4E2D;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x8BBE;&#x7F6E;&#x65B9;&#x5F0F;&#xFF1A;</p><p><img src="/posts/742bf6ac/1595622690641.png" alt=""></p><p><img src="/posts/742bf6ac/1595622696669.png" alt=""></p><p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x5E26;&#x6709;&#x516C;&#x7F51;IP&#x7684;VPS&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;A&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x3002;</p><p>&#x5728;linux&#x4E0B;&#xFF0C;&#x901A;&#x8FC7;dig&#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E3B;&#x673A;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x5E26;&#x6709;<code>+trace</code>&#x547D;&#x4EE4;&#xFF0C;&#x5219;&#x4F1A;&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p><p>&#x6BD4;&#x5982;&#x6211;&#x7684;&#x4E00;&#x4E2A;&#x670B;&#x53CB;&#x7684;&#x57DF;&#x540D;keyanjie.net&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig +trace keyanjie.net</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; +trace keyanjie.net</span><br><span class="line">;; global options: +cmd</span><br><span class="line">.                       1023    IN      NS      g.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      h.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      l.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      j.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      k.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      b.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      a.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      f.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      d.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      c.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      e.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      i.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      m.root-servers.net.</span><br><span class="line">;; Received 239 bytes from 127.0.1.1#53(127.0.1.1) in 5 ms</span><br><span class="line"></span><br><span class="line">net.                    172800  IN      NS      l.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      b.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      c.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      d.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      e.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      f.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      g.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      a.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      h.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      i.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      j.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      k.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      m.gtld-servers.net.</span><br><span class="line">net.                    86400   IN      DS      35886 8 2 7862B27F5F516EBE19680444D4CE5E762981931842C465F00236401D 8BD973EE</span><br><span class="line">net.                    86400   IN      RRSIG   DS 8 1 86400 20200806170000 20200724160000 46594 . Mn3fm45mYwBzvw8EuVABTXC269FVccFND9a6jaX/CfWye4E6YONViIkh Zs0fEBH3g2i6QKsTXliK+nYa3PfZAYO9VqheNxIvkdJO760Q29sd2BKa 6DooGoz3vqaC4aqSSKO1NHmNWSaEii++pVLNiggssxOJapdcv8scpo1R ebtASpz0fnOu6rO8MhYkz5aDLBWKEgWYyjfFK+ItwNoyc1+MYNtrMX6H QJRUtDY4b21ICLuDpp7nMNFIwnoScFf4e50qM413WP0ihVyCPuDD/aMx p/DcWdJUCpM9CTs5o0wIZnM9udZwXPJ2tAD6SyVpLmkgR7Sxwqy0SwCm E4+oMw==</span><br><span class="line">;; Received 1169 bytes from 192.203.230.10#53(e.root-servers.net) in 206 ms</span><br><span class="line"></span><br><span class="line">keyanjie.net.           172800  IN      NS      dns11.hichina.com.</span><br><span class="line">keyanjie.net.           172800  IN      NS      dns12.hichina.com.</span><br><span class="line">A1RT98BS5QGC9NFI51S9HCI47ULJG6JH.net. 86400 IN NSEC3 1 1 0 - A1RUUFFJKCT2Q54P78F8EJGJ8JBK7I8B NS SOA RRSIG DNSKEY NSEC3PARAM</span><br><span class="line">A1RT98BS5QGC9NFI51S9HCI47ULJG6JH.net. 86400 IN RRSIG NSEC3 8 2 86400 20200728064417 20200721053417 56519 net. B4N1ZLUcMCAkfgGNrmJfXylkUAbPnqxO31ZQ5ZwU0AecyChOkGGTelH/ 87eM7RtGM7mqrM6zU9CnGwsgheqg2HCbpX7n5Fvl1AclnJZBuFlF0hve jSO99rrLrLRaTWQtLyJwVQJWkMfgztCO5Mh2ngJfK6ZB1PLSxOFqVz0j 5MTYYp9QwdL1PvLIaBAw0kTgcm3o476wB0glMo6yzDbK2A==</span><br><span class="line">DMUULDLK9AHE90T3TVLM9UO0BL3FSD6H.net. 86400 IN NSEC3 1 1 0 - DMV0V678LC7UEC158TTU3M81UCSIPP21 NS DS RRSIG</span><br><span class="line">DMUULDLK9AHE90T3TVLM9UO0BL3FSD6H.net. 86400 IN RRSIG NSEC3 8 2 86400 20200730063155 20200723052155 56519 net. Nnwi6w5n3/C/sNwr5mMCP2i7Uv7Ki3KAI4dkigOMjFwpgLLN2egqyCqL QjLb/Dlk0fe4BjpzbPLMe67vsX8uJVcPXddgSh3EHa1LxhQROegMAFxJ QS2x/2gEI7a5lkLN2Jp7/F8c7q29LqERK8kFCw5sUC5/HHa+c/Pjk96r pfvFNfgj7doPCn7cZ0iXv3eGRxorZFIwemOVzrJfZ/IEiw==</span><br><span class="line">;; Received 641 bytes from 192.33.14.30#53(b.gtld-servers.net) in 157 ms</span><br><span class="line"></span><br><span class="line">keyanjie.net.           600     IN      A       101.132.113.74</span><br><span class="line">;; Received 57 bytes from 106.11.141.115#53(dns11.hichina.com) in 45 ms</span><br></pre></td></tr></table></figure><p>&#x6309;&#x524D;&#x6587;&#x6240;&#x8FF0;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x672C;&#x673A;&#x5411;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EE5;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x7533;&#x8BF7;&#x89E3;&#x6790;&#xFF0C;127.0.1.1&#x662F;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#xFF1F;</p><p>&#x6211;&#x7684;&#x673A;&#x5668;&#x662F;ubuntu16.04&#xFF0C;ubuntu&#x4E0B;&#x6709;&#x4E2A;&#x672C;&#x5730;DNS&#x670D;&#x52A1;&#xFF0C;&#x53EB;dnsmasq&#xFF0C;&#x5B83;&#x662F;&#x7531;NetworkManager&#x63A7;&#x5236;&#x7684;&#x3002;</p><p>&#x5B83;&#x76D1;&#x542C;&#x7684;&#x672C;&#x5730;&#x5730;&#x5740;&#xFF0C;&#x2013;listen-address=127.0.1.1 (ubuntu12.04&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C; &#x662F; 127.0.0.1)&#xFF0C; &#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x662F;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x56DE;&#x73AF;&#x5730;&#x5740;&#x3002; &#x800C;&#x771F;&#x5B9E;&#x7684;dns&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x662F;&#x88AB;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7BA1;&#x7406;&#x7EF4;&#x62A4;&#x7740;&#x7684;&#x3002;</p><p>127.0.1.1&#x662F;&#x7528;&#x4E8E;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#xFF08;port forwarding&#xFF09;&#x7684;&#xFF0C;&#x6BD4;&#x5982;ISP&#x5206;&#x914D;&#x7684;DNS server&#x662F;123.123.123.123&#x3002;&#x5219;dnsmasq&#x4F1A;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x5411;127.0.1.1:53&#x53D1;&#x9001;&#x7684;DNS&#x8BF7;&#x6C42;&#xFF0C;&#x8F6C;&#x53D1;&#x5230;123.123.123.123:53&#x3002;</p><p>&#x5728;&#x963F;&#x91CC;&#x4E91;&#x7684;&#x89E3;&#x6790;&#x56FE;&#x793A;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;NS&#x8BB0;&#x5F55;&#x7C7B;&#x578B;&#xFF0C;&#x6807;&#x8BB0;&#x7740;&#x5C06;&#x57DF;&#x540D;&#x6307;&#x5B9A;&#x5176;&#x4ED6;DNS&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;&#x8FD9;&#x91CC;&#x7684;NS&#xFF0C;&#x5C31;&#x662F;<code>dig +trace</code>&#x5E94;&#x7B54;&#x8BB0;&#x5F55;&#x4E2D;&#x7684;NS&#x3002;</p><p>&#x5B83;&#x8FD4;&#x56DE;13&#x4E2A;&#x6839;&#x57DF;&#x540D;&#x7684;&#x5730;&#x5740;&#x3002;&#x6839;&#x636E;&#x5E94;&#x7B54;&#x7684;&#x7C7B;&#x578B;NS&#xFF0C;&#x4EA4;&#x7531;&#x5217;&#x51FA;&#x6765;&#x7684;.net&#x7684;&#x6743;&#x5A01;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x5728;&#x6BCF;&#x4E2A;&#x57DF;&#x4E2D;&#xFF0C;&#x4F1A;&#x6709;&#x4E00;&#x53F0;&#x6216;&#x8005;&#x591A;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x6765;&#x4FDD;&#x5B58;&#x8FD9;&#x4E2A;&#x57DF;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x54CD;&#x5E94;&#x5173;&#x4E8E;&#x8BE5;&#x57DF;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD9;&#x79CD;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x53EB;&#x8FD9;&#x4E2A;&#x57DF;&#x7684;&#x6743;&#x5A01;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x591A;&#x4E2A;&#x6743;&#x5A01;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x95F4;&#xFF0C;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x53F0;&#x662F;&#x4E3B;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8FD9;&#x53F0;&#x4E3B;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5411;&#x5176;&#x4ED6;&#x8F85;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5206;&#x53D1;&#x57DF;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x66F4;&#x65B0;&#x4FE1;&#x606F;&#xFF09;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p><p>&#x540C;&#x6837;&#xFF0C;b.gtld-servers.net&#x8FD9;&#x4E2A;DNS&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;NS&#x7C7B;&#x578B;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x4EA4;&#x7531;dns11.hichina.com&#x6216;dns12.hichina.com&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p><p>&#x9009;&#x62E9;&#x4E86;dns11.hichina.com&#xFF0C;&#x8FD4;&#x56DE;keyanjie.net&#x7684;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#xFF1A;A&#x7C7B;&#x578B;&#xFF0C;&#x5230;IP&#xFF1A;101.132.113.74&#x3002;</p><p>&#x8FD9;&#x65F6;&#xFF0C;&#x8BBF;&#x95EE;101.132.113.74&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x4ED6;&#x7684;&#x535A;&#x5BA2;&#x3002;</p><h1 id="&#x4E00;&#x4E2A;IP&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;"><a href="#&#x4E00;&#x4E2A;IP&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;" class="headerlink" title="&#x4E00;&#x4E2A;IP&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;"></a>&#x4E00;&#x4E2A;IP&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;</h1><p>&#x8FD9;&#x662F;&#x6211;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x540C;&#x5B66;&#x7684;&#x535A;&#x5BA2;&#xFF1A;cjh.zone&#xFF0C;&#x5F53;dig cjh.zone&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig cjh.zone</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; cjh.zone</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 47702</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;cjh.zone.                      IN      A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">cjh.zone.               300     IN      A       185.199.111.153</span><br><span class="line"></span><br><span class="line">;; Query time: 64 msec</span><br><span class="line">;; SERVER: 127.0.1.1#53(127.0.1.1)</span><br><span class="line">;; WHEN: Fri Jul 24 18:09:24 CST 2020</span><br><span class="line">;; MSG SIZE  rcvd: 42</span><br></pre></td></tr></table></figure><p>&#x5F53;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;IP&#xFF1A;185.199.111.153 &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;github&#x7684;404&#x754C;&#x9762;&#xFF1A;</p><p><img src="/posts/742bf6ac/1595626403791.png" alt=""></p><p>&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x4E2A;&#x4E3B;&#x673A;&#x4E0B;&#xFF0C;&#x6709;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;&#x3002;</p><p>&#x90A3;&#x5F53;&#x6211;&#x8BBF;&#x95EE;cjh.zone&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E3B;&#x673A;&#x662F;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x663E;&#x793A;&#x7F51;&#x7AD9;&#x7684;&#x5462;&#xFF1F;</p><p>&#x662F;&#x901A;&#x8FC7;&#x4E3B;&#x673A;&#x5934;&#xFF0C;</p><p>&#x5728;&#x77E5;&#x4E4E;&#x7684;&#x8FD9;&#x4E2A;&#x56DE;&#x7B54;&#x4E2D;&#xFF1A;</p><p><a href="https://www.zhihu.com/question/30105450/answer/1207087774" target="_blank" rel="noopener">&#x5728;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x9762;&#x600E;&#x4E48;&#x653E;&#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x5440;&#xFF1F; - &#x725B;&#x5CB1;&#x7684;&#x56DE;&#x7B54; - &#x77E5;&#x4E4E; </a>&#x4E2D;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#xFF1A;</p><p>&#x7406;&#x89E3;&#x4E86;HTTP &#x534F;&#x8BAE;&#x4F60;&#x5C31;&#x77E5;&#x9053;&#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x5B8C;&#x5168;&#x53EF;&#x4EE5; host &#x5F88;&#x591A;&#x7F51;&#x7AD9;&#xFF0C;&#x539F;&#x56E0;&#x5C31;&#x5728;&#x4E8E; HTTP request &#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86; HOST &#x8FD9;&#x4E2A;&#x4FE1;&#x606F;&#x5934;&#x3002;</p><p>&#x867D;&#x7136;&#x4E24;&#x4E2A;&#x57DF;&#x540D;&#x90FD;&#x89E3;&#x6790;&#x5230;&#x540C;&#x4E00;&#x4E2A; IP&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x7528;&#x6237;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4E24;&#x4E2A;&#x57DF;&#x540D;&#x5411;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;&#xFF0C;HTTP Request &#x91CC;&#x9762;&#x7684; Host &#x5934;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x3002;</p><p>&#x5F53;&#x4F60;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x91CC;&#x8F93; <code>http://developer.mozilla.org</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;server &#x6536;&#x5230;&#x7684; HTTP &#x62A5;&#x6587;&#x5934;&#x957F;&#x8FD9;&#x6837;&#xFF1A;</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: developer.mozilla.org</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>&#x5F53;&#x4F60;&#x6362;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BD4;&#x5982; <code>http://developer.google.org</code>&#xFF0C;&#x62A5;&#x6587;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: developer.google.org</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p><p>&#x5F88;&#x663E;&#x7136;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;host &#x6765;&#x628A;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x3002; &#x4E00;&#x822C;&#x7684;&#x5B9E;&#x8DF5;&#x505A;&#x6CD5;&#x7684;&#x8BDD;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; nginx &#x4F5C;&#x4E3A; Gate&#xFF0C;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x91CC;&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#xFF1A;</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">http {  </span><br><span class="line">   ...  </span><br><span class="line"> </span><br><span class="line">   server {  </span><br><span class="line">            listen 80;  </span><br><span class="line">            server_name developer.mozilla.org;  </span><br><span class="line">            root /var/www/html/mozilla;  </span><br><span class="line">            ...  </span><br><span class="line">   </span><br><span class="line">   }  </span><br><span class="line">   server {  </span><br><span class="line">            listen 80;  </span><br><span class="line">            server_name developer.google.com;  </span><br><span class="line">            root /var/www/html/google;  </span><br><span class="line">            ...  </span><br><span class="line">   </span><br><span class="line">   }  </span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x7684;&#x8BDD;&#xFF0C;&#x7528;&#x6237;&#x7528;&#x57DF;&#x540D;<code>http://developer.mozilla.org</code>&#x8BF7;&#x6C42;&#x7684;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE; /mozilla &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939; serve &#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x4ECE; <code>http://google.org</code>&#x8BF7;&#x6C42;&#x7684;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE; /google &#x6587;&#x4EF6;&#x5939; serve &#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002; &#x4E00;&#x822C;&#x60C5;&#x51B5;&#x672C;&#x5730;&#x7684;&#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x8FD8;&#x8981;&#x6709; serve &#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5047;&#x5982;&#x4E00;&#x4E2A;&#x542F;&#x52A8;&#x540E;&#x76D1;&#x542C; 3000&#x7AEF;&#x53E3;&#xFF0C;&#x4E00;&#x4E2A;&#x76D1;&#x542C; 8000 &#x7AEF;&#x53E3;&#xFF0C;&#x90A3;&#x518D;&#x52A0;&#x4E0A;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">http {  </span><br><span class="line">       ...  </span><br><span class="line">       ...  </span><br><span class="line">  </span><br><span class="line">       server {  </span><br><span class="line">                listen 80;  </span><br><span class="line">                server_name developer.mozilla.org;  </span><br><span class="line">                root /var/www/html/mozilla;  </span><br><span class="line">                location /api {</span><br><span class="line">                    proxy_pass localhost:3000</span><br><span class="line">                }</span><br><span class="line">       </span><br><span class="line">       }  </span><br><span class="line">       server {  </span><br><span class="line">                listen 80;  </span><br><span class="line">                server_name developer.google.com;  </span><br><span class="line">                root /var/www/html/google;  </span><br><span class="line">                location /api {</span><br><span class="line">                    proxy_pass localhost:8000</span><br><span class="line">                }</span><br><span class="line">                ...  </span><br><span class="line">       </span><br><span class="line">       }  </span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5F62;&#x5982;<code>http://developer.mozilla.org/api/...</code> &#x7684;&#x8BF7;&#x6C42;&#x5C31;&#x4F1A;&#x8F6C;&#x53D1;&#x5230; localhost:3000&#xFF0C;&#x7136;&#x540E; nginx &#x518D;&#x628A; localhost:3000 &#x8FD4;&#x56DE;&#x7684;&#x518D;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x5F53;&#x7136;&#x5982;&#x679C;&#x5E94;&#x7528;&#x4E0D;&#x662F;&#x5728;&#x548C; nginx &#x4E00;&#x4E2A;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x80FD;&#x8FD9;&#x4E2A;localhost:3000 &#x5C31;&#x662F;&#x79C1;&#x7F51;&#x7684;&#x5176;&#x5B83;&#x4E3B;&#x673A;ip&#xFF0C;&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x516C;&#x7F51; ip&#xFF0C;&#x6216;&#x8005;&#x57DF;&#x540D;&#xFF0C;8000 &#x7684;&#x4E5F;&#x540C;&#x7406;&#x3002;</p><p>&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x53EF;&#x4EE5; host &#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x4E86;&#xFF0C;&#x540C;&#x7406;&#x8FD8;&#x53EF;&#x80FD;&#x662F;&#x5F88;&#x591A;&#x4E2A;&#x3002;</p><p>nginx &#x7684;&#x8BDD;&#xFF0C;&#x7528;&#x4F5C;&#x8FD9;&#x79CD; Gate &#x8F6C;&#x53D1;&#x8BF7;&#x6C42;&#x5E76;&#x9759;&#x6001;&#x6587;&#x4EF6; host &#x662F;&#x86EE;&#x65B9;&#x4FBF;&#x7684;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x51E0;&#x884C;&#x7B80;&#x5355;&#x7684; json &#x914D;&#x7F6E;&#xFF0C;&#x5C31;&#x80FD;&#x7A33;&#x5B9A;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x800C;&#x4E14;&#x57FA;&#x4E8E;&#x5F02;&#x6B65; I/O&#xFF0C;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x5F88;&#x597D;&#x3002;</p><p>&#x603B;&#x4E4B;&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;Host &#x5934;&#x53EF;&#x4EE5;&#x8BA9;&#x8FC7;&#x6EE4;&#x8F6C;&#x53D1;&#x8BF7;&#x6C42;&#x3002;</p><h1 id="&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;IP"><a href="#&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;IP" class="headerlink" title="&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;IP"></a>&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;IP</h1><p>&#x5F53;&#x4F60;<code>dig +trace windsings.com</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;DNS&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x4E09;&#x4E2A;IP&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig +trace windsings.com</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; +trace windsings.com</span><br><span class="line">;; global options: +cmd</span><br><span class="line">.                       2983    IN      NS      a.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      b.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      c.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      d.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      e.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      f.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      g.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      h.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      i.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      j.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      k.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      l.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      m.root-servers.net.</span><br><span class="line">;; Received 239 bytes from 127.0.1.1#53(127.0.1.1) in 7 ms</span><br><span class="line"></span><br><span class="line">com.                    172800  IN      NS      a.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      b.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      c.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      d.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      e.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      f.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      g.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      h.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      i.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      j.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      k.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      l.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      m.gtld-servers.net.</span><br><span class="line">com.                    86400   IN      DS      30909 8 2 E2D3C916F6DEEAC73294E8268FB5885044A833FC5459588F4A9184CF C41A5766</span><br><span class="line">com.                    86400   IN      RRSIG   DS 8 1 86400 20200806210000 20200724200000 46594 . iFLnO7of/tl4M23HkDFQ0sMsm5ONcS+Qg6l6QPKHo1xV0zslYX1M8WQ4 TU7kbX1eks3f44hXrtjJwNESdakmQd0XgKapTIiXsOMknfFjpj5lLprm B5x5k6JI5PKZsZ5OVtGF888BsUXYH1dAT7bfny6xw0kRJvk/ZJHbKC+g uczBRdilPuYfqEyVHEdCaWd3TL6clVIS85ZpaB3zzYZAHldD2ykBzWRR 46vmMFfk0EIpatpoOf9p6LQzmq0CqR7FcPo5EEOUnvpXkaMUjEenGIdw q8lm4/a43otwwq9g15CFabxN2o2mQlhlzuVBMmLIyUCKU4QzevhVnh7g AM6nyA==</span><br><span class="line">;; Received 1173 bytes from 198.41.0.4#53(a.root-servers.net) in 162 ms</span><br><span class="line"></span><br><span class="line">windsings.com.          172800  IN      NS      ns1.smartgslb.com.</span><br><span class="line">windsings.com.          172800  IN      NS      ns2.smartgslb.com.</span><br><span class="line">CK0POJMG874LJREF7EFN8430QVIT8BSM.com. 86400 IN NSEC3 1 1 0 - CK0Q1GIN43N1ARRC9OSM6QPQR81H5M9A NS SOA RRSIG DNSKEY NSEC3PARAM</span><br><span class="line">CK0POJMG874LJREF7EFN8430QVIT8BSM.com. 86400 IN RRSIG NSEC3 8 2 86400 20200728044213 20200721033213 24966 com. qoAss2VVxsBWG9+MAQ3giAmCnzf4dz7GppZsQfkt3b7cFIVgO3TiWPWk usb3BEbpsma2Q+x/TBLeeHYm6l1HWXMIl7zcYLsAXY0ZzoWaqNPTPH6Y NDAreZYP21UekBL7g710cndRk4oaJUNz5t8sGi3JaOJF046QcUz6gGg7 NLMvyGlJWzmftGbxgp9ovdOgwmirddESGOj33kuCfSJvWA==</span><br><span class="line">8HTEEKSHQDE7BN29IUEH9GCUG0BJA05S.com. 86400 IN NSEC3 1 1 0 - 8HTEUV6CJU94CB57CLPPJ7DS5EJ8OTUB NS DS RRSIG</span><br><span class="line">8HTEEKSHQDE7BN29IUEH9GCUG0BJA05S.com. 86400 IN RRSIG NSEC3 8 2 86400 20200731051909 20200724040909 24966 com. PqoClMMWAVeFX2+5EHMtxxS6MgOwOWIBrWYrnhdgy8SecgUvrpv5PhSH TKGR5F+dTpeYpCe8E6HPHEwxHtXaPhuepEzxWNAyREnAy5LMssix1Jnh WrjKiRFjK4tWWqfhDHBaGcgjm9r3SFl3OWneA3VG11RvlEkUTb6vHQRm zH/0ZPKSkpxGK1joaA/GDOIlNrNbKGzicXKDjBaJGFDdQw==</span><br><span class="line">;; Received 817 bytes from 192.54.112.30#53(h.gtld-servers.net) in 483 ms</span><br><span class="line"></span><br><span class="line">windsings.com.          60      IN      A       154.209.235.56</span><br><span class="line">windsings.com.          60      IN      A       45.137.10.76</span><br><span class="line">windsings.com.          60      IN      A       119.28.89.140</span><br><span class="line">;; Received 90 bytes from 172.104.121.39#53(ns1.smartgslb.com) in 65 ms</span><br></pre></td></tr></table></figure><p>&#x5F53;&#x8BB0;&#x5F55;&#x503C;&#x6709;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x57DF;&#x540D;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x7684;&#xFF1F;</p><p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x8003;<a href="https://support.huaweicloud.com/dns_faq/dns_faq_023.html" target="_blank" rel="noopener">&#x534E;&#x4E3A;&#x4E91;&#xFF1A;&#x5F53;&#x8BB0;&#x5F55;&#x503C;&#x6709;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x57DF;&#x540D;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x7684;&#xFF1F;</a></p><p>&#x5F53;&#x4E3A;&#x57DF;&#x540D;&#x6DFB;&#x52A0;A&#x7C7B;&#x578B;&#x6216;&#x8005;AAAA&#x7C7B;&#x578B;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x53C2;&#x6570;&#x201C;&#x503C;&#x201D;&#x652F;&#x6301;&#x586B;&#x5199;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#xFF0C;&#x5C06;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x5230;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x3002;</p><p>&#x5F53;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x7684;&#x201C;&#x503C;&#x201D;&#x5305;&#x542B;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x4F1A;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x8FD4;&#x56DE;IP&#x5730;&#x5740;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x968F;&#x673A;&#x7684;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;IP&#x5730;&#x5740;&#x4F5C;&#x4E3A;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x3002;</p><p>&#x5176;&#x89E3;&#x6790;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p><ol><li>&#x7F51;&#x7AD9;&#x8BBF;&#x95EE;&#x8005;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x5411;Local DNS&#x53D1;&#x9001;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x3002;</li><li>Local DNS&#x5C06;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x9010;&#x7EA7;&#x8F6C;&#x53D1;&#x81F3;&#x6743;&#x5A01;DNS&#x3002;</li><li>&#x6743;&#x5A01;DNS&#x5728;&#x6536;&#x5230;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x5C06;&#x6240;&#x6709;IP&#x5730;&#x5740;&#x4EE5;&#x968F;&#x673A;&#x987A;&#x5E8F;&#x5168;&#x90E8;&#x8FD4;&#x56DE;Local DNS&#x3002;</li><li>Local DNS&#x5C06;&#x6240;&#x6709;IP&#x5730;&#x5740;&#x8FD4;&#x56DE;&#x6D4F;&#x89C8;&#x5668;&#x3002;</li><li>&#x7F51;&#x7AD9;&#x8BBF;&#x95EE;&#x8005;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;IP&#x5730;&#x5740;&#xFF0C;&#x901A;&#x5E38;&#x9009;&#x53D6;&#x8FD4;&#x56DE;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;IP&#x5730;&#x5740;&#x3002;</li></ol><p>&#x6839;&#x636E;&#x5927;&#x91CF;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x663E;&#x793A;&#xFF0C;&#x89E3;&#x6790;&#x5230;&#x5404;IP&#x5730;&#x5740;&#x7684;&#x6BD4;&#x4F8B;&#x63A5;&#x8FD1;&#x76F8;&#x7B49;&#x3002;</p><p>&#x4F8B;&#x5982;&#xFF0C;&#x67D0;&#x7F51;&#x7AD9;&#x7684;&#x57DF;&#x540D;&#x4E3A;&#x201C;example.com&#x201D;&#xFF0C;&#x90E8;&#x7F72;&#x4E86;3&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;IP&#x5730;&#x5740;&#x5206;&#x522B;&#x4E3A;&#xFF1A;192.168.1.1&#x3001;192.168.1.2&#x3001;192.168.1.3&#x3002;</p><p>&#x4E3A;&#x57DF;&#x540D;&#x201C;example.com&#x201D;&#x914D;&#x7F6E;&#x4E00;&#x6761;A&#x7C7B;&#x578B;&#x8BB0;&#x5F55;&#x96C6;&#xFF0C;&#x5C06;&#x8BB0;&#x5F55;&#x96C6;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;3&#x4E2A;IP&#x5730;&#x5740;&#x3002;<br><img src="/posts/742bf6ac/zh-cn_image_0253273506.png" alt=""></p><p>&#x4E0D;&#x540C;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x7F51;&#x7AD9;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x5982;&#x4EE5;&#x4E0B;&#x6240;&#x793A;&#x3002;</p><table><thead><tr><th>&#x7528;&#x6237;</th><th>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</th><th>&#x89E3;&#x6790;&#x7ED3;&#x679C;</th></tr></thead><tbody><tr><td>&#x7528;&#x6237;A</td><td>192.168.1.1         192.168.1.2         192.168.1.3</td><td>192.168.1.1</td></tr><tr><td>&#x7528;&#x6237;B</td><td>192.168.1.2         192.168.1.1         192.168.1.3</td><td>192.168.1.2</td></tr><tr><td>&#x7528;&#x6237;C</td><td>192.168.1.3         192.168.1.1         192.168.1.2</td><td>192.168.1.3</td></tr></tbody></table><p>&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x89E3;&#x6790;windsings.com &#x7684;&#x7ED3;&#x679C;&#xFF08;&#x5728;Linux&#x4E0B;&#xFF09;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netdb.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">hostent</span> *<span class="title">host</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span> <span class="title">h_addr</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((host = gethostbyname(<span class="string">&quot;windsings.com&quot;</span>)) != <span class="literal">NULL</span>) {</span><br><span class="line">        h_addr.s_addr = *((<span class="keyword">unsigned</span> <span class="keyword">long</span> *)host-&gt;h_addr);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, inet_ntoa(h_addr));</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ gcc code1.cpp</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ls</span><br><span class="line">a.out  code1.cpp</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">119.28.89.140</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">45.137.10.76</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">119.28.89.140</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">154.209.235.56</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$</span><br></pre></td></tr></table></figure><p>&#x53EF;&#x89C1;&#xFF0C;3&#x4E2A;IP&#x90FD;&#x88AB;&#x6253;&#x5370;&#x51FA;&#x6765;&#x4E86;&#x3002;</p><p>&#x5728;&#x8FFD;&#x8E2A;&#x7684;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;DNS&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;&#x662F;smartgslb&#xFF0C;&#x81EA;&#x7136;&#x60F3;&#x5230;&#x4E86;&#x57FA;&#x4E8E;DNS&#x89E3;&#x6790;&#x7684;&#x5168;&#x5C40;&#x8D1F;&#x8F7D;&#x5747;&#x8861;GSLB&#xFF0C;&#x6211;&#x539A;&#x7740;&#x8138;&#x76AE;&#x53D1;&#x5DE5;&#x5355;&#x95EE;&#x5BA2;&#x670D;&#xFF0C;&#x8BE2;&#x95EE;&#x5230;&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x3002;</p><p>&#x8FD9;&#x4E2A;&#x80CC;&#x540E;&#x662F;&#x4E00;&#x4E2A;&#x53EB;&#x667A;&#x80FD;&#x89E3;&#x6790;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5F53;&#x6211;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x7684;IP&#x5730;&#x5740;&#x5728;&#x4E9A;&#x6D32;&#xFF0C;&#x56E0;&#x6B64;&#x667A;&#x80FD;DNS&#x89E3;&#x6790;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E9A;&#x6D32;&#x7684;IP&#x3002;&#x8FD9;&#x4E09;&#x4E2A;IP&#x7531;&#x6211;&#x7684;&#x7535;&#x8111;&#x81EA;&#x884C;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#xFF08;&#x4E00;&#x822C;&#x5C31;&#x662F;&#x8BBF;&#x95EE;&#x7B2C;&#x4E00;&#x4E2A;&#xFF09;&#xFF0C;&#x5173;&#x4E8E;&#x667A;&#x80FD;&#x89E3;&#x6790;&#xFF0C;&#x6211;&#x53E6;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x7B80;&#x8FF0;&#x3002;</p><p>&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x4F7F;&#x7528;&#x4E86;CDN&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E09;&#x4E2A;IP&#x5176;&#x5B9E;&#x662F;CDN&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5173;&#x4E8E;CDN&#xFF0C;&#x6211;&#x53E6;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x7B80;&#x8FF0;&#x3002;</p>]]></content>
+      <content type="html"><![CDATA[<p>&#x5F53;&#x4F60;&#x8BBF;&#x95EE;windsings.com&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E16;&#x754C;&#x90FD;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</p><a id="more"></a><h1 id="&#x6700;&#x666E;&#x901A;&#x7684;dns&#x89E3;&#x6790;">&#x6700;&#x666E;&#x901A;&#x7684;DNS&#x89E3;&#x6790;</h1><p>&#x6839;&#x636E;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x8BFE;&#x672C;&#xFF0C;&#x8BBF;&#x95EE;&#x67D0;&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x8FD9;&#x4E2A;&#x57DF;&#x540D;&#x600E;&#x4E48;&#x8DF3;&#x8F6C;&#x5230;&#x5177;&#x4F53;&#x7684;IP&#x4E0A;&#xFF0C;&#x662F;&#x4F7F;&#x7528;&#x4E86;DNS&#x89E3;&#x6790;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p><p>&#x4E3B;&#x673A;&#x5411;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x7684;&#x8FC7;&#x7A0B;&#x91C7;&#x7528;&#x9012;&#x5F52;&#xFF0C;&#x800C;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5411;&#x5176;&#x5B83;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x548C;&#x8FED;&#x4EE3;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p><p>&#x8FED;&#x4EE3;&#x7684;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5411;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#x4E4B;&#x540E;&#xFF0C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x5230;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x7EE7;&#x7EED;&#x5411;&#x5176;&#x5B83;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#xFF1B;&#x800C;&#x9012;&#x5F52;&#x5730;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7EE7;&#x7EED;&#x5411;&#x524D;&#x8BF7;&#x6C42;&#x89E3;&#x6790;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x624D;&#x4F1A;&#x8FD4;&#x56DE;&#x3002;</p><p><img src="/posts/742bf6ac/clip_image001.jpg"></p><h1 id="&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x89E3;&#x6790;">&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x89E3;&#x6790;</h1><p>&#x5F53;&#x6211;&#x4ECE;&#x67D0;&#x4E2A;&#x57DF;&#x540D;&#x5546;&#x90A3;&#x91CC;&#x4E70;&#x4E86;&#x67D0;&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x8981;&#x5BF9;&#x57DF;&#x540D;&#x7684;&#x89E3;&#x6790;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;&#x963F;&#x91CC;&#x4E91;&#x4E2D;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x8BBE;&#x7F6E;&#x65B9;&#x5F0F;&#xFF1A;</p><p><img src="/posts/742bf6ac/1595622690641.png"></p><p><img src="/posts/742bf6ac/1595622696669.png"></p><p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x5E26;&#x6709;&#x516C;&#x7F51;IP&#x7684;VPS&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;A&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x3002;</p><p>&#x5728;linux&#x4E0B;&#xFF0C;&#x901A;&#x8FC7;dig&#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E3B;&#x673A;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x5E26;&#x6709;<code>+trace</code>&#x547D;&#x4EE4;&#xFF0C;&#x5219;&#x4F1A;&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p><p>&#x6BD4;&#x5982;&#x6211;&#x7684;&#x4E00;&#x4E2A;&#x670B;&#x53CB;&#x7684;&#x57DF;&#x540D;keyanjie.net&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig +trace keyanjie.net</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; +trace keyanjie.net</span><br><span class="line">;; global options: +cmd</span><br><span class="line">.                       1023    IN      NS      g.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      h.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      l.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      j.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      k.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      b.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      a.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      f.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      d.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      c.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      e.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      i.root-servers.net.</span><br><span class="line">.                       1023    IN      NS      m.root-servers.net.</span><br><span class="line">;; Received 239 bytes from 127.0.1.1#53(127.0.1.1) in 5 ms</span><br><span class="line"></span><br><span class="line">net.                    172800  IN      NS      l.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      b.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      c.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      d.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      e.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      f.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      g.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      a.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      h.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      i.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      j.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      k.gtld-servers.net.</span><br><span class="line">net.                    172800  IN      NS      m.gtld-servers.net.</span><br><span class="line">net.                    86400   IN      DS      35886 8 2 7862B27F5F516EBE19680444D4CE5E762981931842C465F00236401D 8BD973EE</span><br><span class="line">net.                    86400   IN      RRSIG   DS 8 1 86400 20200806170000 20200724160000 46594 . Mn3fm45mYwBzvw8EuVABTXC269FVccFND9a6jaX/CfWye4E6YONViIkh Zs0fEBH3g2i6QKsTXliK+nYa3PfZAYO9VqheNxIvkdJO760Q29sd2BKa 6DooGoz3vqaC4aqSSKO1NHmNWSaEii++pVLNiggssxOJapdcv8scpo1R ebtASpz0fnOu6rO8MhYkz5aDLBWKEgWYyjfFK+ItwNoyc1+MYNtrMX6H QJRUtDY4b21ICLuDpp7nMNFIwnoScFf4e50qM413WP0ihVyCPuDD/aMx p/DcWdJUCpM9CTs5o0wIZnM9udZwXPJ2tAD6SyVpLmkgR7Sxwqy0SwCm E4+oMw==</span><br><span class="line">;; Received 1169 bytes from 192.203.230.10#53(e.root-servers.net) in 206 ms</span><br><span class="line"></span><br><span class="line">keyanjie.net.           172800  IN      NS      dns11.hichina.com.</span><br><span class="line">keyanjie.net.           172800  IN      NS      dns12.hichina.com.</span><br><span class="line">A1RT98BS5QGC9NFI51S9HCI47ULJG6JH.net. 86400 IN NSEC3 1 1 0 - A1RUUFFJKCT2Q54P78F8EJGJ8JBK7I8B NS SOA RRSIG DNSKEY NSEC3PARAM</span><br><span class="line">A1RT98BS5QGC9NFI51S9HCI47ULJG6JH.net. 86400 IN RRSIG NSEC3 8 2 86400 20200728064417 20200721053417 56519 net. B4N1ZLUcMCAkfgGNrmJfXylkUAbPnqxO31ZQ5ZwU0AecyChOkGGTelH/ 87eM7RtGM7mqrM6zU9CnGwsgheqg2HCbpX7n5Fvl1AclnJZBuFlF0hve jSO99rrLrLRaTWQtLyJwVQJWkMfgztCO5Mh2ngJfK6ZB1PLSxOFqVz0j 5MTYYp9QwdL1PvLIaBAw0kTgcm3o476wB0glMo6yzDbK2A==</span><br><span class="line">DMUULDLK9AHE90T3TVLM9UO0BL3FSD6H.net. 86400 IN NSEC3 1 1 0 - DMV0V678LC7UEC158TTU3M81UCSIPP21 NS DS RRSIG</span><br><span class="line">DMUULDLK9AHE90T3TVLM9UO0BL3FSD6H.net. 86400 IN RRSIG NSEC3 8 2 86400 20200730063155 20200723052155 56519 net. Nnwi6w5n3/C/sNwr5mMCP2i7Uv7Ki3KAI4dkigOMjFwpgLLN2egqyCqL QjLb/Dlk0fe4BjpzbPLMe67vsX8uJVcPXddgSh3EHa1LxhQROegMAFxJ QS2x/2gEI7a5lkLN2Jp7/F8c7q29LqERK8kFCw5sUC5/HHa+c/Pjk96r pfvFNfgj7doPCn7cZ0iXv3eGRxorZFIwemOVzrJfZ/IEiw==</span><br><span class="line">;; Received 641 bytes from 192.33.14.30#53(b.gtld-servers.net) in 157 ms</span><br><span class="line"></span><br><span class="line">keyanjie.net.           600     IN      A       101.132.113.74</span><br><span class="line">;; Received 57 bytes from 106.11.141.115#53(dns11.hichina.com) in 45 ms</span><br></pre></td></tr></table></figure><p>&#x6309;&#x524D;&#x6587;&#x6240;&#x8FF0;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x672C;&#x673A;&#x5411;&#x672C;&#x5730;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EE5;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x7533;&#x8BF7;&#x89E3;&#x6790;&#xFF0C;127.0.1.1&#x662F;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#xFF1F;</p><p>&#x6211;&#x7684;&#x673A;&#x5668;&#x662F;ubuntu16.04&#xFF0C;ubuntu&#x4E0B;&#x6709;&#x4E2A;&#x672C;&#x5730;DNS&#x670D;&#x52A1;&#xFF0C;&#x53EB;dnsmasq&#xFF0C;&#x5B83;&#x662F;&#x7531;NetworkManager&#x63A7;&#x5236;&#x7684;&#x3002;</p><p>&#x5B83;&#x76D1;&#x542C;&#x7684;&#x672C;&#x5730;&#x5730;&#x5740;&#xFF0C;--listen-address=127.0.1.1 (ubuntu12.04&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C; &#x662F; 127.0.0.1)&#xFF0C; &#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x662F;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x56DE;&#x73AF;&#x5730;&#x5740;&#x3002; &#x800C;&#x771F;&#x5B9E;&#x7684;dns&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x662F;&#x88AB;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7BA1;&#x7406;&#x7EF4;&#x62A4;&#x7740;&#x7684;&#x3002;</p><p>127.0.1.1&#x662F;&#x7528;&#x4E8E;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#xFF08;port forwarding&#xFF09;&#x7684;&#xFF0C;&#x6BD4;&#x5982;ISP&#x5206;&#x914D;&#x7684;DNS server&#x662F;123.123.123.123&#x3002;&#x5219;dnsmasq&#x4F1A;&#x5C06;&#x5BA2;&#x6237;&#x7AEF;&#x5411;127.0.1.1:53&#x53D1;&#x9001;&#x7684;DNS&#x8BF7;&#x6C42;&#xFF0C;&#x8F6C;&#x53D1;&#x5230;123.123.123.123:53&#x3002;</p><p>&#x5728;&#x963F;&#x91CC;&#x4E91;&#x7684;&#x89E3;&#x6790;&#x56FE;&#x793A;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;NS&#x8BB0;&#x5F55;&#x7C7B;&#x578B;&#xFF0C;&#x6807;&#x8BB0;&#x7740;&#x5C06;&#x57DF;&#x540D;&#x6307;&#x5B9A;&#x5176;&#x4ED6;DNS&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;&#x8FD9;&#x91CC;&#x7684;NS&#xFF0C;&#x5C31;&#x662F;<code>dig +trace</code>&#x5E94;&#x7B54;&#x8BB0;&#x5F55;&#x4E2D;&#x7684;NS&#x3002;</p><p>&#x5B83;&#x8FD4;&#x56DE;13&#x4E2A;&#x6839;&#x57DF;&#x540D;&#x7684;&#x5730;&#x5740;&#x3002;&#x6839;&#x636E;&#x5E94;&#x7B54;&#x7684;&#x7C7B;&#x578B;NS&#xFF0C;&#x4EA4;&#x7531;&#x5217;&#x51FA;&#x6765;&#x7684;.net&#x7684;&#x6743;&#x5A01;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x5728;&#x6BCF;&#x4E2A;&#x57DF;&#x4E2D;&#xFF0C;&#x4F1A;&#x6709;&#x4E00;&#x53F0;&#x6216;&#x8005;&#x591A;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x6765;&#x4FDD;&#x5B58;&#x8FD9;&#x4E2A;&#x57DF;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x54CD;&#x5E94;&#x5173;&#x4E8E;&#x8BE5;&#x57DF;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD9;&#x79CD;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x53EB;&#x8FD9;&#x4E2A;&#x57DF;&#x7684;&#x6743;&#x5A01;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x591A;&#x4E2A;&#x6743;&#x5A01;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x95F4;&#xFF0C;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x53F0;&#x662F;&#x4E3B;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8FD9;&#x53F0;&#x4E3B;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5411;&#x5176;&#x4ED6;&#x8F85;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5206;&#x53D1;&#x57DF;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x66F4;&#x65B0;&#x4FE1;&#x606F;&#xFF09;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p><p>&#x540C;&#x6837;&#xFF0C;b.gtld-servers.net&#x8FD9;&#x4E2A;DNS&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;NS&#x7C7B;&#x578B;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x4EA4;&#x7531;dns11.hichina.com&#x6216;dns12.hichina.com&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p><p>&#x9009;&#x62E9;&#x4E86;dns11.hichina.com&#xFF0C;&#x8FD4;&#x56DE;keyanjie.net&#x7684;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#xFF1A;A&#x7C7B;&#x578B;&#xFF0C;&#x5230;IP&#xFF1A;101.132.113.74&#x3002;</p><p>&#x8FD9;&#x65F6;&#xFF0C;&#x8BBF;&#x95EE;101.132.113.74&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x4ED6;&#x7684;&#x535A;&#x5BA2;&#x3002;</p><h1 id="&#x4E00;&#x4E2A;ip&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;">&#x4E00;&#x4E2A;IP&#x4E0B;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;</h1><p>&#x8FD9;&#x662F;&#x6211;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x540C;&#x5B66;&#x7684;&#x535A;&#x5BA2;&#xFF1A;cjh.zone&#xFF0C;&#x5F53;dig cjh.zone&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig cjh.zone</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; cjh.zone</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 47702</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;cjh.zone.                      IN      A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">cjh.zone.               300     IN      A       185.199.111.153</span><br><span class="line"></span><br><span class="line">;; Query time: 64 msec</span><br><span class="line">;; SERVER: 127.0.1.1#53(127.0.1.1)</span><br><span class="line">;; WHEN: Fri Jul 24 18:09:24 CST 2020</span><br><span class="line">;; MSG SIZE  rcvd: 42</span><br></pre></td></tr></table></figure><p>&#x5F53;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;IP&#xFF1A;185.199.111.153 &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;github&#x7684;404&#x754C;&#x9762;&#xFF1A;</p><p><img src="/posts/742bf6ac/1595626403791.png"></p><p>&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x4E2A;&#x4E3B;&#x673A;&#x4E0B;&#xFF0C;&#x6709;&#x591A;&#x4E2A;&#x7F51;&#x7AD9;&#x3002;</p><p>&#x90A3;&#x5F53;&#x6211;&#x8BBF;&#x95EE;cjh.zone&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E3B;&#x673A;&#x662F;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x663E;&#x793A;&#x7F51;&#x7AD9;&#x7684;&#x5462;&#xFF1F;</p><p>&#x662F;&#x901A;&#x8FC7;&#x4E3B;&#x673A;&#x5934;&#xFF0C;</p><p>&#x5728;&#x77E5;&#x4E4E;&#x7684;&#x8FD9;&#x4E2A;&#x56DE;&#x7B54;&#x4E2D;&#xFF1A;</p><p><a href="https://www.zhihu.com/question/30105450/answer/1207087774" target="_blank" rel="noopener">&#x5728;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x9762;&#x600E;&#x4E48;&#x653E;&#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x5440;&#xFF1F; - &#x725B;&#x5CB1;&#x7684;&#x56DE;&#x7B54; - &#x77E5;&#x4E4E;</a>&#x4E2D;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#xFF1A;</p><p>&#x7406;&#x89E3;&#x4E86;HTTP &#x534F;&#x8BAE;&#x4F60;&#x5C31;&#x77E5;&#x9053;&#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x5B8C;&#x5168;&#x53EF;&#x4EE5; host &#x5F88;&#x591A;&#x7F51;&#x7AD9;&#xFF0C;&#x539F;&#x56E0;&#x5C31;&#x5728;&#x4E8E; HTTP request &#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86; HOST &#x8FD9;&#x4E2A;&#x4FE1;&#x606F;&#x5934;&#x3002;</p><p>&#x867D;&#x7136;&#x4E24;&#x4E2A;&#x57DF;&#x540D;&#x90FD;&#x89E3;&#x6790;&#x5230;&#x540C;&#x4E00;&#x4E2A; IP&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x7528;&#x6237;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4E24;&#x4E2A;&#x57DF;&#x540D;&#x5411;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;&#xFF0C;HTTP Request &#x91CC;&#x9762;&#x7684; Host &#x5934;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x3002;</p><p>&#x5F53;&#x4F60;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x91CC;&#x8F93; <code>http://developer.mozilla.org</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;server &#x6536;&#x5230;&#x7684; HTTP &#x62A5;&#x6587;&#x5934;&#x957F;&#x8FD9;&#x6837;&#xFF1A;</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: developer.mozilla.org</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>&#x5F53;&#x4F60;&#x6362;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BD4;&#x5982; <code>http://developer.google.org</code>&#xFF0C;&#x62A5;&#x6587;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#xFF1A; <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: developer.google.org</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p><p>&#x5F88;&#x663E;&#x7136;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;host &#x6765;&#x628A;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x3002; &#x4E00;&#x822C;&#x7684;&#x5B9E;&#x8DF5;&#x505A;&#x6CD5;&#x7684;&#x8BDD;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; nginx &#x4F5C;&#x4E3A; Gate&#xFF0C;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x91CC;&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#xFF1A;</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">http {  </span><br><span class="line">   ...  </span><br><span class="line"> </span><br><span class="line">   server {  </span><br><span class="line">            listen 80;  </span><br><span class="line">            server_name developer.mozilla.org;  </span><br><span class="line">            root /var/www/html/mozilla;  </span><br><span class="line">            ...  </span><br><span class="line">   </span><br><span class="line">   }  </span><br><span class="line">   server {  </span><br><span class="line">            listen 80;  </span><br><span class="line">            server_name developer.google.com;  </span><br><span class="line">            root /var/www/html/google;  </span><br><span class="line">            ...  </span><br><span class="line">   </span><br><span class="line">   }  </span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x7684;&#x8BDD;&#xFF0C;&#x7528;&#x6237;&#x7528;&#x57DF;&#x540D;<code>http://developer.mozilla.org</code>&#x8BF7;&#x6C42;&#x7684;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE; /mozilla &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939; serve &#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x4ECE; <code>http://google.org</code>&#x8BF7;&#x6C42;&#x7684;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE; /google &#x6587;&#x4EF6;&#x5939; serve &#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002; &#x4E00;&#x822C;&#x60C5;&#x51B5;&#x672C;&#x5730;&#x7684;&#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x8FD8;&#x8981;&#x6709; serve &#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5047;&#x5982;&#x4E00;&#x4E2A;&#x542F;&#x52A8;&#x540E;&#x76D1;&#x542C; 3000&#x7AEF;&#x53E3;&#xFF0C;&#x4E00;&#x4E2A;&#x76D1;&#x542C; 8000 &#x7AEF;&#x53E3;&#xFF0C;&#x90A3;&#x518D;&#x52A0;&#x4E0A;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">http {  </span><br><span class="line">       ...  </span><br><span class="line">       ...  </span><br><span class="line">  </span><br><span class="line">       server {  </span><br><span class="line">                listen 80;  </span><br><span class="line">                server_name developer.mozilla.org;  </span><br><span class="line">                root /var/www/html/mozilla;  </span><br><span class="line">                location /api {</span><br><span class="line">                    proxy_pass localhost:3000</span><br><span class="line">                }</span><br><span class="line">       </span><br><span class="line">       }  </span><br><span class="line">       server {  </span><br><span class="line">                listen 80;  </span><br><span class="line">                server_name developer.google.com;  </span><br><span class="line">                root /var/www/html/google;  </span><br><span class="line">                location /api {</span><br><span class="line">                    proxy_pass localhost:8000</span><br><span class="line">                }</span><br><span class="line">                ...  </span><br><span class="line">       </span><br><span class="line">       }  </span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5F62;&#x5982;<code>http://developer.mozilla.org/api/...</code> &#x7684;&#x8BF7;&#x6C42;&#x5C31;&#x4F1A;&#x8F6C;&#x53D1;&#x5230; localhost:3000&#xFF0C;&#x7136;&#x540E; nginx &#x518D;&#x628A; localhost:3000 &#x8FD4;&#x56DE;&#x7684;&#x518D;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x5F53;&#x7136;&#x5982;&#x679C;&#x5E94;&#x7528;&#x4E0D;&#x662F;&#x5728;&#x548C; nginx &#x4E00;&#x4E2A;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x80FD;&#x8FD9;&#x4E2A;localhost:3000 &#x5C31;&#x662F;&#x79C1;&#x7F51;&#x7684;&#x5176;&#x5B83;&#x4E3B;&#x673A;ip&#xFF0C;&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x516C;&#x7F51; ip&#xFF0C;&#x6216;&#x8005;&#x57DF;&#x540D;&#xFF0C;8000 &#x7684;&#x4E5F;&#x540C;&#x7406;&#x3002;</p><p>&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x53EF;&#x4EE5; host &#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x4E86;&#xFF0C;&#x540C;&#x7406;&#x8FD8;&#x53EF;&#x80FD;&#x662F;&#x5F88;&#x591A;&#x4E2A;&#x3002;</p><p>nginx &#x7684;&#x8BDD;&#xFF0C;&#x7528;&#x4F5C;&#x8FD9;&#x79CD; Gate &#x8F6C;&#x53D1;&#x8BF7;&#x6C42;&#x5E76;&#x9759;&#x6001;&#x6587;&#x4EF6; host &#x662F;&#x86EE;&#x65B9;&#x4FBF;&#x7684;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x51E0;&#x884C;&#x7B80;&#x5355;&#x7684; json &#x914D;&#x7F6E;&#xFF0C;&#x5C31;&#x80FD;&#x7A33;&#x5B9A;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x800C;&#x4E14;&#x57FA;&#x4E8E;&#x5F02;&#x6B65; I/O&#xFF0C;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x5F88;&#x597D;&#x3002;</p><p>&#x603B;&#x4E4B;&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;Host &#x5934;&#x53EF;&#x4EE5;&#x8BA9;&#x8FC7;&#x6EE4;&#x8F6C;&#x53D1;&#x8BF7;&#x6C42;&#x3002;</p><h1 id="&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;ip">&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;IP</h1><p>&#x5F53;&#x4F60;<code>dig +trace windsings.com</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;DNS&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x4E09;&#x4E2A;IP&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">intel@intel-pc:~$ dig +trace windsings.com</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; +trace windsings.com</span><br><span class="line">;; global options: +cmd</span><br><span class="line">.                       2983    IN      NS      a.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      b.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      c.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      d.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      e.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      f.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      g.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      h.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      i.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      j.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      k.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      l.root-servers.net.</span><br><span class="line">.                       2983    IN      NS      m.root-servers.net.</span><br><span class="line">;; Received 239 bytes from 127.0.1.1#53(127.0.1.1) in 7 ms</span><br><span class="line"></span><br><span class="line">com.                    172800  IN      NS      a.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      b.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      c.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      d.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      e.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      f.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      g.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      h.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      i.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      j.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      k.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      l.gtld-servers.net.</span><br><span class="line">com.                    172800  IN      NS      m.gtld-servers.net.</span><br><span class="line">com.                    86400   IN      DS      30909 8 2 E2D3C916F6DEEAC73294E8268FB5885044A833FC5459588F4A9184CF C41A5766</span><br><span class="line">com.                    86400   IN      RRSIG   DS 8 1 86400 20200806210000 20200724200000 46594 . iFLnO7of/tl4M23HkDFQ0sMsm5ONcS+Qg6l6QPKHo1xV0zslYX1M8WQ4 TU7kbX1eks3f44hXrtjJwNESdakmQd0XgKapTIiXsOMknfFjpj5lLprm B5x5k6JI5PKZsZ5OVtGF888BsUXYH1dAT7bfny6xw0kRJvk/ZJHbKC+g uczBRdilPuYfqEyVHEdCaWd3TL6clVIS85ZpaB3zzYZAHldD2ykBzWRR 46vmMFfk0EIpatpoOf9p6LQzmq0CqR7FcPo5EEOUnvpXkaMUjEenGIdw q8lm4/a43otwwq9g15CFabxN2o2mQlhlzuVBMmLIyUCKU4QzevhVnh7g AM6nyA==</span><br><span class="line">;; Received 1173 bytes from 198.41.0.4#53(a.root-servers.net) in 162 ms</span><br><span class="line"></span><br><span class="line">windsings.com.          172800  IN      NS      ns1.smartgslb.com.</span><br><span class="line">windsings.com.          172800  IN      NS      ns2.smartgslb.com.</span><br><span class="line">CK0POJMG874LJREF7EFN8430QVIT8BSM.com. 86400 IN NSEC3 1 1 0 - CK0Q1GIN43N1ARRC9OSM6QPQR81H5M9A NS SOA RRSIG DNSKEY NSEC3PARAM</span><br><span class="line">CK0POJMG874LJREF7EFN8430QVIT8BSM.com. 86400 IN RRSIG NSEC3 8 2 86400 20200728044213 20200721033213 24966 com. qoAss2VVxsBWG9+MAQ3giAmCnzf4dz7GppZsQfkt3b7cFIVgO3TiWPWk usb3BEbpsma2Q+x/TBLeeHYm6l1HWXMIl7zcYLsAXY0ZzoWaqNPTPH6Y NDAreZYP21UekBL7g710cndRk4oaJUNz5t8sGi3JaOJF046QcUz6gGg7 NLMvyGlJWzmftGbxgp9ovdOgwmirddESGOj33kuCfSJvWA==</span><br><span class="line">8HTEEKSHQDE7BN29IUEH9GCUG0BJA05S.com. 86400 IN NSEC3 1 1 0 - 8HTEUV6CJU94CB57CLPPJ7DS5EJ8OTUB NS DS RRSIG</span><br><span class="line">8HTEEKSHQDE7BN29IUEH9GCUG0BJA05S.com. 86400 IN RRSIG NSEC3 8 2 86400 20200731051909 20200724040909 24966 com. PqoClMMWAVeFX2+5EHMtxxS6MgOwOWIBrWYrnhdgy8SecgUvrpv5PhSH TKGR5F+dTpeYpCe8E6HPHEwxHtXaPhuepEzxWNAyREnAy5LMssix1Jnh WrjKiRFjK4tWWqfhDHBaGcgjm9r3SFl3OWneA3VG11RvlEkUTb6vHQRm zH/0ZPKSkpxGK1joaA/GDOIlNrNbKGzicXKDjBaJGFDdQw==</span><br><span class="line">;; Received 817 bytes from 192.54.112.30#53(h.gtld-servers.net) in 483 ms</span><br><span class="line"></span><br><span class="line">windsings.com.          60      IN      A       154.209.235.56</span><br><span class="line">windsings.com.          60      IN      A       45.137.10.76</span><br><span class="line">windsings.com.          60      IN      A       119.28.89.140</span><br><span class="line">;; Received 90 bytes from 172.104.121.39#53(ns1.smartgslb.com) in 65 ms</span><br></pre></td></tr></table></figure><p>&#x5F53;&#x8BB0;&#x5F55;&#x503C;&#x6709;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x57DF;&#x540D;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x7684;&#xFF1F;</p><p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x8003;<a href="https://support.huaweicloud.com/dns_faq/dns_faq_023.html" target="_blank" rel="noopener">&#x534E;&#x4E3A;&#x4E91;&#xFF1A;&#x5F53;&#x8BB0;&#x5F55;&#x503C;&#x6709;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x57DF;&#x540D;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x7684;&#xFF1F;</a></p><p>&#x5F53;&#x4E3A;&#x57DF;&#x540D;&#x6DFB;&#x52A0;A&#x7C7B;&#x578B;&#x6216;&#x8005;AAAA&#x7C7B;&#x578B;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x53C2;&#x6570;&#x201C;&#x503C;&#x201D;&#x652F;&#x6301;&#x586B;&#x5199;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#xFF0C;&#x5C06;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x5230;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x3002;</p><p>&#x5F53;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x7684;&#x201C;&#x503C;&#x201D;&#x5305;&#x542B;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x4F1A;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x8FD4;&#x56DE;IP&#x5730;&#x5740;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x968F;&#x673A;&#x7684;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x7684;IP&#x5730;&#x5740;&#x4F5C;&#x4E3A;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x3002;</p><p>&#x5176;&#x89E3;&#x6790;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p><ol type="1"><li>&#x7F51;&#x7AD9;&#x8BBF;&#x95EE;&#x8005;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x5411;Local DNS&#x53D1;&#x9001;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x3002;</li><li>Local DNS&#x5C06;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x9010;&#x7EA7;&#x8F6C;&#x53D1;&#x81F3;&#x6743;&#x5A01;DNS&#x3002;</li><li>&#x6743;&#x5A01;DNS&#x5728;&#x6536;&#x5230;&#x89E3;&#x6790;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x5C06;&#x6240;&#x6709;IP&#x5730;&#x5740;&#x4EE5;&#x968F;&#x673A;&#x987A;&#x5E8F;&#x5168;&#x90E8;&#x8FD4;&#x56DE;Local DNS&#x3002;</li><li>Local DNS&#x5C06;&#x6240;&#x6709;IP&#x5730;&#x5740;&#x8FD4;&#x56DE;&#x6D4F;&#x89C8;&#x5668;&#x3002;</li><li>&#x7F51;&#x7AD9;&#x8BBF;&#x95EE;&#x8005;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;IP&#x5730;&#x5740;&#xFF0C;&#x901A;&#x5E38;&#x9009;&#x53D6;&#x8FD4;&#x56DE;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;IP&#x5730;&#x5740;&#x3002;</li></ol><p>&#x6839;&#x636E;&#x5927;&#x91CF;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x663E;&#x793A;&#xFF0C;&#x89E3;&#x6790;&#x5230;&#x5404;IP&#x5730;&#x5740;&#x7684;&#x6BD4;&#x4F8B;&#x63A5;&#x8FD1;&#x76F8;&#x7B49;&#x3002;</p><p>&#x4F8B;&#x5982;&#xFF0C;&#x67D0;&#x7F51;&#x7AD9;&#x7684;&#x57DF;&#x540D;&#x4E3A;&#x201C;example.com&#x201D;&#xFF0C;&#x90E8;&#x7F72;&#x4E86;3&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;IP&#x5730;&#x5740;&#x5206;&#x522B;&#x4E3A;&#xFF1A;192.168.1.1&#x3001;192.168.1.2&#x3001;192.168.1.3&#x3002;</p><p>&#x4E3A;&#x57DF;&#x540D;&#x201C;example.com&#x201D;&#x914D;&#x7F6E;&#x4E00;&#x6761;A&#x7C7B;&#x578B;&#x8BB0;&#x5F55;&#x96C6;&#xFF0C;&#x5C06;&#x8BB0;&#x5F55;&#x96C6;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;3&#x4E2A;IP&#x5730;&#x5740;&#x3002; <img src="/posts/742bf6ac/zh-cn_image_0253273506.png"></p><p>&#x4E0D;&#x540C;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x7F51;&#x7AD9;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x5982;&#x4EE5;&#x4E0B;&#x6240;&#x793A;&#x3002;</p><table><thead><tr class="header"><th>&#x7528;&#x6237;</th><th>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</th><th>&#x89E3;&#x6790;&#x7ED3;&#x679C;</th></tr></thead><tbody><tr class="odd"><td>&#x7528;&#x6237;A</td><td>192.168.1.1 192.168.1.2 192.168.1.3</td><td>192.168.1.1</td></tr><tr class="even"><td>&#x7528;&#x6237;B</td><td>192.168.1.2 192.168.1.1 192.168.1.3</td><td>192.168.1.2</td></tr><tr class="odd"><td>&#x7528;&#x6237;C</td><td>192.168.1.3 192.168.1.1 192.168.1.2</td><td>192.168.1.3</td></tr></tbody></table><p>&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x89E3;&#x6790;windsings.com &#x7684;&#x7ED3;&#x679C;&#xFF08;&#x5728;Linux&#x4E0B;&#xFF09;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netdb.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">hostent</span> *<span class="title">host</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span> <span class="title">h_addr</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((host = gethostbyname(<span class="string">&quot;windsings.com&quot;</span>)) != <span class="literal">NULL</span>) {</span><br><span class="line">        h_addr.s_addr = *((<span class="keyword">unsigned</span> <span class="keyword">long</span> *)host-&gt;h_addr);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, inet_ntoa(h_addr));</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ gcc code1.cpp</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ls</span><br><span class="line">a.out  code1.cpp</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">119.28.89.140</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">45.137.10.76</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">119.28.89.140</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$ ./a.out </span><br><span class="line">154.209.235.56</span><br><span class="line">(base) intel@intel-pc:~/Documents/CppCode$</span><br></pre></td></tr></table></figure><p>&#x53EF;&#x89C1;&#xFF0C;3&#x4E2A;IP&#x90FD;&#x88AB;&#x6253;&#x5370;&#x51FA;&#x6765;&#x4E86;&#x3002;</p><p>&#x5728;&#x8FFD;&#x8E2A;&#x7684;&#x89E3;&#x6790;&#x8BB0;&#x5F55;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;DNS&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;&#x662F;smartgslb&#xFF0C;&#x81EA;&#x7136;&#x60F3;&#x5230;&#x4E86;&#x57FA;&#x4E8E;DNS&#x89E3;&#x6790;&#x7684;&#x5168;&#x5C40;&#x8D1F;&#x8F7D;&#x5747;&#x8861;GSLB&#xFF0C;&#x6211;&#x539A;&#x7740;&#x8138;&#x76AE;&#x53D1;&#x5DE5;&#x5355;&#x95EE;&#x5BA2;&#x670D;&#xFF0C;&#x8BE2;&#x95EE;&#x5230;&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x3002;</p><p>&#x8FD9;&#x4E2A;&#x80CC;&#x540E;&#x662F;&#x4E00;&#x4E2A;&#x53EB;&#x667A;&#x80FD;&#x89E3;&#x6790;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5F53;&#x6211;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x7684;IP&#x5730;&#x5740;&#x5728;&#x4E9A;&#x6D32;&#xFF0C;&#x56E0;&#x6B64;&#x667A;&#x80FD;DNS&#x89E3;&#x6790;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E9A;&#x6D32;&#x7684;IP&#x3002;&#x8FD9;&#x4E09;&#x4E2A;IP&#x7531;&#x6211;&#x7684;&#x7535;&#x8111;&#x81EA;&#x884C;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#xFF08;&#x4E00;&#x822C;&#x5C31;&#x662F;&#x8BBF;&#x95EE;&#x7B2C;&#x4E00;&#x4E2A;&#xFF09;&#xFF0C;&#x5173;&#x4E8E;&#x667A;&#x80FD;&#x89E3;&#x6790;&#xFF0C;&#x6211;&#x53E6;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x7B80;&#x8FF0;&#x3002;</p><p>&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x4F7F;&#x7528;&#x4E86;CDN&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E09;&#x4E2A;IP&#x5176;&#x5B9E;&#x662F;CDN&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5173;&#x4E8E;CDN&#xFF0C;&#x6211;&#x53E6;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x7B80;&#x8FF0;&#x3002;</p>]]></content>
       
       <categories>
           
@@ -457,9 +457,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
         </tags>
       
@@ -559,9 +559,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 校招真题 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -902,9 +902,9 @@
             
             <tag> 算法 </tag>
             
-            <tag> 数据结构 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 复习 </tag>
             
@@ -927,9 +927,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 实验报告 </tag>
+            
+            <tag> C++ </tag>
             
             <tag> OpenCV </tag>
             
@@ -1080,9 +1080,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 实验报告 </tag>
+            
+            <tag> C++ </tag>
             
             <tag> OpenCV </tag>
             
@@ -1113,9 +1113,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> C++ </tag>
             
             <tag> Eigen </tag>
             
@@ -1335,7 +1335,7 @@
       <title>读研日记</title>
       <link href="//posts/52379290/"/>
       <url>//posts/52379290/</url>
-      <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x8BBF;&#x95EE;</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19uaB+Momb75zmlVWkzg9SOXIg0sxMbW8qHsVj2kvfXkh2LizkZLDOOdlp3b71KB/9fX0uE3ad40qFryGF1CekmRnA0ofHfa/id1jxb0NpHUufgX1WyATO/c5IoO1w1rUC/intkAUHTzfa9ETLFn/5i0JuuEP8P0hG5kHW/ZgF2xW3KsRUlg3o68ItAX6rVMzUtbediu5c7J8Zylv3X0J2XKOwg/mnHaAVoOUuAn4rsyVcYDOXdo/vsZkMfoIkGjvxjkaEXyqRoGfZWcuVZ9SLlF+5StFB2Zkcfu1qmGs3sizDJgw1fwm7krKGM7CNXuGQV1UQBG03U14eYsKYBukMxqNeeapEfp36icRGFIS/qVY4rDCAIruPk0HbaCzrmv9D1iSjFPRfCB55gEawA0Ry77sHhM/BFNuqXB2exb4Hih2RBrzJb+hW7WFvTIvu/9cYE4vXV0PI7FU4fL0dc3nTP1AqoKJHu2PC5lzrURwqOBRPufjdsIQaJIM6JwHoLs/aNJkV2uk71PGflwNMhjJM2rH90d/ZxIKGc/4qwDJZz1h7iTNnfPEmAKqKQuAANNc0Zj2H/6TJn3UaUswTNWXU7wBpe24tiTMmy/E9hOyWOlpAUUn4SMrSRhvovmVFqAey5gEmV8lH+/YNc+VXvFpI2awOk278Ljw+jFWm2giez3p160y4oQUkDaclB6L3x2ZPH4jAwW/MvJOhHjH2/a0tx7tkx34QtrX/RBYaNFCja6V5dSZHmOgLkrpDSy6akXCdnZvt+TMSa72gPe3Eaf3MCVXbkU+VOUoLC+t4gsuxSG+UlPtt4ra1NiZeQ8HH5JwRmkgAizN0p2ZjZEL8Un61Snc0WIzIeUNOS5ISDs3FznHltkGdEF850IYJorRY+fm8RykmMAgaSFWCnrHcxA69acrCr8VqLjbYNx0zWehMWhUof0yr9exbd7Zb2+WZ89nYfAJWTq+T/bh+WTNHcuKHwzDEZuN+SA/0O8UYg5hJrnK6pVFq5t8XhMMFMXEa6y/131uP1kDBwHBAHKIom9x+iMEwI0G21fgXjdsNFBfooROZFxGhMwiH/55iSwp5s6zRN1ZBRAEq97RWJw0A2N5HzeOAdlYmhaK8rIXKv1cqhvgQV2bp7SDNy/zm4MsNdXsjcOeO0sg6fU1c9dwDxYXa4MxK8CU0CXWNsAu4qqVTiTmxaiMJWcsPE/jnQp3jA6wGOv6CGIQIoCWxnjZgYhoIf55mrQil/xunzwqHNH4CS+N+5YhIj5QQ2MsqAeOju5+kPD8ZT6LGX3dpSoeLn4YwyKVPrgEVJK164/b0BQsZD23dox+ENme1afJIBhoO82OQk1pSre6zj+rvnUTcfzw8RVhxRGOvKODj7iFhB9zKM7zeCLOxjsy42dvMMViL0gabF3Rbv9T+xXK7bT7AzQRoXlVNbsZJtwkAtaWWiNw5fGUUub61SecIn+oDyqinKppYgyH9eLmkQB39jm0t6xFD+jLzyj58jg/B0QsvUS6dZGzsOCoaK+cK4JUaBN9Kn7e+fo4RDW6AaGYCLkOp66ViXezAVrJ98jvXulY4OeBF5kVErEZkkh/3VpXtrMgzp1CGjNw5FvV/bdCsiYqbKmen9FqWbnPXarjpT9lOWLG4qks7jJgsCzsAmVrm2B5olzlAXrxkgUnquCnlKKKMFzE+YrtfV8QNhgkHNk+CjYf16surxgBSPu4GXZQYK6wORmbQyga/RjmsFziCUHV3Y9bU2UQk6XK7gNamt9XNABYGN5t3mHo7fKvMl5zKcYDtSrAvMQjlvdLfS8mSmPZQEIXxU+upfljblJiubQ0pBjcuvcOazpDsZ8vOwyIVRWc0vv6SmZNMErL7DwzdHDVYZ8q9IIMdaRN+755tciY8/qZzX5Tmaz0+Aijf0qS/U2wX7CYRdyrKrG0lE4KAmphTw2MM55ZA/7TJUuZ9D90zDa7Lyaz0wKuXPM48ik6chL0Dgh/QSAkX/nc5fCUdrxnKe7ESFyrGo0h4ckB7Kr0iPrL2bHVJi0M+H4lxvT+A4t6UfcO0PQckK4f7KgNYigzJYddWwnYl+Zv4sMKwqKg8OV1swR+pzI8eC2jxOUkqP2yS7oBhXSE5RAQ8X1e5agUwNqYodSJPt0R2sA/SwhC1nmwbj2q40A8cCQyM2pEMac2QMTeg+Vh2vmG1er2gYA1OHSrrLn7t8LrkNNY6xgSKcGQvYp/uBLiuB+l9Evr7Qo72Og9ebsi59oay4qH+xxkzj4e+c2eCZ24Bf9JGmRIPYc8KYqRSDr91LeVPwkB8pmAkQ2mKzux4IhB2XeAvrpL/IKRu4pZEtxyuh7c1+E1WMJkcH01AGAWOkPhUxMvdyT2sj/MwoVWDHyXRXyt0Rlb6l24sNX3089GSoLS/ymM6/ASNcIUGd/9S4h4WdYJoEdYdNuY6x8dAOpzeDNvSYBb4pDLC4/E8yhSWnpnrLqpE4I1q/eBTP9ks4YC/wQ+FPHKZEeP9SMGxWsdS78WqfnfoKrI4MvHJjmmBt3R0fZ3yXsVbp7ipwCfBcGb2GP1v+eGok75W+P8O+ls2xwbCa3dF6ooGJHVcx7+ZRpWq2ZgbIQm513xYkSdBQgHAnZuhjM+vs6A+QWjXMY0IG33eXnZt3s6NDV2GIR0FCrvrvb8ejC1/V0g//LqblNqqszqJcj6/KvBl6i8mjJtreWhQToJZBB5hHoU9sB3zEicsYVqiQpi8vSkUERfVU/D0Ii3TNGL0N6IopmOaz0PAHIKQKTohXqyUFFvDVt89MZe/wK++znyRDK1wqGO9ZJMz3GIGbXFoTNBwbHMv/bQyktkY1oWICR7yc3IjVMaoUkVSYqJYC6E5yidDlOJ4FofaqJVTvLIqhOt3V4lsFxA5bK0AjzcuPoyziSgHpEn2p8SELj585cXToES3Qq9MOxSkDMBtFA0j/SyxtG5boRlNIMSQunRy87uq2iJfTwTzNK5LyIyddmcscAfQCC23KbsLlaqufx6gp7XWSbWcYl/6cfiEUO6p0ZO7w/TiKFxVEICrQY5r3LWE59G9y0ESpa/4E25k16znPOB+hGBgAg6PNZZvCyt6LiFVCjm8ZbW9fXJiWhpCzKKHvPLEhyQSn9fAfuMYw7Il26qiHNl2ncypGGXEh5OocMbj61EbdtCxoqxdXB6hk44gRuGOKWEXKl5y3UnxMy8RafXBXyVOKWV3+xAtX9mxXbCGAjh3g5G3Vzbr+tmycAjkpLVYFa4qgwhp7msU/LC7SfMNDfTda4vYkgStkZLBad5c+k3BdskOGgITygsgZEVWO66qCCig4eSRw8rU5Bu/k2LCvOe/O0Yu1gEJqpq9JxRz5cxUJc18/f3ulZNA3lsySoeD1c0E1JAf06Y7VqZBD7p+9rPf8u8b1XPm6LjFR8EIYW5D6OEbx74K5exCoZ/RWiBstfNsiNoQOXIIaiwKotOD7w9iIMDwbFOFfMEgejFDAAFTji7j+82/nuQ+G7PvnXcV1hx4hQbLzOarlq9HViETW21lJPe461i91oU2ZT6fm5v7a96bOYPkPHIgioVZ/+333uBEit8KA57bzywWbpeNOx+aSct1GK8uxK61IK8AT1IYyuc4WtFw5gZfSjyIcAhZpDEDUTWAyURSvgt4iMDW7GuyshCeGvDcxiE5CuWg5VA1xq1g5aTrUnvlynRnZoSrLnKRVq66UwS7hgd6L/qZ2sgpkQLjSCmUp1m48cqh/0JXSsuFOY0G/ip45s2Dat4eydnpgerv2M1ora7iJkA/ZTN+Y+/42ROuSpDDfmZF8sEMp/toECCJGA+KqYvygGZt7WfEV8dctHZWNeMmNEwqj8SeEFcaEmuxXCwZYo7WM+RZUmTGayhw+AO7qFPd76fv92JOJBdH8sK9nqC/UmSKyyxTKIOeEW1td/i3DoDqXawdoEvKDH/wjia9NQV6MT03EEf0eqRiz9pKY1dkGEm+rVj041Ci79RFUqyZvVaiuGR7YZVZk0xnj3K7mMbHjgY+cJRSXONyXglprTZar5Jh9pbN9P97+xXRMu2++gCl0lWE0Lvr+ZXFS82f3kxrnESGMPMB90FrcamgNPU+YPRM2EFhfiZXK6wU9CG1uMKCr172rmINqp/QrVlcD1YpzkAf4wY1xmEEpv5fG2Avyb9DYZWlHapAa6oisPh21XSI2L3Dq5faGP+gZpIiB/UWfIYAQq32avvXPpEXoywGCptODJHNvb+SA9KgQmrduJLhbDNRr4+3xE5jaIGEyJGGHaelVdN6MyTYQ3J8p4MHoDzBLzn6ts1qjMGmTkOHOl1OwgmcFccQltsUhTdCu4741xEF0iAHjy/d+hxmEYeUfozHIrPSjRKE0f2evndKl7f+VNR5QXZD0qkrdEdlJMd6Npt4cuCfRyWgoWRTmeJJe37bWmP4mjZfZbrgjxbVm3r2JGDgvj54fumvrjqRCxRKtrjsbnc2X0CPDxZb+GnzHtI5HALMVIAvAniSQjNq24/t10xdblKkJXcBA96hpqn02evGdsbmyy1mnJYjx8LrZSSp8tz4No3MzuH7RbNp787ckgwONR7kXbpzDb2e9dMT2I4D2lzVJWR/vsJumiyJ778eWdIgd+A+O0lOBrakQ/l+ZXYhmhMo6PGTZKuGbbiFgWloigNHPEx8Pno9GPR+WCyhRkgPUuN81Hd4mWkZyV9SwUQ1JIkOZWk6R0FdW6QMjnr6h6BgFEosm+FeM7faT6nB0h9GMFr3cVE+8rGebPdMOrqpnrwkLmD2li5tiISeBTBIZHUEfXxSntUAZ17frQSkxxlx+TIC83u1cQADTf25mGeLSMsFxnjsDxN9ykkxaDssCl5idgjJAQerXOSktfP4lhFaVNyNiqO3Fca4/zabGhBsPQ5XvoyGunMThYTTQc46bQrZWvwifdBeG4Ev/k9VbHyyiMjs2u3KiuvrhKuVsiuD3xGwz5g1H/P+6NRUJsumCSTj+YMiREJIW+RyMCihgTG9dPmffH0blcOnRY2Ig/A5e4xYmZ7hJCPkzAMhwVczhutXJgOeYgaGqDHcRKv1Y/khuAcfp1EmlXzTsAJNB0dg4RsFmvDhBL22/p+kI4K7Er2L0tPISdN88oqesKk4xjWLkadJYMsC+b3e9JJxOSXUqDC0R0NNE4PylIBmyOjRWZTfy1JX34+kjmrE5yYa5lhrRtHUMXpFGlXn7HYU6phYk02dBam9Yd9kW1rxZATvy9Ba1lTW+ggAREpasljit5sK+u5+RBy8+bDdSlUrQ68VEWni1IdKEHP8/gzaSNKYmOhFfDKPGaKxpwmzttDeuWLgvz4YbcVOR2sOwNzphwmknnX8H6ImsThe2veYfOQLXboWLJa0FLuqbmkxmKHhP6HWiKfO1Aq4M/dgpEyhCDqnwlvN7TO/Jm1PnMdxqo+532c0EhT2yVpaQbNhqtDd60mtMLkGOD+MZ8DOjswbV0oVqap/87/PocBkyNSSaDt5MYf3pidnCqVLfMJxclbsr4Y1qBGxGdR57rT0s2g0TBHlp1lYaEdNmvzDhv86gPH+ncT2KNIRHHkavWO3wlDhTB5AyT6rJgNaSCLYETVakELT208rKoaosOpQwuFID7kf2+1ML9rGdhOCz5nAyYr1UGSnuHutUHMMfP3w22meF2rgWXcrowMxoPF0tIHDcspm7iyfa6gRChcjMWOoHxrK3/z0jMYJ7PYKY8w/0xUwAnwU+d+RlrWfTWaf2NVsdAya1so5IhMBMO79Dbn+OhcLckjiuSRM3C1RposlCHjYflTt73AWn1ZUHTZQHsd99WpPJptNomtR5XMMOULZ1e2iUyy27STHhtwVSufKbHuD/ksvRxuXw9EykcIISKZthNDkh2WUbvoreKnnNXF5oAm9JeIDaMgxmYR7Q6jeJktT/hKeTiXRUgksl5k/nhBtCqVHy0I4FnLoZlzXVLflPmIwes3R5zCz9kjSVlr4a01Wxp/xEOG1Han9tpY4XrkLIBKZgTlbzW1TsA9qlHI0VvsLeHEtpH99f68RoLrkfmGE9KFcWuvKh5dDPExmjbCRi/9bMQsz++9J/UywtXxyMct9LclkuzBdjtKNCDRdSY9ib+xsJ3Z/TNNlnqS4LS7N3OzqmW6wC3xQcHmi/rteRZkZvvx6WeIyEjJTDuycqBzKIrsBsM3Ne2Igsi2Vhmvnmt65/1Y7K3ueeFRIcWV9K7ZVNdufGNMWGTaiGHpgsvF5x3dCj0SAyvtn/fXSkn0ZZOvHdklyGqoH/cmYr5sjJPgbExBNPeh03lyK7vRwmW62kVvKGzLjyX79ZftLkBoBydM1S7SP7w3PSPechZpGE7+D2vJ6N/CGy0X/sIXgorF10QlA2DGNtCoM/H5itK/KglrAOjtKLyk2CKnfggr4ojB3L2o9jjCkitu6/0ouPs7/qpDsGbBzodYZ4c4UNhfkicoHKHan1Fa5/vOL7mzmow8PmbdTAWTQ045j9PDXdlS2m1qnN9KbzmSO7ueubJ2U2mCEKTJ4+i9DlMrvar8ovsW2nu9VCYXsWgkO6XOH+K3GkQNQSSuJS3YQ8273shjngmjN9GIM877nBoDK3PSNzhquAvcP44L3F2NDJmIW19zVIADLxJvownne/I94k1KU/OqIKDXR+V+bu94ZS3m1PSZDbRfye1ez+hKPZjj7VZ+Y9yYgPqPm4/ypCVwA0xsD/pPnoyJGT34ljiNwVRDUNpUmaSu4U8nw8HzEuk/Bfwjg9A1kQRnQjXJhX3JhYoTiTIs7UQ5LIBgfDI1r6+jPJsExOKLZZPFIDI2VLx9kNkVFK7PwT4C3ZJzLNXQUM9yFvrsngUrgQ3TohykbSy8qtBOxUY3zbXjV348QZAhjZRxvWEWtufsJfdPX6Ly0x7CExTAb65tBCpxM7fxsyqYOlMPZtrbCVn1y+xZ0GPOYZQDadok+zIRdnBRBiujfaPMbMJVkK6mmjh2aeFaHKZ2X1TOp76C+ax/TaWYJ0wK/Lzu6Lz/wBRUOLo0ohVxA3Us5cUMY91SOaHUODbU49qI6hw1km3ob8F9Z4nzyHSxjG3pVxx4Pl55RnVL3mamct0+1fmnsskSZUbe6YPy0m5VCTbJNzkt7hFzDO9ZQeVIc61opsXNTUs5RRd9/3TYiw9HtSmsGJ+js8zlOjf9CqvI4u6kg4kZdWUSA8mqQpeYRr56L4Z/BbT+qE4M87kWiZo/w6QC6KpyUW6tDBKNPSUzLWKwU35ENCipIxLtgpqnVR0iNcCKn+DXfXWW/uVEzhyig3nmVsy/viq44a63IMS1EX/Bmm8kZjviIx6IMnu6hepW5keQa1OELSuA4PVE2oqPMADfIhiq1RH908J9clIevDOb1IAPBsQpFIo/D5XNrNdGcTE6ytAA4uWoTFEpcp+GuitkNLqheB/k9NMyzYrMQKzL3nBsCerpKYIPN42V1ac0NIli2ypcMeGF1mK8iCN0IxwXLQmhb2u0mtTReIcz1/jigDA1S2xK78MbucfxstYtDId2AMCELZBLF+wVaOJa+ZzExmenwU2m4u3jD/3lWNHX6quEElfWZCiSGDUbg0CkbR6zUt2unx+OzkYmg3n61NaG00nT6X6wwheFkeVtZRRgqSw9oPmuHz/DSiRZphpMXBBgdjv64vDgMd/AxSPaUlQvHkgrRzT6y9bqMrvXxvzhf8xlJeyfTalbjvwN/Ccqya50dtjn0gFDlx0pEz8OdT5UtpqrPuT609oOC4alVK3kZLAPEUH0jhcDN0FOAMbh80WR3aFzcCda6ckrFx3Za1Io42sUspcEwtBjXQO4YuFsMnBa6u+0pMnsuoygE5EHaQ0eMVTNHsMpo2Zzbef+S5UFLYlmUgwfXnd7U6czc49wT7AexTMpogseMOqdQo1X9QRjYUjFCok1nlSxE/eDxGrlVAjON33LHF1w0Q2jEDrw/ZDAScme3etlEuOuZ36ZHB5VBotnQSPQp3zsYRG6pC1wVjQs7bS78g2CQHv4GJDJ9XF+5a+kAsAlaMjYwiY/i/ZKgXhKBD3dwKlP7zJ5wMrj7kALmqSwl2ND1gH2CZOalyFuvwJDfOLgMyJen6b9FnSB4klUR7x/aXtkJ/XHyFcWcmDTZfDEmoNw27eqGuEQ3hOH69i117HN3uM3w6AE2uqPkfrRX3twlcvrnLwWZs3f61U1e6XASuQZQ9/ITRf5J09J0LAh4GhputghvnEyXPeE7Uy+gQDs+YsJVTzhxKqMzB5vcd7Ge2fSszV8EJOPyr1cTOssz1JWr4sJAP7oY4Oaes/R8A0FeBaz0lyKxPJ864yguhXhAjMGllvuOGbB80deF4iPSz5ko7jBspp2nk74c/czrxUeWohnDL2pgkOfVOQMFlxHIFc/Ad/QaQUwh7PlBB/MEyzmRqjQ8VuujDtdoeXqJ2BewK9ahCCYdPlbpOx4eUNE5a6mvDu2YtjloPFOCSvpecLPplwLxr5Co2WyM405B+GIzzAglX8qcYq+l30DSoDyyqzW40xEtT94cwrDo0vospBMF7Zce/zzPKpjUIuIDLrgW3qls0iZW9dS1S+Ep728keleowyMoFdRB/CycYNfrEx806E+Tlwi72irkOwuzJPDjuCjKFvcntgW5S9+FZoPK1iAiT4yu3auFgZgCuGN6y4EuZDirpq+lzWCzxVK0i0DjduUaUL7N2swyeLYNINcnHQMRZBmbiK11I1IVUEIe3OfEtQZaLL5Qa5zqsL4k+aIelSt+InX/robz/Yf2AIIegwj+cTAY5g/HrkO1c8NY/iYEgHXdIJvQEjAB3Kfh8aLNkhXHR0RAHh5RVcdfvYOJSmb7/S6MI8Qw6ka1Zpf0F1Pf7tFh1u8J5VV45pDBYhymfC13q2J4Yq5hjAkzFSJoMmAS4eFJCubTY6RzIrTIcKrYT5AvyR95XtjP7PPdrD+sLGscxXZ7DlrPHicqeIt+TrOzkjEwuHr5RP/UUmQFPEs+KLCorn96uGd3VMg9Q+n0PfriDZfqe+jKft8hOC2d9n1tLyDeGXmsr6E1H2/zgRPm+l/w0/u7nCMuO7iNUGi/EVvu2JB8UWOG2ZSRRHoGgD9zt9sfkPjs4vaZVb5QDyyMdt4owGai2QYPfkE4NWoFpnL/tLQTo3X0Pt4sEuiASmxL77zD04uDzeTI2Wn+i9kjsRCYGEJOWxs6D/WKNHtV4rie5jLAUWz/SLAcRGlOjQbEmbQXSIDlbkffmHLWaRsuHNnJPB73FjmfgTRHF9R5V77CPnTt4EMwvhQBQArDRAhhZq13og0uK+tuWEvDde0TtFAFrVQRVO7a9HHKBBeomEKI/jkfPzoCwShJo1t1HsnxT2zng72l05fiOiV6BpanXrfpQaekg2CRRBn+91t9nsd6Lt6DI3GKMkj1Rn2n1EXNZ+LBZsvLrUd1c/oZvdtCb0DW8v2RcZYGuFCaHzhnf7Tts0ODLKo0VKPuH0/Z+gjGfYxA7OlHx/xG+Fx2s1J7dKhWi+lhgT+oQiQDOXnxGCnP7N7g5sL450RkXe8NDAMqgWwM5T/s3Wc+nvSOJRejbHoEXwzgQwtIsBOf8HtrAwSBVddAP572DvxBVe1Suq4HCwxGW0yu35oj4mTePpzQsH5RwzdCDiImZ2l0xUYl5HFu5blnURZ+Xsy03LV0B+9LQPqLJl82JUgFVuTOCDp+U5iuv+xtXDpy8ie7ZvHWwkWPiaa7v9cjhwmmyK7TulkpIfqAA8E3RDlFmoqbmPO9BBBukwCKBt+b0Aiq6/PmhTSomNqLoMH93HwEQIPNVOKgnkU20rNLgPVfS9xaiDydvlWSw7n7PyztrIjdVs1r++TdFTwBk7qZpd0HmIDPTXSWOVP8/2xo+L2CTnzcqqvW3myBROFNugicJUozlK3hK16Ux4jZtRegud46wQPYbh/PZY6F6NYhKTgJR114fGT2dMFxP3Qm0tiyoC/ca1boG9LlI7BIqwnCAJj/J+17MXAsnblA6gMTkUdD56YUj+yqhkrA1ddd/0wAROvAj+XtifsI+jBv+7NqzrS36KD6jbRh/vgZ7T5RnbNXQS2KAeuXeRIyLvuq0bc1qmSiiNN/OAmWbpEr6d+8JPpn3RAYLFbjjKljcr/0NyMrNohCPY1iD4jDqDUjWqqGDKa1HgrsAowYPDikBLxg85bKfLsjEwf+IpzV/Jv2x6kMWr6rUiDw2penV7yduRe8ReIn0r5Y1JurKTdIwPPtC7bO20ht/Wq2xfdPqXPvQZaK1erFYXUmPrLSSwT1QSYqfLRL+Y2m8knG0TZDAC7moRNfeR+GgQl6pjFu2CMqwiPrUnG4V1tLQ0NdsTturTiNbVRjWbHYsMOuHRAr5+7wJb1MVQurKIK/zCld+opljha+x3UVyi1ZQKgFlD+muoG3WQ5a83Rb0I8G6iR8h3ByI47iL/mxnp8+LxxUDYQG692JKg2OHaaz77WD6MOW1unzkZLfse9KUND9+9Cjxo46eDYpM2c5z6XjoufvsAGSXEbcQWQgOXeFExSpXp/U1ktReEgJLVKSPgNMNvg+RwZ4BsZytld1tj0M6sWhyIKTMsjC75QiGy3k8Jy4uU3CnXLs1eZuM5weQsFOf0SFOV9yyKsgP3wLXcbVmiifTZhh04JB3W+ns8NaLHQ0LDq2StKZ4LkcorLwsk7u/k0F1GdNmUf3hHMAylN6TVac2zs6yyVGMurSwPlJoJfE79/oGJc7Al66u1INMc2ClIq1q3Co9G+UwYw5OjJZvbkAO4HInxYEDZsBQD7bXXhICYdegvyLJIjdrnIengqbtJV7QZfGl/rPEuWonmH6PrcI+P+4AnP2E6/6rp2V1IEmyudqCwGWOg6un01MmSiOH0r7ZM4lIraQcSmyqAFBFEftiSwQQb+4MKk21T24paxi7+sWGoyw2cVKgG58kF5sKwRh26N81TeLX9LWRyK4m4jj8DAEP/R6axSa2GzRwc90bn3EkCHg+Vs5vBLauF6lv3AaJL6HrUX9j3u7OGmXW6dmf8jRdogb8Eo7oY621iIdnzaoyKA2Scn+CZuwo2Wg4pUSMjX2HzQolm9E6l/JSxk0EvQRMgyqR6qw9NYRHivCOoB6mTAuJ66TEVo6gC4Def/5Kyj5Ai2LM069RqrqF/jVhxDFK9AlJGOMJISyI8njLXdLXArUnJ1rK1uggiVh9vLiycdp0VGlR1SVVbgBDokMbPDKx39GEn6uCGD/hv09q+yOUtCk2ji0IWIH0Vp/lhgHd1pFrEHGp33qaqcukXtbbMkdKD9kmaiQIEjATazPH2pmFWVof2NP5yJxTYxShmgr67cjlMv82zfHHSNswhyhR5lthON1wMTJkvi1ElzcbYtalKbg1tnyOlz9vMLEJ8cfmiRbsk7ncSu+E3ASBx8l6DoO+Ilhh9jN/iZ3RJeBp14vCxgO8eTnKvCtlsgCkUIadRaDX56lgTZ5U6+Bkd+ipatGgd1BhofJ7ync7Fpz8D8mBwqhOwDD7mWkbB4R7bnl+Yp9KMit8v0P0tyRCSPhhdXXWrVbQhyVmmTqA1KDLMdkcSkZ86nlJSx5/6VEpfujnOahu+l/9kuiQd/LRpM894/SXX61tYjYGmGDvC8O0SPWCqgia2NNPB/nYS7vnqSTnYRmYErWZRjyW17HQKwQm8uEYa5tCTBtSl/vgLxBPQnGoQbfi+ISeytcYjJtf2sO5Zjx5T1pr4RrHgNIHa9B9zw1ldxF1wguTr/SKvmrTKRCHO2q9RsAMPRsCXn7P/AlZVgEWFPYItKcKG1MhPjNHPg1fcas16uoDO5TLiQps+2/h4GwO8FJJogiTYXmZgEO1+yom/ZL/8/04ROfqs9LgBpPrWz7VKNctJ3jinZJAdWYUMpXSKNm5rM8n+pMODjPKUxlpavoa7ocFJqfn7NBDfRyWtUr+fkXRnlJdkDWc/0xPMdyCe+zqyJM54H7LTFO6YncxmYuzOc8m7eJ765NVevL9qA+ZvdbxI1fZHqmOyHXHDpptWzeX8ETeU5zfmzoc7xU4dVITZj7Y3cS0XnPkk1wEMhL6Vc3VKztacg8SIEu0A2SBadIfYK8ZLk9z/FfxTYKU5F+OsRe9kbgIl5YWlwUCm106009BSjF7EdeYOlq/s1kw6KczOCUHGyOsnOrkV5FT/waFlGVe947G3Mow8Xmuy8lMX1txYsSAe2k10ux0UHvwdgYrVkEBzFw9WRw/6zBgD+ugQ604rNAAArUk+iiAqmchKly8BLBSNzWVn5k+G4FZqHqQRghVi8vrDAuEzgmdzLNBUS1m+I2s4I3E9CfquwK66KeA5+PFl+Udps6msfRmCNx0Klaa0Pq3ryf+e+oc6s/gNuNr6laYTB/GQCMYPl6zwm7d+08+US9f4/yqtye0iuJ/+fcpdULJJh/SE0qqiv/OxstEQqSI+Vhq7J+zmL0oCkgiBZXExE0jR4Bsq/BnlUmSJy3hTY7rlIBvyYJyIGn32hos3cSW5JBPMksFeY0eXqJflTJFE+1y2BNmnACS0up1Oawz41p+qQoCHOy1IKTWoqs2Hcje5hsXaOb7pNA2ybbq6lFCNEZeYwH6zB85csMrBeMQVgugO9lLl01+qZOYQwrX+/pSzQtxulGOIXu9jSF3xUI/mYJIcWSidaJEifm8/NPc//HdCoEyXHNulfoau1WKHDktV6rwHWlpROl936+HQNXetW4m/j+VDUdgM9kTxzcNcWWaEzB+1k7iB5ojuBes33Jqijp6YRfVOKQSBDXibx63pY4+mwjuFvEHB+kagMCxGG4gceJEsYbPThjSP6KXGs5/uoCnAz2ZTKZeasavSLbnbtIOrSaaAJQxVRbV/6fkqIH/KvE68XA3P0nFrcKd9JqGNK6mAZUP8RyprG3PpdNIvD7uQPR/Y4/Z29gK4TwTF3E7RsWUoe/3sRgww9TH8PI0jtcyAw/NpcQ05m0yfIy8ScrNArdzGpmR9Hx5BxpegDII4a1/7AkkYRSQ181Z4dpXkU8pJ5wZwO4TlG3SRxYpjuBdyrxUYVnfO3BSgr2Wxe9OaWW5oXsc42Em7DD9cOfnrdIjcMBu4gtq4WYP0OSPz5iPmiBMz0+HL/P+56ISPgMhXb1x3byNkcejwYnAqtGoVGiDvBGSqkaO+VqQHvWK3tYN7tTaQzTZJWRmO2U+OqzS3MbIlSUxF7uPu80fyJjDv9Mz2t0pRF2iDuWLwEYz7mpM0dW1teYwfcEgh3KEguJjdPArOdns12BfRMwLvXA6/MkdAiABGDHiU8LJ1eONNhXIDUZsmhxtzaeFTpzM95grTxwhpAYdGkbEXn4/Sh9F00hSvMG+fq3Yh6w/EeWaUOTd/VBR/C+D3uXKYbJY+jQXlBxLGLJgKFrh3YL0S6Kmpj0yDdCpVNNA97NJAyhCZC9SKfWgpN4XXdDjqTckXCeDgGZPlORVddLFwtt01H3cO4k2HBIw1pdlDMbRe+MOFRYAQgQhH3JiJ6SCGg2hLE+GlG7dQm7DEQ8Fn8GxU2QEEPrNJyxaZzbYhtfYcfDcfR/2PT65wIgY92tZnJSXbHrbjm/Pni5N2jgSlRHPmYJxXJUi37/+iF5D2pzNE1/IeT0NWELqPI4SkcxbN1pRhsPENSDJT/lh/rVcliBKtGBSSIZC0NVP2R/X77L5FjvJvXXBUe1YqGy/oXKlQV7PTGuGv32zYeK20Rb8MnCF0B99B3Nr8w6lstUn+CwoQxK7dED6F8xR/KPE/dIYTFT6o/yyVMWCC7tkdKqd4nzvIrpRYoKM5/nBEYAJf1TysruQs9mBwcMtVv2X0kHzrGNPOLMbsPzN6wO80xogeEywn7CAbPeIZm7oht1b+wg6CztB9d2w5fHiCD87RRCVhONGHm5Kvznvi5BwdWdqKw6j8iXb+SFm7fX81coteWiMyTO7gjq6Kfrgj2Aw+fr1QQEvOoTtGHaOuOylAS0XAoMQcvopHKTlbf/Qc65Xw7v5VODVwkIBdZ5BuswudBGwoQTzkm0c7SP93nizf5KPFPCzL+C0pns/43AvMmXpfgLiurw2xfGCNJkdEIZbZxGOGcWBHSfVrQkWEIYHGBVZqZTq/D7WW4qla6gLpXpsC/+YhLL4mrlBjwkeEpti+PWx026DZEc9z3t9hSZod4OHQ3GPgBTk5mdbxK2ZDeSBNOge++nc3r4rdmBnDO/HITrrIVYds4qv/INR870KY8U5SRDWtF41p0F/FmzH9pkpXgb8T0WO12V7Epd+yfGGL0v5jM05/CK5dmuW1u0JGoNMYF+fcCqkdCq65AlB+BkXN3inZb2npbkWor4uZI8yudRthMlNRrsYBhaZhjpdM2XRNltgEF+HZFV0Azz3/DzSbbAjAC6WkSq4j/ZFgO6ndvHLhMLb0xLCPedBgxddOkz1lvuxvHOCwUeKg6vyuxJ6JAEQQoWixVCbwSeYfUlSXqj6cGhGITHzQKLH8cUDhIyoFI4VXqeZlVsQOh2IcxsCOQldwKMXE1jx1z05gTwxEjQQVrnq0GzImduGbvCGiXULD3TORLt6ZuWpyTYEpJuQ7kV+7DBYxA8tWeddevk7gKrlO48HlKYUBu1Y2kHHWQfz0D7xIsvyUpGed39vUxO9T+RV314Q0fqqaMJXyJ/H8gTPtXT9IwpT8QnAWPxL6YL5YJmNn7DphlJGch1zVnUjMR0I10uEL08Ew0klKGsUf3APuBGoY6h5Zh+0n5+McDRzblj9k7r1zE0b3SDZM9ZqdBKLhS7BtymSQfdrxi5P2+55Dv3Dx13Oc/alzyoWvR4mZBhuYRvXSHT8qckFs/HTdJg5LfcGvrBGk6fhIj7u408xph5hF8rZgdLKLy1UAKbmYMngraqCgXpBEslliqiTJeBuy+lwV7rn2I47gHmsrdk6jkjac4jgjeGFBQ3fmBHMuFG/0Ae+Ki5xIB4ydPjM5GyWtk2h9zvNp0DGmz4OyQua2F0OMYpx+EWQ2lGIrytspAFcY7b9p390olvTMAj9P2bT7J6Xfr3pKQmpXPtu2xXkfo0hqBf7Ffw7jT0hIsYiU/YWRj/rlr1kq4haaK0qd/PvfzwNhoqlXfFRcDiA8FPqjsy+j16e927j5HTEElLMsiuw9F/s/kr7aOqsAPgLbGqNYIJ5Y1d5Ja+GYQU06Z+92Xu7n7ScgoHjYYSZZzZPehY2v5gv3mMnLhg/HbSkY0B7VHUqzwRVdjV0keea6qfNxpe0odp5u7ySAIGpe4mt4vcMXpdxwr9aSwlakMRnVn0cdnj2MzD9PmqvNNjBmdbFvW6iBFkMn2wDDtv8KlUCOmcG2VlwN/6dpzR6+MAn7ptHH1NRQCLCLQA7MtMngQMq0sJSSrQGQQa3N+GZEVVbPmy9+Fjf8n+Lp8Frkj+negZl5jE6Y519TlIErvtIWBlYzWSmjWEOsjmn+A4xi5/CkpJXifX2gpWMasJhZb1Yl9UpUi2VgRdIaTBcxiaiESO5/C/rmvfDwj7G1uqBxrnV3vzwAwL/lgWPxdmizW7x78gEF9N7MbUbEZnRt8d2QPwucZKoGlfRjiChdi2kWrlmJPazFoTjX+df4D7ok8UNEI/orET62kfmzC+ZRi+GfALHgIB3vqBmEmxTakRib2DDiuIYbO+NJ9tzVH45IthpqWEzIesWJiAor+Xv0MUlgcnHle0m2H2eN8fcLcLPxi8u4FekcEUk/gKvVI3IcJjQrboNFR2CVoHNKu8Yq28GFI6JjX/jKYnnQAK/L3iGEKhPl+Riqykhf1ccGb5QJ1pV+AvsvKZAhdavdS6xFayA9DTsOz3stBa2muI+gMK6IiifeCJ63kE1DXuFknKUmWCdF2DXtw8jUwT8md1QM1xK34EMrl59KpyiIJ89D8lqcMtcJoFIkDhMPzZHNjCiWpbVgFcGC1DmUeoukXYEYSN6rLOEifW8yW4CYAwZ4y3n6gm3orKTsU41NOsQVo61PPsW5Ki44FJ+6WlrvUKrxCqrAIv5QvHjlXaOKrR4HMFPpzpMFYu2I0e6S6ErSPIEgDwU+2Gf+HSBN69u0DUG43RkCumI7ZwUapycb/AiWVV84gnW8nO6gJC6PpC+9nftOn7blNToer6Ei3F8S6xrXEuLNw0GmuUUdeA2iwj29HxrlGZ6g8zhWrAq+8ujbM99v5XeXuqLkSsG4swNXEltwSgzr+F/93gsz31kRr8+lGFpkzlWOpfBpw5rBCFaOU4wZ8ONw2sjlLa2mJGgJH5FaCil4dr2TtcJy4C6W0PdbNFZRw2F4HgqmOHqAam6AHDB7D8YUKC0AwmYFHrJ6i9pVeNHmEC4aJIjFZK0vvgZKswLMDIbChBXm5W9pgNegKAYm4dDAxNFxVIBmkDI6RarxGbmh+8HBscvnRVqVqKNxWkVyE7wyZzX8mcOMVR/2rwlQlmPToWKgKsLMc+TlAW/Vcn9iFpPg26B2UCh85ab4TLg69xTYSmqW28/OmZM0xSeL8Cxs9EgRlehDS0O1aBUlr4CRN5phW6+7ddal16wKNTGqR+WAp7vD3WWqaaNjqfqj/z0k/foNmfFeCnE113oKch01q7WlnzToinA67R84tC1LO1hjgmmAkWf+L/itTICNrRD9W2eFHpd98pf249vp8MxZ7ChPZ1zG1ZXc2ZeRGcCPF8KsRI0luOkSna5LMrypOV7ZbepJzMnUzM/w6xlRF40ntYJLhlYDYY4UoNo9ZOXEXnwPUSmtzg2zFt/Fqr2uJ7YjampQSYSQ/DzExWFfnYl3gKrCSZF7B9bKsUNO2gQczxMQZt5AWUcZZQRtfobUTi27azj76D4PM0mXBxXP81PhYZoI8/lEr5nBrkYHUBZgvBe08Ai201iPgW7w5EO9zm1Y2QWYgwY0GZnv9dalwKd61lv2Ll2S7B/iXkrTK1ju5Kq/+7sv9RfL6NAFXa49XxQTc+Yvsm82SL4jXjxhI8KD+2CsUtY0Yaq7u9p0m6b57l69esIG5iDdYFU8/Dn1lAWLHrxfBpxClvyYkN3QPgllnRZxhpn1Tf+A+KumEvT/CRI6FGSKOzPt0/xTP1dj+tIl75HWl+Y2LHs/qd+EVBh0n0GQcvucD9ojWhqsgZfo+tobXv8Uv/5gF6NDaOrATRL6gzKVJQea801VNg3FSmkakRXb8qoMiN6lATpUNYrJjfVUJtZjumneNkWKAEB5z5WlT6/iWIXT7NqOPTeZ+43WwpRDGkn38/U5uh5SkVVZu1f3x5RA81kHcO6o+zj1e4DFzYZXbg5rcJf7nLDpWD/jp85asylc1PrkvwYANUwfkYkWMxeb84Uw8tUaUJqPWVolS/FVKYPPXdT5e/f9kdqTLSJCXCCBmZ2moN7mhbC2DLeCxiio1J3bGQvnswNYiZ/k5C+XFTJXXAhcKnZ1Ehtx5yuy5waLW70o2y9un5ex0eDx9jUVQamuKy5sTzDHqrPzrklgBwV8NN8ujedvQdIaAEuBTe5qM3XuBLmhkNjzFM4MAjlnT5BOc3xDNeETbHwzHYs3PAWsPWK0ABTfOl010s74OuTqPIo6KhNgUZUu5uJ4MOHO1NG8GNGAoJjmTXvm1EubNGmymSfyyyU/zc4ovkd8azWEIVNhxgaUbwEAI/fXbnlJx9/PR+TuMNwdCgGUmCmvB3b2KueHfYFQgmeq3dZEPgR9FM+MjHel2tFEgZuKTM3cnGT0o/4yqu8od8zs6QKc7EJVzZgcAfTvytZ8clrGNhGT/VBEPfubH61zLkWQcTKw3UXQC6UF5PIqAvjomrcP1Em9pzsEFi3fxdzRhqYkowOpfsUwXK5Rbr9pHpOwNNCslqayiakTO+7or3h3AueYFhs83UZpq23oZLkPBkftI11wJpMwYMh6yJli6spikANJfsHNfC1gfmjHPlM+2gVLNXQa53Dees4e85lq9YkP2y2QoF/JIUVSMKqjs93aNShgSGlPvJoVqph608ubVVZFo+KRo49l3EYFpuk3mZh9MnFVrlIT1gYmZquOSplwxSNefyxlTfwchHxHmOM2aKh9U/F9A+3kAdqC8AqyDuxNO2SUVEqYoZ/Svj+tE7+1UlS6onIfS7ANjZvYGUSrPB4KHOHdh1dfCrPOcP4jvbYZWb8FjEo+mxDSydJev7N9l60i+clksy4c7MlU9ltjD1Rs/DBWj949izFGKFae9bp4dbR4LNQ2GMq0qBlykKLRHei7zWvpQo8ti8DaUL0Cwzle9qEaACDze+jgcXq9eLiPwVkiAWWL5NPQQGhGnGKzAamHUbwQHq4wVRk2wPIAICrCr8OEU6sGUi6C2AGXI8eKKDMmrrr09GDQYEIixPFzIOsiOeG7pxxcGgVGmfM5J1ON19FCjxhSk/N6odkf/gYHfVp1sIzqh0ujBPGdsoWga/y5RLW4hzNQc4oAP5zG6wqCtX00teZVfH0njBSTUws5KZQAwWkt3Nx8Nvs95RIY5huquyUgOxo7b4MfsdCnG2xfsik0f/s7XK3OK4EClmG29w+zdjoOBX5/s4i2lQ+ghMk93t1MXSQ19BwSlMtFPxXkzpLKxs+aKHFDBas6x6dYeOm5/J4GvQUpnKcV6+GQmiPh4I7J9RlgtOyJD6OMi/u31QeqYBqspsSBrpivI69J0t9KdYkjECw++6CjgPmNcBrwzpz6YSuDOKxs6R0+LrD0VYY7iwUnszNCmnRJXMhhad+r10e30ZSb+U8FlvA4FIr6Mt7dHONlqeaQL8CNCVf77Vq5SguiA1e5fYpuKEYousoILWibo+lHZRb3uIkjLJvhgCAwY4gl2LaS8vJyBSzN5QDV/QtnVcH6ydZtSMtrDak/jlblItFDcvj6sgwq3afa4y+RkDzAhGfUS2Fs2TN5PiVL1Y4ztCVOABbl7sVyexlSCVQEJIrJCsShrsGXHtTEgn0xgaNhehcfYdc/ZiiDQKWn6QOw7U2mmgWG8nlH6GWMjusIlP3wNjDlfLiWNP7u0Uf6FwJ3BoeyEYSqHpTsZPYpsNyskKVC8wQe+g1BYOe0KLFe8z57ATBAfr+tNynT3T9EDeouzMA5+wem8nPVgxYu9DNyHF1B01+diQj+9GMOZvUGkXRMNx/qoGXD+zltjG3R8ga2uqRtMGhqvS3eEqXIZE3xdSWRR6i+aD2NVAtr5SPT13nX752QUQCLm/QY75BaUkwT/goyXpKUzhe0NveHBpntk/F0TLHvlPlxmgSduGr9Kk5vbrJAixPxRdK9DDWyj7pyb3ElBtolj0uJAXztc2fhqJSdLGQaNTvdnLnGXb7MJxNYmY7XSF54mgvaLlHYSqDXc66zFp4grmes9oF8CO5n/gJVwjOKLvgIB7Tt9BBQUXyWQ62AYBNAzkiLYPhOG8Kc2RTYQ5Mx+uFWWlYTItISaJQLXQuRWVAU1K5ZeOxszjMWPKRyYI0yMBmx7zVQ0lgEOnUAl6FPV5BqyOHLxC347GhvIAnfTVsHC+uMcs8V42jf0WCZ33Wl3PW5szuhI4XipAKjG0ke7LdTu2TATWJpCcGkcuDlV6KFEIwGNhL5QVtUAQYlzjhISPXCiT6dUeSJ5jJ3rERIDi8r6XrFe3ejK8/gw+v1OqgyuU77LZAMjw/ZurVnhSotySOauw3vQZm0qK4+xX75fPbbIq364dz95dQ7TpWXX3klJH7jMVjrDPKdWOulWQh5gjpNXvx+BXbZ85KoXQH1wVXFQ7e5x7P1qfLKhdFBz3cumujwqS6RXi0yAKq9FJOmYmAthI6sMkwOaqpbUqFKkTJVcrCwzZkdz5t3UwV7cFD8eTnfnnptPqDEuE3PpWfldOUrcPh9DMLBQNU+1Q7fvEznNg+E+ff6lF5cs2AbQSaqwcvlRmScnj4FjJ+SupVuEhST+PE7wDZ/CKsE68THoofU8oOA9w/PzAs9nWOLosjDRsqE72klYbhmnMhd2r6PDdaT4mgHyP1zrqySmT/SNQZCV70Akol6AwJvq1kQ3uP51d3dvwqPv4RQzWV3Ad/UrGsLVwTvAC/0OO9vpYXjoRAaP4dwAhmZQjq7ibwQl2O1OKCZYrYDCzBB56721OyjqVCq0kj/X9dLC8DrB3D60Ba7Ds7bk1icrf4lZ1TW1GZUiUyxlugtlC71i6cPI9Y6EHQ1IbPlRa5vB5gni+QuFqrOpHHyqKzjyXPCjs6B9tqbboBh5pexz9bn5h6dqSSkOC90whPckVXbvOhEd0lpJ/45YmDnk9vVzFQMcHQNtPjK7qjd4JUTlCsb//H52u+9ftz6oD1mA2dt9yGyr84rIXP4krGVJYTMLshzhsPL5mh1AHX5vQjANCacQEDuUpHiljMubluSKywToTy8vVB+AabAnRvi9XV1pbr5IW+UrtBOyIzXDOZSg3xEZKmy3EVaiVUBv8V9ue2ETP+Pb9mn5nYkwLU8DS84VSZIZY/8mHIL1CuG3YEViuUCHZP+se/Ia7LyQbcZytbag6g6bv72UMyKQv2vXwYjAXtHf/bqKiYZ2B/9GQNDnhNMaKj1rBLPmZjttZthcOv5e0MdUNINxqUdWa5EVYsFMN9hwc4pomOLtXzmmMAbUBWgP8Dw4XeRphUOYayLNWw+QOBEmH/YPc9qFn9ObMt2cocPGTwBVnMm57oTfruYOVZpPdDAvPbg3smnQHW/kaDQKEfT+OdxHKxlFZOBO+EkDNPG4C7DIuLylHRGkejDylb8372+L7eHsmivDYbcIbhmLgxZFVOF9BQ0BnKSTHA/UlX9v1e652qcx9EwM7k9MCYt2P3NPi8t8SorHj6KhxHa92+YUs9GqCuffW/BggwV93GOmobGiX0xDUgTW47YBgCtoy7ra4HhbKF2q8suiuIKs0pbHAee5MFpXK8WkoUyHEHXJ7tZ1Me5lWyYrWpkqlzFNxeca11MyL1OfRCo33j+3YDk5EfhaTqFnjB3SX3lqsJi7+Tqpbdp9cLoNTK4MAZdbbO0LAjP4trx9ArmC7yWIa9vhLqCf+MmU9FvH5NcQ81PBfD1YChKKdNgEpjCZ4awRobJYYd/NOdr6DH6mqCkAHZ7A6im7BI8w7nEP4psaVZm7YoOoMuduzr7JsE253NiztwkX6Qdo30dm3iXNlAEx19Ki/xeMR3Pm3rQZ7pPRKYSWJUo4Owd4ATGeolWSxHjSPHffRAsz6BqBWIk6ipdkYsFfdGNL6H0Cr8W8EmogZYSz7niwD8KOGcEDMfQd0BG9fsN4cvpYnl4MXp7MyL5UsNN42irSR+iiXT0hJXndejj90D80PLkiYnrfbVTyNB85HH6EZYxC+wAUh56nSTvLyKJDEAOOjkotNy7+/OIngam5/vPTzSOSsFXhn8SEg7R6YnnM3Z67njzHe+FhPFHryC8bzJYGsRPSTc6X0k5s77a8azUeIO+W0SAYsEbrrug+/D6bIk28S/Q2+hy8Tqi+GD0RfIZpa5gGy/Pnowc7J3CTI3Yc3dALSTLTAbXVQK/QlqtMT0MG0tIZZmlmQDyr2u/JlgbVc2b93iomuaLe9kyH/HfII6MGQwS1y8v5o02ICV+g7gKyr5eu7i0cgXTm4WcZYPVFVUz4oVRqf47Unj4a6+vk+Brs1Qc8buOKWF3edNKkSVRu6cJR7OAaliKk5TAcXzf/z9wnU4s2eTWl9e2AHiTAftH608JhWGX+oNMeKcDPbq/X97HymnNOHWXYH5O0Irm85r0KL2BM2Uho+48mpChe/RK9qaYqQJhIvlx7zW3eGZ0rwdk/ttYkc122/o4TVEfCK/tgAmBRbKIFh5EMSYCo0h53nTCkLA1ra2b/R9hYcXP3yX9CwzBmn6f4nYkRdcxT6jZwr32lk7QamD6ZZL5+/ddFWF4bpdTXKRSveSUqxEX3rhk+KlgYM8ByJQVOrkWdJNwZ45X+HsNIJYwgpt6KwMSLyyJi1ZrdhFW5RnwWpI1ghR3o7l4EmL/8Qqd2nJqL9Bj2MBZs+qOo00/VlqExbyzaqwj3sOMY1YU62Rg0qy/G0u2jjbbl6eJxHjL6KtzyO5h6krmARf18Dw/cI/ZFLWtVx8OZYysTRUbZKZd8G85tZQ+574kp1HJw5DeVPnqQ7tTpPjm2JPqJDYmvHeKZu1sl92lIvusEwD/wu1VzaPZMteR1dXcVis7Cb01xWANTGCJsO5FxrTw9k6WpgFLhjdsvJOX3f7eCuP+TLKdWSFxPij2LV8OyHQI+9hvgU+OFXFyU8kqA8If2udVx8VAdtVZP+xfzPbmyKpQHgHhL/UcPfhZx2b+GtYmfsHddS2tsn5USlJZjTtIO+IEfa7KQuXmDQJAq/lkWIWxHnMyWZEmK0l2LTuLMdZc5HxWjhNVPNEu5PtvDamAu2TdOrhZ4WBFp/VSrAhUt/D3tLakhaxDQJL1Uqi7dVw83uG0YakwUEUYQO3O6MxDazxpL3CiUGj9ork+VzfGdsuCdI1hlk+HmVDNs8r2335me9cAdm1KxKGmBYjuJ8fniUp0Xx1PMT0f/9wns/tBY/k8P2muoONk93G8E7bdEpLFDCt+WM/f53xSRjF+X41IHIJCR9dQ+hpzPbiFdRDfwDpjZmBxo2pprtKqcM2/KJXk9aR/F13v1Ai+b/JaI1T7yAV49HsTS1IyxDIfSgK6N1OcHiTVBuV1Q+AmIp/yXX0j72LzGfrmcuc05r7xAcbHsyaCKbXPYasNgP5HzKT/CpqPhgYPQvHZB3a3XdVxXf3ok89T2uOdMIKZQiBCLPuXatIfBv3oA1VXmOgJwRJTpBc9HAO93mkFsumlMwkPHCLRQX4NFrzt3Qjt7HTKLZsBo+/RaLC4E+7nrccfCvjL+Umr+Kc4+5kwMLgkrsBRYZJl0OvgcPr9AbkX4XsofolHSqWTVGv02Mwd/PVXlirZtACadzwvNSuHDYxiWi/3QNxZZk+oDWOjHnInDS+i1IllC/0fXc4svXYSSVUs0OUQRw1zFtfHpeetv+fcO+zWr58TJ8NgZyuBHD1HB9/IG9cg1WIjWkcRePEc20LAqrMQ9aSVQV7GpSOSL8cdIXBpf9zpmd4RaYZFSUewuIBwvSnDtGg8JGwxNVLjZ3aH1ldxDDWjL3O5E0Xh2QSLu9OP7VHoVuv1wJwul/Kv59d0ecSE/VxtJ5wqzN+zGUYfEarSKSnp4CFcWkQ+QJ6QCY9tqTyFkpA9q36LuBVx7J5wft3Oycjx4KFNgeE+dLcbJWD8ScOw16r26Aj2s35ovUr1RkwEsP6xrHOuDW67zBLrAwBjMlOFkqDxMFDVlGBNv1MefoZqz0Qj/pgvac63Jb1wLhRt2NslHpwxDmV6OUnWzTnP+v0dqz35Ahm4TgMtt0BQ1AvlPE5ImJ/9q02SCrhOPzerttK1bkLcaR3iL6ciJqwsKp4OYOMIOpML2GDPUi77Di7WfjKmd/xdXnAFsmwf41GQYQ7LiRtfSLSS03kqmv6gV1BN+3vUw+iTmnAq+FjGyKlEfZZs36OribhMpdT8IO2EYIsvxuD1mTrvhLvlFNly57WCEqCmBFGxpwTOKohcYNB7/kMDgJrozc4llehGsn97k8gx4fYm5hPhE9+n4fCKzwuHK3EBuIoDLbqBl+hNuPGEyQiwYEAFqjhQrWOQ+x42vn6YwWbQcpy36il+GydEoOOf1ptc+acB4V9A7T8e1YyuInmLEdMBMOt8oy48YKoDP2pJQ9h0STBfdcWidGrPIQWEy/979AcDZBGGe7dzGKtjSr8yOq5doKxJyqEM6PZ2PFV7yIR0I8Q+z55+h4jJdF7u/xXYkl47fOcSb8cmH74voD1cIkSMSp2Sa6f38mmfQ3Xu0KyTk53bAaHanu3OrKDjXe9VqRuQfvFyUNKKjY1huZc/vFXvt2rSNaphMNstnvWyqQP23IMv/0VOoAxxAimUi3wS8jTUx5jRaMzyBETh75dlAIjNC4rXpI3le/SArfQ3FCjLgRJ4tT0mnFER4WjQKsjhcb+17cCWvAdzdkKC1TvDjk1LhqKiSPT90oxOUw1qDQMi2VkYXRtbbSrQG8ntXHnlnslutEDOrt2RGL16w7OHbagnCPTxbDWRDb29AlBpR4oBOu5uTJQ7t/NER2f5g0XeOKgKMA= </div>]]></content>
+      <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x8BBF;&#x95EE;</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
       
       <categories>
           
@@ -1668,9 +1668,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 并查集 </tag>
             
@@ -1693,9 +1693,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -1718,9 +1718,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串处理 </tag>
             
@@ -1743,9 +1743,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 二叉搜索树 </tag>
             
@@ -1770,9 +1770,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> Dijkstra </tag>
             
@@ -1799,9 +1799,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 完全二叉树 </tag>
             
@@ -1826,9 +1826,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 模拟 </tag>
             
@@ -1851,9 +1851,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串处理 </tag>
             
@@ -1876,9 +1876,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 并查集 </tag>
             
@@ -1901,9 +1901,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 层次遍历 </tag>
             
@@ -1928,9 +1928,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 模拟 </tag>
             
@@ -1953,9 +1953,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 数学 </tag>
             
@@ -1978,9 +1978,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> DFS </tag>
             
@@ -2005,9 +2005,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 二叉树 </tag>
             
@@ -2030,9 +2030,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -2057,9 +2057,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -2088,9 +2088,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> BFS </tag>
             
@@ -2117,9 +2117,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> Dijkstra </tag>
             
@@ -2146,9 +2146,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 快速排序 </tag>
             
@@ -2171,9 +2171,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> C++ STL </tag>
             
@@ -2200,9 +2200,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 链表 </tag>
             
@@ -2225,9 +2225,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 逻辑 </tag>
             
@@ -2250,9 +2250,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 层次遍历 </tag>
             
@@ -2277,9 +2277,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 乘法原理 </tag>
             
@@ -2304,9 +2304,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串 </tag>
             
@@ -2331,9 +2331,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 分数 </tag>
             
@@ -2358,9 +2358,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 层次遍历 </tag>
             
@@ -2385,9 +2385,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -2414,9 +2414,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 二叉树 </tag>
             
@@ -2443,9 +2443,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> STL </tag>
             
@@ -2470,9 +2470,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串处理 </tag>
             
@@ -2497,9 +2497,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -2522,9 +2522,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 分数加法 </tag>
             
@@ -2551,9 +2551,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串处理 </tag>
             
@@ -2576,9 +2576,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> DFS </tag>
             
@@ -2601,9 +2601,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -2626,9 +2626,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> Hash </tag>
             
@@ -2653,9 +2653,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串 </tag>
             
@@ -2826,9 +2826,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 二叉搜索树 </tag>
             
@@ -2853,9 +2853,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> C++ STL </tag>
             
@@ -2880,9 +2880,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 数学问题 </tag>
             
@@ -2942,9 +2942,9 @@
             
             <tag> 动态规划 </tag>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 最长上升子序列 </tag>
             
@@ -2971,9 +2971,9 @@
             
             <tag> 01背包 </tag>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
         </tags>
       
@@ -2994,9 +2994,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 图论 </tag>
             
@@ -3021,9 +3021,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> BFS </tag>
             
@@ -3046,9 +3046,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -3071,9 +3071,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 链表 </tag>
             
@@ -3096,9 +3096,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> C++ STL </tag>
             
@@ -3123,9 +3123,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> C++ STL </tag>
             
@@ -3150,9 +3150,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 贪心 </tag>
             
@@ -3175,9 +3175,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串 </tag>
             
@@ -3200,9 +3200,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 模拟 </tag>
             
@@ -3225,9 +3225,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 判断溢出 </tag>
             
@@ -3250,13 +3250,13 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
             
-            <tag> 模拟 </tag>
+            <tag> PAT </tag>
             
             <tag> AVL Tree </tag>
+            
+            <tag> 模拟 </tag>
             
         </tags>
       
@@ -3277,9 +3277,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -3302,9 +3302,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 字符串处理 </tag>
             
@@ -3327,9 +3327,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 分解质因数 </tag>
             
@@ -3352,9 +3352,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 进制转换 </tag>
             
@@ -3377,9 +3377,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> map映射 </tag>
             
@@ -3404,9 +3404,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 链表 </tag>
             
@@ -3429,9 +3429,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> Hash散列 </tag>
             
@@ -3454,9 +3454,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> Hash散列 </tag>
             
@@ -3481,9 +3481,9 @@
             
             <tag> 动态规划 </tag>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
         </tags>
       
@@ -3504,9 +3504,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 贪心 </tag>
             
@@ -3529,9 +3529,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -3556,9 +3556,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 贪心 </tag>
             
@@ -3581,9 +3581,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 链表 </tag>
             
@@ -3606,9 +3606,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -3633,9 +3633,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -3658,9 +3658,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 排序 </tag>
             
@@ -3683,9 +3683,9 @@
       
         <tags>
             
-            <tag> PAT </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> PAT </tag>
             
             <tag> 回文数 </tag>
             

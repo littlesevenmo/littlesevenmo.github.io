@@ -108,19 +108,19 @@
 
 
 
-  <meta name="description" content="&amp;#x9898;&amp;#x76EE;&amp;#x63CF;&amp;#x8FF0; &amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x7EC4;&amp;#x7269;&amp;#x54C1;&amp;#xFF0C;&amp;#x4E00;&amp;#x5171;\(n\)&amp;#x4E2A;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4EF6;&amp;#x7269;&amp;#x54C1;&amp;#x90FD;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;">
+  <meta name="description" content="&amp;#x9898;&amp;#x76EE;&amp;#x63CF;&amp;#x8FF0; &amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x7EC4;&amp;#x7269;&amp;#x54C1;&amp;#xFF0C;&amp;#x4E00;&amp;#x5171;\(n\)&amp;#x4E2A;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4EF6;&amp;#x7269;&amp;#x54C1;&amp;#x90FD;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684">
 <meta name="keywords" content="背包问题,01背包,算法笔记,动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01背包算法笔记">
 <meta property="og:url" content="https://www.windsings.com/posts/b07a74da/index.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="&amp;#x9898;&amp;#x76EE;&amp;#x63CF;&amp;#x8FF0; &amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x7EC4;&amp;#x7269;&amp;#x54C1;&amp;#xFF0C;&amp;#x4E00;&amp;#x5171;\(n\)&amp;#x4E2A;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4EF6;&amp;#x7269;&amp;#x54C1;&amp;#x90FD;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;">
+<meta property="og:description" content="&amp;#x9898;&amp;#x76EE;&amp;#x63CF;&amp;#x8FF0; &amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x7EC4;&amp;#x7269;&amp;#x54C1;&amp;#xFF0C;&amp;#x4E00;&amp;#x5171;\(n\)&amp;#x4E2A;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4EF6;&amp;#x7269;&amp;#x54C1;&amp;#x90FD;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.windsings.com/posts/b07a74da/v2-1d8090c991ca13cee3cb43c027b72304_r.jpg">
-<meta property="og:updated_time" content="2020-07-25T11:46:18.911Z">
+<meta property="og:updated_time" content="2020-07-25T11:57:37.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01背包算法笔记">
-<meta name="twitter:description" content="&amp;#x9898;&amp;#x76EE;&amp;#x63CF;&amp;#x8FF0; &amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x7EC4;&amp;#x7269;&amp;#x54C1;&amp;#xFF0C;&amp;#x4E00;&amp;#x5171;\(n\)&amp;#x4E2A;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4EF6;&amp;#x7269;&amp;#x54C1;&amp;#x90FD;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;">
+<meta name="twitter:description" content="&amp;#x9898;&amp;#x76EE;&amp;#x63CF;&amp;#x8FF0; &amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x7EC4;&amp;#x7269;&amp;#x54C1;&amp;#xFF0C;&amp;#x4E00;&amp;#x5171;\(n\)&amp;#x4E2A;&amp;#xFF0C;&amp;#x6BCF;&amp;#x4EF6;&amp;#x7269;&amp;#x54C1;&amp;#x90FD;&amp;#x6709;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684">
 <meta name="twitter:image" content="https://www.windsings.com/posts/b07a74da/v2-1d8090c991ca13cee3cb43c027b72304_r.jpg">
 
 
@@ -388,7 +388,7 @@
                 
               
 
-              <time title="创建时间：2020-07-25 18:45:05 / 修改时间：19:46:18" itemprop="dateCreated datePublished" datetime="2020-07-25T18:45:05+08:00">2020-07-25</time>
+              <time title="创建时间：2020-07-25 18:45:05 / 修改时间：19:57:37" itemprop="dateCreated datePublished" datetime="2020-07-25T18:45:05+08:00">2020-07-25</time>
             
 
             
@@ -454,7 +454,8 @@
       
 
       
-        <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+        <a id="more"></a>
+<h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
 <p>&#x7ED9;&#x5B9A;&#x4E00;&#x7EC4;&#x7269;&#x54C1;&#xFF0C;&#x4E00;&#x5171;<span class="math inline">\(n\)</span>&#x4E2A;&#xFF0C;&#x6BCF;&#x4EF6;&#x7269;&#x54C1;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x91CD;&#x91CF;&#xFF08;<span class="math inline">\(weight\)</span>&#xFF09;&#x548C;&#x4EF7;&#x503C;&#xFF08;<span class="math inline">\(value\)</span>&#xFF09;&#xFF0C;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x627F;&#x91CD;&#x4E3A;<span class="math inline">\(C\)</span>&#x7684;&#x80CC;&#x5305;&#xFF0C;&#x6BCF;&#x4E2A;&#x7269;&#x54C1;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x62FF;&#x6216;&#x8005;&#x4E0D;&#x62FF;&#xFF0C;&#x95EE;&#x8FD9;&#x4E2A;&#x80CC;&#x5305;&#x6700;&#x591A;&#x80FD;&#x5E26;&#x8D70;&#x7684;&#x6700;&#x591A;&#x7684;&#x7269;&#x54C1;&#x603B;&#x4EF7;&#x503C;&#x662F;&#x591A;&#x5C11;</p>
 <h1 id="&#x95EE;&#x9898;&#x5206;&#x6790;">&#x95EE;&#x9898;&#x5206;&#x6790;</h1>
 <p>&#x8D2A;&#x5A6A;&#x7B97;&#x6CD5;&#x662F;&#x65E0;&#x6CD5;&#x6C42;&#x6700;&#x4F18;&#x89E3;&#x7684;&#x3002;</p>
