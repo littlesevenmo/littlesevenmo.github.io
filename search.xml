@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[分组背包算法笔记]]></title>
+    <url>%2F%2Fposts%2Fa76cf5d1%2F</url>
+    <content type="text"><![CDATA[&#x6240;&#x6709;&#x7269;&#x54C1;&#x5206;&#x6210;K&#x7C7B;&#xFF0C;&#x6BCF;&#x7C7B;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x9009;&#x62E9;&#x4E00;&#x4EF6;&#x7269;&#x54C1;&#x7684;&#x80CC;&#x5305;&#x95EE;&#x9898;&#x3002;]]></content>
+      <categories>
+        <category>背包问题</category>
+      </categories>
+      <tags>
+        <tag>背包问题</tag>
+        <tag>算法笔记</tag>
+        <tag>动态规划</tag>
+        <tag>多重背包</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu设置终端走代理]]></title>
     <url>%2F%2Fposts%2F3c42339d%2F</url>
     <content type="text"><![CDATA[Ubuntu&#x8BBE;&#x7F6E;&#x7EC8;&#x7AEF;&#x8D70;&#x4EE3;&#x7406;]]></content>
@@ -507,8 +521,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>数据结构</tag>
         <tag>笔记</tag>
+        <tag>数据结构</tag>
         <tag>复习</tag>
       </tags>
   </entry>
@@ -520,8 +534,8 @@
         <category>智能机器人</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>实验报告</tag>
+        <tag>C++</tag>
         <tag>OpenCV</tag>
         <tag>双目相机</tag>
         <tag>单目相机</tag>
@@ -599,8 +613,8 @@
         <category>智能机器人</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>实验报告</tag>
+        <tag>C++</tag>
         <tag>OpenCV</tag>
         <tag>物体检测</tag>
         <tag>掩模</tag>
@@ -616,8 +630,8 @@
         <category>智能机器人</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>笔记</tag>
+        <tag>C++</tag>
         <tag>Eigen</tag>
         <tag>Cmake</tag>
       </tags>
@@ -1124,8 +1138,8 @@
       <tags>
         <tag>算法</tag>
         <tag>PAT</tag>
-        <tag>BFS</tag>
         <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>图的遍历</tag>
       </tags>
   </entry>
@@ -1167,8 +1181,8 @@
       <tags>
         <tag>算法</tag>
         <tag>PAT</tag>
-        <tag>字符串处理</tag>
         <tag>C++ STL</tag>
+        <tag>字符串处理</tag>
         <tag>Map</tag>
       </tags>
   </entry>
@@ -1647,8 +1661,8 @@
       <tags>
         <tag>算法</tag>
         <tag>PAT</tag>
-        <tag>字符串处理</tag>
         <tag>C++ STL</tag>
+        <tag>字符串处理</tag>
       </tags>
   </entry>
   <entry>
