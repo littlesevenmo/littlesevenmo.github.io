@@ -454,57 +454,59 @@
       
         <p>&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x6570;&#x91CF;&#x6709;&#x9650;&#x5236;&#x7684;&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x95EE;&#x9898;&#x3002;</p>
 <a id="more"></a>
-<h1 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h1><p>&#x5728;&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x6709;&#x6570;&#x91CF;&#x9650;&#x5236;&#x3002;&#x6700;&#x591A;&#x6709;$n[i]$&#x4E2A;.</p>
-<h1 id="&#x601D;&#x8DEF;&#x5206;&#x6790;"><a href="#&#x601D;&#x8DEF;&#x5206;&#x6790;" class="headerlink" title="&#x601D;&#x8DEF;&#x5206;&#x6790;"></a>&#x601D;&#x8DEF;&#x5206;&#x6790;</h1><p><strong>&#x601D;&#x8DEF;&#x4E00;</strong></p>
-<p>&#x591A;&#x91CD;&#x80CC;&#x5305;&#x95EE;&#x9898;&#x7684;&#x601D;&#x8DEF;&#x8DDF;&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x7684;&#x601D;&#x8DEF;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;$k$&#x7684;&#x53D6;&#x503C;&#x662F;&#x6709;&#x9650;&#x5236;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4EF6;&#x7269;&#x54C1;&#x7684;&#x6570;&#x91CF;&#x662F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x4E3A;&#xFF1A;</p>
-<script type="math/tex; mode=display">
-dp[i][j] = max\{dp[i - 1][j - k * w[i]] + v[i], dp[i-1][j] \}\ \ (0≤k≤ n[i]且k*w[i]≤j)</script><p><strong>&#x601D;&#x8DEF;&#x4E8C;</strong></p>
-<p>&#x8F6C;&#x5316;&#x4E3A;01&#x80CC;&#x5305;&#x53BB;&#x89E3;&#x3002;&#x6BD4;&#x5982;1&#x53F7;&#x7269;&#x54C1;$(w,v)=(2,1), n=2$&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x770B;&#x4F5C;&#x6709;&#x4E24;&#x4E2A;$(w,v)=(2,1)$&#x7684;&#x7269;&#x54C1;&#x3002;</p>
-<h2 id="&#x4F8B;"><a href="#&#x4F8B;" class="headerlink" title="&#x4F8B;"></a>&#x4F8B;</h2><div class="table-container">
+<h1 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;">&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h1>
+<p>&#x5728;&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6BCF;&#x79CD;&#x7269;&#x54C1;&#x6709;&#x6570;&#x91CF;&#x9650;&#x5236;&#x3002;&#x6700;&#x591A;&#x6709;<span class="math inline">\(n[i]\)</span>&#x4E2A;.</p>
+<h1 id="&#x601D;&#x8DEF;&#x5206;&#x6790;">&#x601D;&#x8DEF;&#x5206;&#x6790;</h1>
+<p><strong>&#x601D;&#x8DEF;&#x4E00;</strong></p>
+<p>&#x591A;&#x91CD;&#x80CC;&#x5305;&#x95EE;&#x9898;&#x7684;&#x601D;&#x8DEF;&#x8DDF;&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x7684;&#x601D;&#x8DEF;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;<span class="math inline">\(k\)</span>&#x7684;&#x53D6;&#x503C;&#x662F;&#x6709;&#x9650;&#x5236;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4EF6;&#x7269;&#x54C1;&#x7684;&#x6570;&#x91CF;&#x662F;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x4E3A;&#xFF1A; <span class="math display">\[
+dp[i][j] = max\{dp[i - 1][j - k * w[i]] + v[i], dp[i-1][j] \}\ \ (0&#x2264;k&#x2264; n[i]&#x4E14;k*w[i]&#x2264;j)
+\]</span> <strong>&#x601D;&#x8DEF;&#x4E8C;</strong></p>
+<p>&#x8F6C;&#x5316;&#x4E3A;01&#x80CC;&#x5305;&#x53BB;&#x89E3;&#x3002;&#x6BD4;&#x5982;1&#x53F7;&#x7269;&#x54C1;<span class="math inline">\((w,v)=(2,1), n=2\)</span>&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x770B;&#x4F5C;&#x6709;&#x4E24;&#x4E2A;<span class="math inline">\((w,v)=(2,1)\)</span>&#x7684;&#x7269;&#x54C1;&#x3002;</p>
+<h2 id="&#x4F8B;">&#x4F8B;</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>&#x6570;&#x91CF;</th>
 <th>&#x91CD;&#x91CF;</th>
 <th>&#x4EF7;&#x503C;</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>0</td>
 <td>0</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>1</td>
 <td>5</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>2</td>
 <td>4</td>
 <td>2</td>
 </tr>
-<tr>
+<tr class="even">
 <td>1</td>
 <td>3</td>
 <td>3</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>2</td>
 <td>2</td>
 <td>4</td>
 </tr>
-<tr>
+<tr class="even">
 <td>1</td>
 <td>1</td>
 <td>5</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>&#x4EE3;&#x7801;</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> C = <span class="number">15</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> w[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span> };</span><br><span class="line">    <span class="keyword">int</span> v[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> };</span><br><span class="line">    <span class="keyword">int</span> num[<span class="number">6</span>] = { <span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span> };</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(C + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)	<span class="comment">//&#x628A;&#x524D;&#x4E24;&#x4E2A;&#x5FAA;&#x73AF;&#x770B;&#x6210;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF0C;&#x5C31;&#x62C6;&#x5F00;&#x4E86;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= num[i]; k++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = C; j &gt;= w[i]; j--)</span><br><span class="line">                dp[j] = max(dp[j], dp[j - w[i]] + v[i]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[C] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -634,7 +636,7 @@ dp[i][j] = max\{dp[i - 1][j - k * w[i]] + v[i], dp[i-1][j] \}\ \ (0≤k≤ n[i]�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">134</span>
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -646,10 +648,6 @@ dp[i][j] = max\{dp[i - 1][j - k * w[i]] + v[i], dp[i-1][j] \}\ \ (0≤k≤ n[i]�
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
                     
-                    
-                      
-                    
-                      
                     
                       
                     
@@ -709,18 +707,6 @@ dp[i][j] = max\{dp[i - 1][j - k * w[i]] + v[i], dp[i-1][j] \}\ \ (0≤k≤ n[i]�
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
                     
                       
                     

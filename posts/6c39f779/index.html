@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="Ray version:0.7.4 &amp;#x5F53;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;remote function&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x901A;&amp;#x8FC7;remote_func.remote()&amp;#x6267;&amp;#x884C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x51FD;&amp;#x">
+  <meta name="description" content="Ray version:0.7.4 &amp;#x5F53;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;remote function&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x901A;&amp;#x8FC7;remote_func.remote()&amp;#x6267;&amp;#x884C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x51FD;&amp;#">
 <meta name="keywords" content="Ray,分布式系统,源码分析,python,remote function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ray源码分析-执行remote函数">
 <meta property="og:url" content="https://www.windsings.com/posts/6c39f779/index.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="Ray version:0.7.4 &amp;#x5F53;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;remote function&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x901A;&amp;#x8FC7;remote_func.remote()&amp;#x6267;&amp;#x884C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x51FD;&amp;#x">
+<meta property="og:description" content="Ray version:0.7.4 &amp;#x5F53;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;remote function&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x901A;&amp;#x8FC7;remote_func.remote()&amp;#x6267;&amp;#x884C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x51FD;&amp;#">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-07-21T00:00:21.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ray源码分析-执行remote函数">
-<meta name="twitter:description" content="Ray version:0.7.4 &amp;#x5F53;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;remote function&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x901A;&amp;#x8FC7;remote_func.remote()&amp;#x6267;&amp;#x884C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x51FD;&amp;#x">
+<meta name="twitter:description" content="Ray version:0.7.4 &amp;#x5F53;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;remote function&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x901A;&amp;#x8FC7;remote_func.remote()&amp;#x6267;&amp;#x884C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x51FD;&amp;#">
 
 
 
@@ -456,7 +456,7 @@
 <p>&#x5F53;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;remote function&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;remote_func.remote()&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;</p>
 <a id="more"></a>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x4E86;&#x4FEE;&#x9970;&#x5668;@ray.remote&#x4E4B;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x8FDC;&#x7A0B;&#x51FD;&#x6570;remote function</p>
-<p> &#x6700;&#x540E;&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x8981;&#x5C31;&#x662F;</p>
+<p>&#x6700;&#x540E;&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x8981;&#x5C31;&#x662F;</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">invocation</span><span class="params">(args, kwargs)</span>:</span></span><br><span class="line">    args = ray.signature.extend_args(self._function_signature, args, kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> worker.mode == ray.worker.LOCAL_MODE:</span><br><span class="line">        object_ids = worker.local_mode_manager.execute(</span><br><span class="line">                    self._function, self._function_descriptor, args,</span><br><span class="line">                    num_return_vals)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        object_ids = worker.submit_task(</span><br><span class="line">                    self._function_descriptor,</span><br><span class="line">                    args,</span><br><span class="line">                    num_return_vals=num_return_vals,</span><br><span class="line">                    resources=resources)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(object_ids) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> object_ids[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">elif</span> len(object_ids) &gt; <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> object_ids</span><br></pre></td></tr></table></figure>
 <p>&#x4E0D;&#x8003;&#x8651;LOCAL_MODE&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3B;&#x8981;&#x5DE5;&#x4F5C;&#x5C31;&#x4FE9;&#xFF1A;<code>submit_task</code>&#x53D1;&#x5E03;&#x4EFB;&#x52A1;&#xFF0C;&#x548C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>object_id</code>&#xFF0C;&#x4EE5;&#x4F9B;<code>ray.get(object_id)</code></p>
 <p>&#x8FD9;&#x662F;submit_task&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
@@ -586,7 +586,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">134</span>
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -598,10 +598,6 @@
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
                     
-                    
-                      
-                    
-                      
                     
                       
                     
@@ -661,18 +657,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
                     
                       
                     
